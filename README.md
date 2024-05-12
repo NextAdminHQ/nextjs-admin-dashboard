@@ -47,7 +47,7 @@ NextAdmin is a feature-rich tool that comes you with everything necessary to bui
 - A handy UI kit with assets.
 - Over ten web apps complete with examples.
 - Support for both dark mode and light mode.
-- Essential integrations including - Authentication, Database, and Search.
+- Essential integrations including - Authentication (NextAuth), Database (Postgres with Prisma), and Search (Algolia).
 - Detailed and user-friendly documentation.
 - Customizable plugins and add-ons.
 - TypeScript compatibility.
