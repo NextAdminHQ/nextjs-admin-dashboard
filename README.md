@@ -1,10 +1,10 @@
-**NextAdmin** is a full-featured **Next.js** admin toolkit and template that is **free** and **open-source**, designed to streamline your development process. This **Next.js** template includes pre-built components, pages, integrations, responsive layouts, and a customizable design system to help you create powerful admin dashboards with ease.
+**NextAdmin** is a Free, open-source Next.js admin dashboard toolkit featuring 200+ UI components and templates that come with pre-built elements, components, pages, high-quality design, integrations, and much more to help you create powerful admin dashboards with ease.
 
 
 [![nextjs admin template](https://cdn.pimjo.com/nextadmin-2.png)](https://nextadmin.co/)
 
 
-**NextAdmin** provides you with a comprehensive set of dashboard UI components, elements, and pages necessary for creating top-notch admin panels or dashboards with **powerful** features and integrations. Whether you are working on a complex web application or a basic website, **NextAdmin** has got you covered.
+**NextAdmin** provides you with a diverse set of dashboard UI components, elements, examples and pages necessary for creating top-notch admin panels or dashboards with **powerful** features and integrations. Whether you are working on a complex web application or a basic website, **NextAdmin** has got you covered.
 
 ### [✨ Visit Website](https://nextadmin.co/)
 ### [🚀 Live Demo](https://demo.nextadmin.co/)
@@ -39,7 +39,8 @@ yarn dev
 And voila! You're now ready to start developing. **Happy coding**!
 
 ## Highlighted Features
-**NextAdmin** is a feature-rich tool that comes you with everything necessary to build a resilient **Next.js** dashboard for your advanced and future-proof web projects. Here are some of the key features that contribute to making **NextAdmin** a dynamic and multi-faceted solution for your development needs:
+**200+ Next.js Dashboard Ul Components and Templates** - includes a variety of prebuilt **Ul elements, components, pages, and examples** crafted with a high-quality design.
+Additionally, features seamless **essential integrations and extensive functionalities**.
 
 - A library of over **200** professional dashboard UI components and elements.
 - Five distinctive dashboard variations, catering to diverse use-cases.
