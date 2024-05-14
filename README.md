@@ -1,4 +1,4 @@
-**NextAdmin** is a full-featured **Next.js** admin template that is **free** and **open-source**, designed to streamline your development process. This **Next.js** template includes pre-built components, pages, integrations, responsive layouts, and a customizable design system to help you create powerful admin dashboards with ease.
+**NextAdmin** is a full-featured **Next.js** admin toolkit and template that is **free** and **open-source**, designed to streamline your development process. This **Next.js** template includes pre-built components, pages, integrations, responsive layouts, and a customizable design system to help you create powerful admin dashboards with ease.
 
 
 [![nextjs admin template](https://cdn.pimjo.com/nextadmin-2.png)](https://nextadmin.co/)
