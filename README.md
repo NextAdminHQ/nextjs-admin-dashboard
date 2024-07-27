@@ -1,4 +1,4 @@
-# Next.js admin dashboard template and UI components
+# NextAdmin - Next.js Admin Dashboard Template and Components
 
 **NextAdmin** is a Free, open-source Next.js admin dashboard toolkit featuring 200+ UI components and templates that come with pre-built elements, components, pages, high-quality design, integrations, and much more to help you create powerful admin dashboards with ease.
 
