@@ -31,7 +31,6 @@ const MultiSelect: React.FC<DropdownProps> = ({ id }) => {
           });
         }
         setOptions(newOptions);
-        setShow(false); // Close dropdown after selection
       }
     };
 
@@ -62,7 +61,6 @@ const MultiSelect: React.FC<DropdownProps> = ({ id }) => {
     }
 
     setOptions(newOptions);
-    setShow(false); // Close dropdown after selection
   };
 
   const remove = (index: number) => {

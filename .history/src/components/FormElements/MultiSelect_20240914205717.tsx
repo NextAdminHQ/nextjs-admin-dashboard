@@ -87,8 +87,9 @@ const MultiSelect: React.FC<DropdownProps> = ({ id }) => {
         !show ||
         dropdownRef.current.contains(target) ||
         trigger.current.contains(target)
-      )
+      ) {
         return;
+      }
       setShow(false);
     };
     document.addEventListener("click", clickHandler);
