@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 interface Props {
   children: React.ReactNode;
-  exceptionRef?: React.RefObject<HTMLElement>;
+  exceptionRef?: React.RefObject<HTMLElement | null>;
   onClick: () => void;
   className?: string;
 }
