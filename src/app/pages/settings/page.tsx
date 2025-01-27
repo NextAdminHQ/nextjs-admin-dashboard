@@ -1,24 +1,26 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-
-import { Metadata } from "next";
-import DefaultLayout from "@/components/Layouts/DefaultLaout";
-import SettingBoxes from "@/components/SettingBoxes";
+import type { Metadata } from "next";
+import { PersonalInfoForm } from "./_components/personal-info";
+import { UploadPhotoForm } from "./_components/upload-photo";
 
 export const metadata: Metadata = {
-  title: "Next.js Settings Page | NextAdmin - Next.js Dashboard c",
-  description: "This is Next.js Settings page for NextAdmin Dashboard Kit",
+  title: "Settings Page",
 };
 
-const Settings = () => {
+export default function SettingsPage() {
   return (
-    <DefaultLayout>
-      <div className="mx-auto w-full max-w-[1080px]">
-        <Breadcrumb pageName="Settings" />
+    <div className="mx-auto w-full max-w-[1080px]">
+      <Breadcrumb pageName="Settings" />
 
-        <SettingBoxes />
+      <div className="grid grid-cols-5 gap-8">
+        <div className="col-span-5 xl:col-span-3">
+          <PersonalInfoForm />
+        </div>
+        <div className="col-span-5 xl:col-span-2">
+          <UploadPhotoForm />
+        </div>
       </div>
-    </DefaultLayout>
+    </div>
   );
 };
 
-export default Settings;

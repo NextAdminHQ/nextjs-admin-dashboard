@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 interface Option {
   value: string;

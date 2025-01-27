@@ -2,23 +2,18 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,tsx}"],
+  darkMode: ["class"],
   theme: {
-    fontFamily: {
-      satoshi: ["Satoshi", "sans-serif"],
-    },
-    screens: {
-      "2xsm": "375px",
-      xsm: "425px",
-      "3xl": "2000px",
-      ...defaultTheme.screens,
-    },
     extend: {
+      fontFamily: {
+        sans: ['"Satoshi"', ...defaultTheme.fontFamily.sans],
+      },
+      screens: {
+        "2xsm": "375px",
+        xsm: "425px",
+        "3xl": "2000px",
+      },
       colors: {
         current: "currentColor",
         transparent: "transparent",
