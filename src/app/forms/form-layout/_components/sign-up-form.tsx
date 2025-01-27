@@ -33,7 +33,7 @@ export function SignUpForm() {
           className="mb-5.5"
         />
 
-        <button className="flex w-full justify-center rounded-[7px] bg-primary p-[13px] font-medium text-white hover:bg-opacity-90">
+        <button className="flex w-full justify-center rounded-lg bg-primary p-[13px] font-medium text-white hover:bg-opacity-90">
           Sign Up
         </button>
       </form>
