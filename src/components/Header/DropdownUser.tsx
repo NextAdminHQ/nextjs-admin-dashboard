@@ -18,12 +18,8 @@ const DropdownUser = () => {
             width={112}
             height={112}
             src="/images/user/user-03.png"
-            style={{
-              width: "auto",
-              height: "auto",
-            }}
             alt="User"
-            className="overflow-hidden rounded-full"
+            className="object-cover w-full h-full rounded-full"
           />
         </span>
 
@@ -59,12 +55,8 @@ const DropdownUser = () => {
                 width={112}
                 height={112}
                 src="/images/user/user-03.png"
-                style={{
-                  width: "auto",
-                  height: "auto",
-                }}
                 alt="User"
-                className="overflow-hidden rounded-full"
+                className="object-cover w-full h-full rounded-full"
               />
 
               <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-green dark:border-gray-dark"></span>

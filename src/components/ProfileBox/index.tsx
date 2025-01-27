@@ -59,7 +59,7 @@ const ProfileBox = () => {
                 src="/images/user/user-03.png"
                 width={160}
                 height={160}
-                className="overflow-hidden rounded-full"
+                className="object-cover w-full h-full"
                 alt="profile"
               />
             </div>
