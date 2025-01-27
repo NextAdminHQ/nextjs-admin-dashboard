@@ -10,8 +10,8 @@ import { ShowcaseSection } from "@/components/Layouts/showcase-section";
 
 export function PersonalInfoForm() {
   return (
-    <ShowcaseSection title="Personal Information" className="!px-7 !py-4">
-      <form className="p-7">
+    <ShowcaseSection title="Personal Information" className="!p-7">
+      <form>
         <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
           <InputGroup
             className="w-full sm:w-1/2"
