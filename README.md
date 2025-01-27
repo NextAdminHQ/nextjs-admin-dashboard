@@ -60,3 +60,14 @@ Additionally, features seamless **essential integrations and extensive functiona
 - Plus, much more!
 
 All these features and more make **NextAdmin** a robust, well-rounded solution for all your dashboard development needs.
+
+## Update Logs
+
+### Version 1.2.0 - Major Upgrade and UI Improvements - [Jan 27, 2025]
+
+- Upgraded to Next.js v15 and updated dependencies
+- API integration with loading skeleton for tables and charts.
+- Improved code structure for better readability.
+- Rebuilt components like dropdown, sidebar, and all ui-elements using accessibility practices.
+- Using search-params to store dropdown selection and refetch data.
+- Semantic markups, better separation of concerns and more.
