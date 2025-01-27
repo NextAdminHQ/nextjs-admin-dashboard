@@ -8,6 +8,8 @@ type PropsType = {
   label: string;
   name?: string;
   minimal?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  radius?: "default" | "md";
 };
 
 export function Checkbox({
@@ -16,6 +18,8 @@ export function Checkbox({
   name,
   withBg,
   minimal,
+  onChange,
+  radius,
 }: PropsType) {
   const id = useId();
 
@@ -29,7 +33,13 @@ export function Checkbox({
         )}
       >
         <div className="relative">
-          <input type="checkbox" name={name} id={id} className="peer sr-only" />
+          <input
+            type="checkbox"
+            onChange={onChange}
+            name={name}
+            id={id}
+            className="peer sr-only"
+          />
 
           <div
             className={cn(
@@ -38,6 +48,7 @@ export function Checkbox({
                 ? "peer-checked:bg-primary [&>*]:text-white"
                 : "peer-checked:bg-gray-2 dark:peer-checked:bg-transparent",
               minimal && "mr-3 border-stroke dark:border-dark-3",
+              radius === "md" && "rounded-md",
             )}
           >
             {!withIcon && (
