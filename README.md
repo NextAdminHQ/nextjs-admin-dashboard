@@ -71,3 +71,11 @@ All these features and more make **NextAdmin** a robust, well-rounded solution f
 - Rebuilt components like dropdown, sidebar, and all ui-elements using accessibility practices.
 - Using search-params to store dropdown selection and refetch data.
 - Semantic markups, better separation of concerns and more.
+
+### Version 1.1.0
+- Updated Dependencies
+- Removed Unused Integrations
+- Optimized App
+
+### Version 1.0
+- Initial Release - [May 13, 2024]
