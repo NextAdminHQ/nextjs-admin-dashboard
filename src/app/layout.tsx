@@ -26,7 +26,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>
-          <NextTopLoader showSpinner={false} />
+          <NextTopLoader color="#5750F1" showSpinner={false} />
 
           <div className="flex min-h-screen">
             <Sidebar />
