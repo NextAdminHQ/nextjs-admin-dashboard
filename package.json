@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "apexcharts": "^3.45.2",
+    "apexcharts": "^4.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
@@ -19,18 +19,14 @@
     "next-themes": "^0.4.4",
     "nextjs-toploader": "^3.7.15",
     "react": "19.0.0",
-    "react-apexcharts": "^1.4.1",
+    "react-apexcharts": "^1.7.0",
     "react-dom": "19.0.0",
-    "react-quill": "^2.0.0",
-    "react-select": "^5.10.0",
-    "react-table": "^7.8.0",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@types/node": "^22",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
-    "@types/react-table": "^7.7.20",
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
