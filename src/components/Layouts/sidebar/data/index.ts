@@ -7,12 +7,14 @@ export const NAV_DATA = [
       {
         title: "Dashboard",
         icon: Icons.HomeIcon,
-        items: [
-          {
-            title: "eCommerce",
-            url: "/",
-          },
-        ],
+        url: "/",
+        items: [],
+      },
+      {
+        title: "Products",
+        icon: Icons.HomeIcon,
+        url: "/products",
+        items: [],
       },
       {
         title: "Calendar",
