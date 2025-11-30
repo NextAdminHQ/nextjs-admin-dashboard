@@ -63,6 +63,10 @@ All these features and more make **NextAdmin** a robust, well-rounded solution f
 
 ## Update Logs
 
+### Version 1.2.2 - [December 01, 2025]
+- Updated to Next.js 16
+- Updated dependencies.
+
 ### Version 1.2.1 - [Mar 20, 2025]
 - Fix Peer dependency issues and NextConfig warning.
 - Updated apexcharts and react-apexhcarts to the latest version.
