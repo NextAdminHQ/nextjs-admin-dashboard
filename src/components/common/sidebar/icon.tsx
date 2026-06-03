@@ -57,8 +57,15 @@ export const CalendarIcon = () => {
 };
 export const UserIcon = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={17} height={17} viewBox="0 0 17 17" fill="none">
-      <circle cx="8.25" cy="8.25" r="7.5" stroke="#71717A" strokeWidth="1.5" />
+    <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 18 18" fill="none">
+      <circle cx={9} cy="6.75" r="2.25" stroke="#71717A" strokeWidth="1.5" />
+      <circle cx={9} cy={9} r="7.5" stroke="#71717A" strokeWidth="1.5" />
+      <path
+        d="M13.4769 15C13.3575 12.8314 12.6935 11.25 8.99999 11.25C5.30644 11.25 4.64246 12.8314 4.5231 15"
+        stroke="#71717A"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 };
@@ -167,6 +174,24 @@ export const ThreeDots = () => {
         d="M18 2C18 3.10457 17.1046 4 16 4C14.8954 4 14 3.10457 14 2C14 0.89543 14.8954 0 16 0C17.1046 0 18 0.89543 18 2Z"
         fill="currentColor"
       />
+    </svg>
+  );
+};
+export const WindowIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 18 18" fill="none">
+      <path
+        d="M1.5 9C1.5 5.46447 1.5 3.6967 2.59835 2.59835C3.6967 1.5 5.46447 1.5 9 1.5C12.5355 1.5 14.3033 1.5 15.4017 2.59835C16.5 3.6967 16.5 5.46447 16.5 9C16.5 12.5355 16.5 14.3033 15.4017 15.4017C14.3033 16.5 12.5355 16.5 9 16.5C5.46447 16.5 3.6967 16.5 2.59835 15.4017C1.5 14.3033 1.5 12.5355 1.5 9Z"
+        stroke="#71717A"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M4.5 4.25C4.63807 4.25 4.75 4.36193 4.75 4.5C4.75 4.63807 4.63807 4.75 4.5 4.75C4.36193 4.75 4.25 4.63807 4.25 4.5C4.25 4.36193 4.36193 4.25 4.5 4.25ZM6.75 4.25C6.88807 4.25 7 4.36193 7 4.5C7 4.63807 6.88807 4.75 6.75 4.75C6.61193 4.75 6.5 4.63807 6.5 4.5C6.5 4.36193 6.61193 4.25 6.75 4.25ZM9 4.25C9.13807 4.25 9.25 4.36193 9.25 4.5C9.25 4.63807 9.13807 4.75 9 4.75C8.86193 4.75 8.75 4.63807 8.75 4.5C8.75 4.36193 8.86193 4.25 9 4.25Z"
+        fill="#71717A"
+        stroke="#71717A"
+      />
+      <path d="M1.5 7.125H16.5" stroke="#71717A" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M6.75 15.75L6.75 7.5" stroke="#71717A" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 };

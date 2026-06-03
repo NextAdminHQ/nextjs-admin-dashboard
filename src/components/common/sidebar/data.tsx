@@ -6,6 +6,7 @@ import {
   TableIcon,
   UserIcon,
   Widget4Icon,
+  WindowIcon,
 } from "@/components/common/sidebar/icon";
 
 export const NAV_DATA = [
@@ -61,7 +62,7 @@ export const NAV_DATA = [
       },
       {
         title: "Pages",
-        icon: <AlphabetIcon />,
+        icon: <WindowIcon />,
         items: [
           {
             title: "Settings",

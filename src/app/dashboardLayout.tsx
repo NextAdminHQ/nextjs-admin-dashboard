@@ -22,7 +22,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       </aside>
       <div className="p-4 flex-1 min-w-0">
-        <div className="rounded-2xl shadow-[0_3px_6px_-2px_rgba(0,0,0,0.02),0_1px_1px_0_rgba(0,0,0,0.04)] bg-card-surface-area border-[0.5px] border-card-surface-border flex flex-col h-full">
+        <div className="rounded-2xl shadow-[0_3px_6px_-2px_rgba(0,0,0,0.02),0_1px_1px_0_rgba(0,0,0,0.04)] bg-card-surface-area border-[0.5px] border-card-surface-border flex flex-col h-full overflow-hidden">
           <Header />
           <div className="max-w-384 mx-auto min-h-0 h-full">{children}</div>
         </div>

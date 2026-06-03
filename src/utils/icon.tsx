@@ -139,3 +139,23 @@ export const AltArrowUpIcon = (props: IconProps) => {
     </svg>
   );
 };
+export const AltArrowDownIcon = (props: IconProps) => {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width={20}
+      height={20}
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M15.4166 7.5L9.99992 12.5L4.58326 7.5"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

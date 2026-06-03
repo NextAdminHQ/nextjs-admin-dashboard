@@ -472,12 +472,15 @@
 
   /* ======================= Next Admin Dashboard  ======================= */
   --color-background-gray-secondary_alt_2: #f4f4f5;
+  --color-background-gray-secondary_alt: #f4f4f5;
   --color-background-gray-primary: #fafafa;
+  --color-background-gray-secondary: #f4f4f5;
   --color-brand-500: #5750f1;
   --color-brand-600: #3c35d8;
   --color-base-white: #ffffff;
   --color-icon-tertiary: #71717a;
   --color-icon-secondary: #52525b;
+  --color-icon-primary: #27272a;
   --color-text-tertiary: #71717a;
   --color-input-background: #ffffff;
   --color-input-border: #d4d4d8;
@@ -485,11 +488,17 @@
   --color-card-border: #e8e8e8;
   --color-card-surface-area: #fcfcfd;
   --color-card-surface-border: #e5e5e5;
+  --color-card-background: #ffffff;
   --color-text-secondary: #52525b;
   --color-text-primary: #18181b;
   --color-sidebar-navigation-nav-item-nav-hover-background: rgba(0, 0, 0, 0.05);
+  --color-border-secondary-alt: #e4e4e7;
+  --color-border-primary: #f4f4f5;
+  --color-border-secondary: #e4e4e7;
+  --color-background-white-secondary: #ffffff;
 
   --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
 }
 
 @layer base {
