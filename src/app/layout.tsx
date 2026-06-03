@@ -1,4 +1,3 @@
-import DashboardLayout from "@/app/dashboardLayout";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -20,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistInter.className} antialiased h-full`}>
-      <body className="bg-background-gray-secondary_alt_2 h-full">
-        <DashboardLayout children={children} />
-      </body>
+      <body className="bg-background-gray-secondary_alt_2 h-full">{children}</body>
     </html>
   );
 }

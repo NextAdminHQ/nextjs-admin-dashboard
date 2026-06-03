@@ -4,7 +4,7 @@ import Sidebar from "@/components/common/sidebar";
 import { Sheet, SheetContent, SheetOverlay } from "@/components/tailgrids/core/sheet";
 import { ReactNode, useState } from "react";
 
-export default function DashboardLayout({ children }: { children: ReactNode }) {
+export default function WithLayout({ children }: { children: ReactNode }) {
   // xl+ sidebar expand/collapse state
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   // mobile sheet open state (< xl breakpoint)

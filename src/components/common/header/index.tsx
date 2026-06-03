@@ -14,20 +14,17 @@ function MobileInfoDrawer({ isOpen }: { isOpen: boolean }) {
   return (
     <div className={cn(isOpen ? "block" : "hidden")}>
       <div className="px-5 py-4 shadow-xs">
-        <div className="flex items-center justify-between">
-          {/* Left Side - Search */}
-          <div className="flex-1 max-w-xs">
+        <div className="flex items-center justify-between gap-2.5">
+          <div className="flex items-center gap-2.5">
+            <NotificationsButton />
+            <button className="size-10 border border-card-border bg-card-background flex items-center justify-center rounded-lg shadow-xs text-icon-primary hover:bg-background-gray-primary transition-colors">
+              <MoonIcon />
+            </button>
             <SearchBar />
           </div>
 
           {/* Right Side - Actions */}
-          <div className="flex items-center gap-2.5">
-            <button className="size-10 border border-card-border bg-card-background flex items-center justify-center rounded-lg shadow-xs text-icon-primary hover:bg-background-gray-primary transition-colors">
-              <MoonIcon />
-            </button>
-            <NotificationsButton />
-            <UserProfileButton />
-          </div>
+          <UserProfileButton />
         </div>
       </div>
     </div>
