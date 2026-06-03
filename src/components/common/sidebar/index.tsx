@@ -1,7 +1,7 @@
 "use client";
 
 import { NAV_DATA } from "@/components/common/sidebar/data";
-import { SidebarExpandedIcon, ThreeDots } from "@/components/common/sidebar/icon";
+import { CloseIcon, SidebarExpandedIcon, ThreeDots } from "@/components/common/sidebar/icon";
 import { Button } from "@/components/tailgrids/core/button";
 import {
   Collapsible,
@@ -100,9 +100,11 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
 export default function Sidebar({
   isSidebarOpen,
   toggleSidebar,
+  isMobileSheet = false,
 }: {
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
+  isMobileSheet?: boolean;
 }) {
   return (
     <div className={cn("flex flex-col h-full transition-all duration-300 overflow-hidden")}>
@@ -114,11 +116,18 @@ export default function Sidebar({
         )}
       >
         {isSidebarOpen ? <LogoWithText /> : <Logo />}
+
         <button
           onClick={() => toggleSidebar()}
-          className={cn("p-1.5 text-icon-tertiary hover:text-text-secondary transition-colors ")}
+          className={cn(
+            "p-1.5 transition-colors",
+            isMobileSheet
+              ? "text-icon-tertiary hover:text-text-primary hover:bg-background-gray-primary rounded-lg"
+              : "text-icon-tertiary hover:text-text-secondary",
+          )}
+          aria-label={isMobileSheet ? "Close sidebar" : "Toggle sidebar"}
         >
-          <SidebarExpandedIcon />
+          {isMobileSheet ? <CloseIcon /> : <SidebarExpandedIcon />}
         </button>
       </div>
 
