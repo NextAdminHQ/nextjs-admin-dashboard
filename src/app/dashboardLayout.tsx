@@ -13,8 +13,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     <div className="flex h-full">
       <aside
         style={{
-          width: isSidebarOpen ? "240px" : "72px",
-          minWidth: isSidebarOpen ? "240px" : "72px",
+          width: isSidebarOpen ? "270px" : "72px",
+          minWidth: isSidebarOpen ? "270px" : "72px",
           transition: "width 300ms cubic-bezier(0.4,0,0.2,1), min-width 300ms cubic-bezier(0.4,0,0.2,1)",
         }}
         className="overflow-hidden"
