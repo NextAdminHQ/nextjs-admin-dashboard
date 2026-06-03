@@ -496,6 +496,8 @@
   --color-border-primary: #f4f4f5;
   --color-border-secondary: #e4e4e7;
   --color-background-white-secondary: #ffffff;
+  --color-green-600: #16a34a;
+  --color-red-600: #dc2626;
 
   --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   --shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
