@@ -1,8 +1,9 @@
+import { Card } from "@/components/tailgrids/core/card";
 import { MenuDotsIcon } from "@/utils/icon";
 
 export default function TrafficSources() {
   return (
-    <div className="border-[0.5px] border-card-border bg-card-background rounded-xl p-5">
+    <Card>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <p className="text-text-primary font-semibold leading-6">Traffic Sources</p>
@@ -38,6 +39,6 @@ export default function TrafficSources() {
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -1,32 +1,65 @@
 "use client";
 
+import { Card } from "@/components/tailgrids/core/card";
 import { ChartContainer } from "@/components/tailgrids/core/chart";
 import { MenuDotsIcon } from "@/utils/icon";
 import { Label, Pie, PieChart } from "recharts";
 
-const chartData = [
-  { name: "Available", value: 61, color: "#5750F1" },
-  { name: "Unavailable", value: 39, color: "#E5E7EB" },
-];
+const chartData = [{ month: "current", "in-stock": 760, "low-stock": 320, "out-of-stock": 160 }];
+const totalUnits =
+  chartData[0]["in-stock"] + chartData[0]["low-stock"] + chartData[0]["out-of-stock"];
+const availablePercent = Math.round((chartData[0]["in-stock"] / totalUnits) * 100);
+const gaugeSegmentCount = 32;
+const inStockSegments = Math.round((chartData[0]["in-stock"] / totalUnits) * gaugeSegmentCount);
+const lowStockSegments = Math.round((chartData[0]["low-stock"] / totalUnits) * gaugeSegmentCount);
+const gaugeSegments = Array.from({ length: gaugeSegmentCount }, (_, index) => {
+  const status =
+    index < inStockSegments
+      ? "in-stock"
+      : index < inStockSegments + lowStockSegments
+        ? "low-stock"
+        : "out-of-stock";
 
-const inventoryStats = [
+  return {
+    fill: `var(--color-${status})`,
+    id: `segment-${index + 1}`,
+    status,
+    value: 1,
+  };
+});
+const inventorySummary = [
   {
-    label: "Total Stock",
-    value: "14,500",
+    label: "In stock",
+    value: chartData[0]["in-stock"],
   },
   {
-    label: "Low Stock",
-    value: "7,00",
+    label: "Low stock",
+    value: chartData[0]["low-stock"],
   },
   {
+    label: "Out",
+    value: chartData[0]["out-of-stock"],
+  },
+] as const;
+
+const chartConfig = {
+  "in-stock": {
+    label: "In stock",
+    color: "var(--chart-2)",
+  },
+  "low-stock": {
+    label: "Low stock",
+    color: "var(--chart-1)",
+  },
+  "out-of-stock": {
     label: "Out of stock",
-    value: "146",
+    color: "var(--destructive)",
   },
-];
+};
 
 export default function InventoryOverview() {
   return (
-    <div className="border-[0.5px] border-card-border bg-card-background rounded-xl p-2 pt-5">
+    <Card className="p-2 pt-5">
       {/* Header */}
       <div className="flex items-center justify-between px-3">
         <p className="text-text-primary font-semibold leading-6">Inventory Overview</p>
@@ -34,76 +67,65 @@ export default function InventoryOverview() {
           <MenuDotsIcon />
         </button>
       </div>
-      {/* <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <SegmentedGauge value={61} />
-    </div> */}
-      {/* Chart Section */}
 
-      <div className="flex flex-col items-center gap-6">
-        <div className="w-64 h-64 flex items-center justify-center">
-          <ChartContainer>
-            <PieChart width={256} height={256}>
-              <Pie
-                cx="50%"
-                cy="100%"
-                cornerRadius={6}
-                data={chartData}
-                dataKey="value"
-                endAngle={0}
-                innerRadius={80}
-                outerRadius={110}
-                paddingAngle={10}
-                startAngle={180}
-                stroke="var(--card)"
-                strokeWidth={1}
-              >
-                <Label
-                  content={({ viewBox }) => {
-                    if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                      return (
-                        <text textAnchor="middle" x={viewBox.cx} y={viewBox.cy}>
-                          <tspan
-                            className="fill-foreground font-medium text-2xl tabular-nums"
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 22}
-                          >
-                            {61}%
-                          </tspan>
-                          <tspan
-                            className="fill-muted-foreground text-xs"
-                            x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 38}
-                          >
-                            Available
-                          </tspan>
-                        </text>
-                      );
-                    }
-                  }}
-                />
-              </Pie>
-            </PieChart>
-          </ChartContainer>
-        </div>
-
-        {/* Percentage Display */}
-        <div className="flex flex-col items-center gap-1">
-          <p className="text-text-primary font-semibold text-xl leading-7 tracking-[-0.2px]">61%</p>
-          <p className="text-text-tertiary text-sm leading-5">Available</p>
-        </div>
+      <div className="h-60 w-full">
+        <ChartContainer className="w-full h-full">
+          <PieChart>
+            <Pie
+              cx="50%"
+              cy="100%"
+              cornerRadius={6}
+              data={gaugeSegments}
+              dataKey="value"
+              endAngle={0}
+              innerRadius={80}
+              outerRadius={110}
+              paddingAngle={2}
+              startAngle={180}
+              stroke="var(--color-background-gray-secondary-alt)"
+              strokeWidth={1}
+            >
+              <Label
+                content={({ viewBox }) => {
+                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                    return (
+                      <text textAnchor="middle" x={viewBox.cx} y={viewBox.cy}>
+                        <tspan
+                          className="fill-foreground font-medium text-2xl tabular-nums"
+                          x={viewBox.cx}
+                          y={(viewBox.cy || 0) + 22}
+                        >
+                          {availablePercent}%
+                        </tspan>
+                        <tspan
+                          className="fill-muted-foreground text-xs"
+                          x={viewBox.cx}
+                          y={(viewBox.cy || 0) + 38}
+                        >
+                          Available
+                        </tspan>
+                      </text>
+                    );
+                  }
+                }}
+              />
+            </Pie>
+          </PieChart>
+        </ChartContainer>
       </div>
 
-      {/* Stats Section */}
-      <div className="bg-background-gray-secondary_alt rounded-lg p-6 flex items-center justify-between gap-8">
-        {inventoryStats.map((stat, index) => (
-          <div key={stat.label} className="flex-1 flex flex-col gap-1">
-            <p className="text-text-tertiary font-normal text-xs leading-4">{stat.label}</p>
-            <p className="text-text-primary font-semibold text-base leading-6 tracking-[-0.2px]">
-              {stat.value}
-            </p>
+      <div className="flex justify-between bg-background-gray-secondary_alt rounded-[9px] py-2 px-11">
+        {inventorySummary.map((item, _index) => (
+          <div key={item.label} className="pt-3">
+            <div>
+              <div className="text-text-tertiary leading-4 text-xs mb-0.5">{item.label}</div>
+              <p className="font-semibold text-text-primary leading-6">
+                {item.value.toLocaleString()}
+              </p>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }

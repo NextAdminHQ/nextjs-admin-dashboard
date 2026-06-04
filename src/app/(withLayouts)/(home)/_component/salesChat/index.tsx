@@ -1,5 +1,6 @@
 "use client";
 
+import { Card } from "@/components/tailgrids/core/card";
 import { ChartContainer } from "@/components/tailgrids/core/chart";
 import {
   Select,
@@ -69,7 +70,7 @@ const chartData = [
 
 export default function SalesChart() {
   return (
-    <div className="bg-card-background rounded-xl border-[0.5px] border-card-border p-5">
+    <Card>
       {/* Header section */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-6">
         <div className="flex flex-col sm:flex-row gap-8">
@@ -181,6 +182,6 @@ export default function SalesChart() {
           </AreaChart>
         </ChartContainer>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -2,6 +2,7 @@
 import Header from "@/components/common/header";
 import Sidebar from "@/components/common/sidebar";
 import { Sheet, SheetContent, SheetOverlay } from "@/components/tailgrids/core/sheet";
+import { cn } from "@/utils/cn";
 import { ReactNode, useState } from "react";
 
 export default function WithLayout({ children }: { children: ReactNode }) {
@@ -47,7 +48,7 @@ export default function WithLayout({ children }: { children: ReactNode }) {
       </Sheet>
 
       {/* ── Main content column ── */}
-      <div className="lg:p-4 flex-1 min-w-0">
+      <div className={cn("flex-1 min-w-0", isSidebarOpen ? "lg:p-4" : "lg:p-4 lg:pl-0")}>
         <div className="lg:rounded-2xl lg:shadow-[0_3px_6px_-2px_rgba(0,0,0,0.02),0_1px_1px_0_rgba(0,0,0,0.04)] bg-card-surface-area border-[0.5px] border-card-surface-border flex flex-col h-full overflow-hidden">
           <Header onMenuClick={() => setIsMobileSheetOpen(true)} />
           <div className="overflow-y-auto scrollbar-thin min-h-0 h-full">

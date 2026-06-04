@@ -1,8 +1,9 @@
+import { Card } from "@/components/tailgrids/core/card";
 import { MenuDotsIcon } from "@/utils/icon";
 
 export default function RegionLabels() {
   return (
-    <div className="border-[0.5px] border-card-border bg-card-background rounded-xl p-5">
+    <Card>
       {/* Header */}
       <div className="flex items-center justify-between">
         <p className="text-text-primary font-semibold leading-6">Region Labels</p>
@@ -10,6 +11,6 @@ export default function RegionLabels() {
           <MenuDotsIcon />
         </button>
       </div>
-    </div>
+    </Card>
   );
 }

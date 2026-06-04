@@ -6,6 +6,7 @@ import { transactionsTableData } from "@/app/(withLayouts)/(home)/_component/las
 import { SearchIcon } from "@/components/common/header/icons";
 import { Badge } from "@/components/tailgrids/core/badge";
 import { Button } from "@/components/tailgrids/core/button";
+import { Card } from "@/components/tailgrids/core/card";
 import { Checkbox } from "@/components/tailgrids/core/checkbox";
 import {
   InputGroup,
@@ -24,7 +25,7 @@ import { MenuDotsIcon } from "@/utils/icon";
 
 export default function LastTransactions() {
   return (
-    <div className="border-[0.5px] border-card-border bg-card-background rounded-xl p-5">
+    <Card>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <p className="text-text-primary font-semibold leading-6">Last Transaction</p>
@@ -48,7 +49,7 @@ export default function LastTransactions() {
         <TableRoot className="min-w-[800px] w-full border-none rounded-none">
           <TableHeader>
             <TableRow className="[&_th]:border-t [&_th]:border-border-primary">
-              <TableHead className="px-5 py-2.5">
+              <TableHead className="px-5 py-2.5 w-9">
                 <div className="flex items-center justify-center">
                   <Checkbox />
                 </div>
@@ -113,6 +114,6 @@ export default function LastTransactions() {
           </TableBody>
         </TableRoot>
       </div>
-    </div>
+    </Card>
   );
 }

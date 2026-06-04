@@ -1,4 +1,5 @@
 import { Avatar } from "@/components/tailgrids/core/avatar";
+import { Card } from "@/components/tailgrids/core/card";
 import { ArrowUpIcon, MenuDotsIcon } from "@/utils/icon";
 
 const products = [
@@ -46,7 +47,7 @@ const products = [
 
 export default function TopProducts() {
   return (
-    <div className="border-[0.5px] border-card-border bg-card-background rounded-xl p-5">
+    <Card>
       {/* Header */}
       <div className="flex items-center justify-between">
         <p className="text-text-primary font-semibold leading-6">Top Product</p>
@@ -81,6 +82,6 @@ export default function TopProducts() {
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }

@@ -1,4 +1,5 @@
 import { overviewData } from "@/app/(withLayouts)/(home)/_component/overview/data";
+import { Card } from "@/components/tailgrids/core/card";
 import { cn } from "@/utils/cn";
 import { ArrowDownIcon, ArrowUpIcon } from "@/utils/icon";
 
@@ -6,10 +7,7 @@ export default function Overview() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {overviewData.map((item) => (
-        <div
-          key={item.id}
-          className="border-[0.5px] border-card-border bg-card-background rounded-xl p-5"
-        >
+        <Card key={item.id}>
           {/* Icon */}
           <div
             className={cn(
@@ -39,7 +37,7 @@ export default function Overview() {
               {item.isPositive ? <ArrowUpIcon /> : <ArrowDownIcon />}
             </div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   );
