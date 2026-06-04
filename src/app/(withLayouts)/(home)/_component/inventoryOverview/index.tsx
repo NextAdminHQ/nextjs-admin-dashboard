@@ -2,13 +2,12 @@
 
 import { ChartContainer } from "@/components/tailgrids/core/chart";
 import { MenuDotsIcon } from "@/utils/icon";
-import { Cell, Pie, PieChart } from "recharts";
+import { Label, Pie, PieChart } from "recharts";
 
 const chartData = [
   { name: "Available", value: 61, color: "#5750F1" },
   { name: "Unavailable", value: 39, color: "#E5E7EB" },
 ];
-import GaugeComponent from "react-gauge-component";
 
 const inventoryStats = [
   {
@@ -39,24 +38,49 @@ export default function InventoryOverview() {
       <SegmentedGauge value={61} />
     </div> */}
       {/* Chart Section */}
-      
+
       <div className="flex flex-col items-center gap-6">
         <div className="w-64 h-64 flex items-center justify-center">
           <ChartContainer>
             <PieChart width={256} height={256}>
               <Pie
+                cx="50%"
+                cy="100%"
+                cornerRadius={6}
                 data={chartData}
-                cx={128}
-                cy={128}
-                innerRadius={70}
-                outerRadius={110}
-                startAngle={90}
-                endAngle={-270}
                 dataKey="value"
+                endAngle={0}
+                innerRadius={80}
+                outerRadius={110}
+                paddingAngle={10}
+                startAngle={180}
+                stroke="var(--card)"
+                strokeWidth={1}
               >
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
+                <Label
+                  content={({ viewBox }) => {
+                    if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                      return (
+                        <text textAnchor="middle" x={viewBox.cx} y={viewBox.cy}>
+                          <tspan
+                            className="fill-foreground font-medium text-2xl tabular-nums"
+                            x={viewBox.cx}
+                            y={(viewBox.cy || 0) + 22}
+                          >
+                            {61}%
+                          </tspan>
+                          <tspan
+                            className="fill-muted-foreground text-xs"
+                            x={viewBox.cx}
+                            y={(viewBox.cy || 0) + 38}
+                          >
+                            Available
+                          </tspan>
+                        </text>
+                      );
+                    }
+                  }}
+                />
               </Pie>
             </PieChart>
           </ChartContainer>

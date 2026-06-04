@@ -1,5 +1,5 @@
 import InventoryOverview from "@/app/(withLayouts)/(home)/_component/inventoryOverview";
-import LastTransaction from "@/app/(withLayouts)/(home)/_component/lastTransaction";
+import LastTransactions from "@/app/(withLayouts)/(home)/_component/lastTransactions";
 import Overview from "@/app/(withLayouts)/(home)/_component/overview";
 import RegionLabels from "@/app/(withLayouts)/(home)/_component/regionlabels";
 import SalesChart from "@/app/(withLayouts)/(home)/_component/salesChat";
@@ -28,7 +28,7 @@ export default function Home() {
           <TrafficSources />
           <RegionLabels />
         </div>
-        <LastTransaction />
+        <LastTransactions />
       </div>
     </div>
   );
