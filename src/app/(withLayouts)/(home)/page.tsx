@@ -1,5 +1,10 @@
+import InventoryOverview from "@/app/(withLayouts)/(home)/_component/inventoryOverview";
+import LastTransaction from "@/app/(withLayouts)/(home)/_component/lastTransaction";
 import Overview from "@/app/(withLayouts)/(home)/_component/overview";
+import RegionLabels from "@/app/(withLayouts)/(home)/_component/regionlabels";
 import SalesChart from "@/app/(withLayouts)/(home)/_component/salesChat";
+import TopProducts from "@/app/(withLayouts)/(home)/_component/topProducts";
+import TrafficSources from "@/app/(withLayouts)/(home)/_component/trafficSources";
 
 export default function Home() {
   return (
@@ -15,6 +20,15 @@ export default function Home() {
       <div className="px-5 space-y-5">
         <Overview />
         <SalesChart />
+        <div className="grid grid-cols-1 md:grid-cols-[519fr_558fr] gap-5">
+          <InventoryOverview />
+          <TopProducts />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-[546fr_531fr] gap-5">
+          <TrafficSources />
+          <RegionLabels />
+        </div>
+        <LastTransaction />
       </div>
     </div>
   );

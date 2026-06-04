@@ -1,4 +1,4 @@
-type IconProps = React.SVGProps<SVGSVGElement>;
+export type IconProps = React.SVGProps<SVGSVGElement>;
 
 export const Logo = () => {
   return (
@@ -159,3 +159,66 @@ export const AltArrowDownIcon = (props: IconProps) => {
     </svg>
   );
 };
+export const MenuDotsIcon = (props: IconProps) => {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width={20}
+      height={20}
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M5.83333 10.0002C5.83333 10.9206 5.08714 11.6668 4.16667 11.6668C3.24619 11.6668 2.5 10.9206 2.5 10.0002C2.5 9.07969 3.24619 8.3335 4.16667 8.3335C5.08714 8.3335 5.83333 9.07969 5.83333 10.0002Z"
+        fill="currentColor"
+      />
+      <path
+        d="M11.6667 10.0002C11.6667 10.9206 10.9205 11.6668 10 11.6668C9.07953 11.6668 8.33333 10.9206 8.33333 10.0002C8.33333 9.07969 9.07953 8.3335 10 8.3335C10.9205 8.3335 11.6667 9.07969 11.6667 10.0002Z"
+        fill="currentColor"
+      />
+      <path
+        d="M17.5 10.0002C17.5 10.9206 16.7538 11.6668 15.8333 11.6668C14.9129 11.6668 14.1667 10.9206 14.1667 10.0002C14.1667 9.07969 14.9129 8.3335 15.8333 8.3335C16.7538 8.3335 17.5 9.07969 17.5 10.0002Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const ArrowUpIcon = (props: IconProps) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+  >
+    <path
+      d="M8 13.3332L8 2.6665M4 6.6665L8 2.6665L12 6.6665"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ArrowDownIcon = (props: IconProps) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+  >
+    <path
+      d="M8 2.6665L8 13.3332M4 9.33317L8 13.3332L12 9.33317"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

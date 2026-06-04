@@ -96,27 +96,3 @@ export const UserGroupIcon = () => (
     />
   </svg>
 );
-
-export const ArrowUpIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-    <path
-      d="M8 13.3332L8 2.6665M4 6.6665L8 2.6665L12 6.6665"
-      stroke="currentColor"
-      strokeWidth="1.3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-export const ArrowDownIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-    <path
-      d="M8 2.6665L8 13.3332M4 9.33317L8 13.3332L12 9.33317"
-      stroke="currentColor"
-      strokeWidth="1.3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);

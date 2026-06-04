@@ -1,6 +1,6 @@
 import { overviewData } from "@/app/(withLayouts)/(home)/_component/overview/data";
-import { ArrowDownIcon, ArrowUpIcon } from "@/app/(withLayouts)/(home)/_component/overview/icon";
 import { cn } from "@/utils/cn";
+import { ArrowDownIcon, ArrowUpIcon } from "@/utils/icon";
 
 export default function Overview() {
   return (
@@ -22,7 +22,7 @@ export default function Overview() {
           </div>
 
           {/* Value */}
-          <div className="text-2xl leading-8 font-semibold text-text-primary mb-[5px]">
+          <div className="text-2xl leading-8 font-semibold text-text-primary mb-1.25">
             {item.value}
           </div>
 

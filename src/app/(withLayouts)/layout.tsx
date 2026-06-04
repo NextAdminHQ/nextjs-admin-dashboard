@@ -33,7 +33,7 @@ export default function WithLayout({ children }: { children: ReactNode }) {
           <SheetContent
             side="left"
             showCloseButton={false}
-            className="p-0 w-[270px]! max-w-[270px]! bg-card-surface-area border-r border-card-border"
+            className="p-0 w-67.5! max-w-67.5! bg-card-surface-area border-r border-card-border"
           >
             <Sidebar
               isSidebarOpen={true}
@@ -50,7 +50,9 @@ export default function WithLayout({ children }: { children: ReactNode }) {
       <div className="lg:p-4 flex-1 min-w-0">
         <div className="lg:rounded-2xl lg:shadow-[0_3px_6px_-2px_rgba(0,0,0,0.02),0_1px_1px_0_rgba(0,0,0,0.04)] bg-card-surface-area border-[0.5px] border-card-surface-border flex flex-col h-full overflow-hidden">
           <Header onMenuClick={() => setIsMobileSheetOpen(true)} />
-          <div className="max-w-384 w-full mx-auto min-h-0 h-full">{children}</div>
+          <div className="overflow-y-auto scrollbar-thin min-h-0 h-full">
+            <div className="max-w-384 w-full mx-auto pb-5">{children}</div>
+          </div>
         </div>
       </div>
     </div>
