@@ -27,7 +27,7 @@ export default function LastTransactions() {
   return (
     <Card>
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
         <p className="text-text-primary font-semibold leading-6">Last Transaction</p>
         <div className="flex items-center gap-1">
           <InputGroup className="h-9">

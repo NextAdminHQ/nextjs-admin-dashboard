@@ -49,14 +49,14 @@ export default function TopProducts() {
   return (
     <Card>
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-6">
         <p className="text-text-primary font-semibold leading-6">Top Product</p>
         <button className="p-1.5 rounded-lg bg-button-primary-outline-background hover:bg-button-primary-outline-hover-background transition-colors">
           <MenuDotsIcon />
         </button>
       </div>
       {/* Product list */}
-      <div className="mt-6 flex flex-col ">
+      <div className="flex flex-col">
         {products.map((product) => (
           <div
             key={product.rank}

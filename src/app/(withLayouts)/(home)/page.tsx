@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <div className="mt-6 space-y-5">
       {/* Header Section */}
-      <div className="px-6">
+      <div className="px-2 lg:px-6">
         <h1 className="text-[28px] leading-8 font-medium text-text-primary mb-1">E-commerce</h1>
         <p className="text-sm leading-5 text-text-tertiary">
           Track sales, monitor orders, and analyze store performance.
         </p>
       </div>
 
-      <div className="px-5 space-y-5">
+      <div className="px-2 lg:px-5 space-y-5">
         <Overview />
         <SalesChart />
         <div className="grid grid-cols-1 md:grid-cols-[519fr_558fr] gap-5">
