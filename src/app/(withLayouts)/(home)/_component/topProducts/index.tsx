@@ -1,49 +1,7 @@
+import { topProducts } from "@/app/(withLayouts)/(home)/_component/topProducts/data";
 import { Avatar } from "@/components/tailgrids/core/avatar";
 import { Card } from "@/components/tailgrids/core/card";
 import { ArrowUpIcon, MenuDotsIcon } from "@/utils/icon";
-
-const products = [
-  {
-    name: "Keyboard H32",
-    sales: "1,284",
-    rank: 1,
-    revenue: "$192.3k",
-    change: "10.98%",
-    fallback: "KB",
-  },
-  {
-    name: "Mouse M12 Pro",
-    sales: "985",
-    rank: 2,
-    revenue: "$143.7k",
-    change: "8.72%",
-    fallback: "MO",
-  },
-  {
-    name: "Gaming Chair X5",
-    sales: "732",
-    rank: 3,
-    revenue: "$117.4k",
-    change: "7.61%",
-    fallback: "GC",
-  },
-  {
-    name: "Wireless Headset V7",
-    sales: "1,120",
-    rank: 4,
-    revenue: "$210.5k",
-    change: "4.55%",
-    fallback: "WH",
-  },
-  {
-    name: "4K Monitor S24",
-    sales: "640",
-    rank: 5,
-    revenue: "$156.2k",
-    change: "2.49%",
-    fallback: "4K",
-  },
-];
 
 export default function TopProducts() {
   return (
@@ -57,13 +15,13 @@ export default function TopProducts() {
       </div>
       {/* Product list */}
       <div className="flex flex-col">
-        {products.map((product) => (
+        {topProducts.map((product) => (
           <div
             key={product.rank}
             className="flex items-center justify-between py-3 border-b border-border-primary last:border-0 last:pb-0 first:pt-0"
           >
             <div className="flex items-center gap-3">
-              <Avatar fallback={product.fallback} size="md" />
+              <Avatar fallback={product.name.charAt(0)} src={product.image} size="md" />
               <div>
                 <p className="text-text-primary font-medium leading-5 text-sm mb-1">
                   {product.name}

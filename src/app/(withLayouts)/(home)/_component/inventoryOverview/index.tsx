@@ -50,9 +50,14 @@ export default function InventoryOverview() {
       </div>
 
       <div className="flex flex-col justify-between flex-1 lg:mt-10">
-        <div className="px-5">
+        <div>
           <div className="h-[169px] w-full">
-            <ChartContainer className="w-full h-full relative">
+            <ChartContainer
+              className="w-full h-full relative"
+              height={169}
+              width={"100%"}
+              aspect={undefined}
+            >
               <PieChart>
                 <Pie
                   cx="50%"

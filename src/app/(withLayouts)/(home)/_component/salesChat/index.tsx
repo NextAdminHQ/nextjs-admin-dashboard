@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/tailgrids/core/select";
 import { ArrowUpIcon } from "@/utils/icon";
+import { useState } from "react";
 import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
 
 // Custom Tooltip Component
@@ -53,22 +54,34 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
   return null;
 };
 
-const chartData = [
-  { month: "Jan", sales: 120, revenue: 230 },
-  { month: "Feb", sales: 260, revenue: 190 },
-  { month: "Mar", sales: 380, revenue: 250 },
-  { month: "Apr", sales: 460, revenue: 350 },
-  { month: "May", sales: 390, revenue: 310 },
-  { month: "Jun", sales: 530, revenue: 620 },
-  { month: "Jul", sales: 610, revenue: 740 },
-  { month: "Aug", sales: 540, revenue: 680 },
-  { month: "Sep", sales: 580, revenue: 760 },
-  { month: "Oct", sales: 620, revenue: 850 },
-  { month: "Nov", sales: 580, revenue: 680 },
-  { month: "Dec", sales: 700, revenue: 600 },
-];
+const chartData = {
+  monthly: [
+    { name: "Jan", sales: 120, revenue: 230 },
+    { name: "Feb", sales: 260, revenue: 190 },
+    { name: "Mar", sales: 380, revenue: 250 },
+    { name: "Apr", sales: 460, revenue: 350 },
+    { name: "May", sales: 390, revenue: 310 },
+    { name: "Jun", sales: 530, revenue: 620 },
+    { name: "Jul", sales: 610, revenue: 740 },
+    { name: "Aug", sales: 540, revenue: 680 },
+    { name: "Sep", sales: 580, revenue: 760 },
+    { name: "Oct", sales: 620, revenue: 850 },
+    { name: "Nov", sales: 580, revenue: 680 },
+    { name: "Dec", sales: 700, revenue: 600 },
+  ],
+  yearly: [
+    { name: "2019", sales: 1520, revenue: 2130 },
+    { name: "2020", sales: 2260, revenue: 3190 },
+    { name: "2021", sales: 3380, revenue: 4250 },
+    { name: "2022", sales: 4460, revenue: 5350 },
+    { name: "2023", sales: 5390, revenue: 6310 },
+    { name: "2024", sales: 6530, revenue: 7620 },
+  ],
+};
 
 export default function SalesChart() {
+  const [timeRange, setTimeRange] = useState("monthly");
+
   return (
     <Card>
       {/* Header section */}
@@ -117,14 +130,23 @@ export default function SalesChart() {
 
         {/* Dropdown */}
         <div>
-          <Select defaultValue="monthly">
+          <Select
+            onChange={(value) => setTimeRange(value as string)}
+            value={timeRange}
+            defaultValue="monthly"
+            aria-label="Select time range"
+          >
             <SelectTrigger className={"rounded-lg gap-0 h-8"}>
               <SelectValue />
               <SelectIndicator className="text-button-primary-outline-text" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem id="monthly">Monthly</SelectItem>
-              <SelectItem id="yearly">Yearly</SelectItem>
+              <SelectItem textValue="monthly" id="monthly">
+                Monthly
+              </SelectItem>
+              <SelectItem textValue="yearly" id="yearly">
+                Yearly
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -132,8 +154,11 @@ export default function SalesChart() {
 
       {/* Chart */}
       <div className="h-67.5 w-full">
-        <ChartContainer className="w-full h-full">
-          <AreaChart data={chartData} margin={{ top: 5, right: 0, left: -20, bottom: 0 }}>
+        <ChartContainer className="w-full h-full" height={270} width={"100%"} aspect={undefined}>
+          <AreaChart
+            data={chartData[timeRange as keyof typeof chartData] || chartData.monthly}
+            margin={{ top: 5, right: 0, left: -20, bottom: 0 }}
+          >
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E7EB" />
             <defs>
               <linearGradient id="background" x1="0" y1="0" x2="0" y2="1">
@@ -142,7 +167,7 @@ export default function SalesChart() {
               </linearGradient>
             </defs>
             <XAxis
-              dataKey="month"
+              dataKey="name"
               axisLine={false}
               tickLine={false}
               tick={{ fill: "#6B7280", fontSize: 12 }}
