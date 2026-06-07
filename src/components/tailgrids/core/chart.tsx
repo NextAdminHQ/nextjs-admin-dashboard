@@ -32,7 +32,7 @@ function ChartContainer({
     <ChartContext.Provider value={{ indicator, setIndicator }}>
       <RechartsPrimitive.ResponsiveContainer
         className={cn(
-          "text-xs tracking-[-0.2px] [&_.recharts-wrapper_*]:focus:not-focus-visible:outline-none [&_.recharts-wrapper_*]:focus-visible:outline-2 [&_.recharts-cartesian-grid_line]:stroke-(--color-chart-grid) [&_.recharts-cartesian-axis-tick-value]:fill-(--color-chart-tick)",
+          "text-xs tracking-[-0.2px] [&_.recharts-wrapper_*]:focus:not-focus-visible:outline-none [&_.recharts-wrapper_*]:focus-visible:outline-2 [&_.recharts-cartesian-grid_line]:stroke-chart-grid [&_.recharts-cartesian-axis-tick-value]:fill-(--color-chart-tick)",
           className,
         )}
         {...props}

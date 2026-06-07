@@ -7,7 +7,7 @@ import {
   PrinterIcon,
   SettingIcon,
 } from "@/components/common/header/icons";
-import { Button } from "@/components/tailgrids/core/button";
+import { Button, buttonStyles } from "@/components/tailgrids/core/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/tailgrids/core/popover";
 import { cn } from "@/utils/cn";
 import React from "react";
@@ -65,7 +65,12 @@ export function NotificationsButton() {
 
   return (
     <Popover placement="bottom-end">
-      <PopoverTrigger className="relative size-10 border border-card-border bg-card-background flex items-center justify-center rounded-lg shadow-xs text-icon-primary hover:bg-background-gray-primary transition-colors">
+      <PopoverTrigger
+        className={cn(
+          buttonStyles({ appearance: "outline", iconOnly: true }),
+          "relative size-10 border border-card-border bg-card-background rounded-lg [&>svg]:size-auto shadow-xs text-icon-primary",
+        )}
+      >
         <BellIcon />
         {unreadCount > 0 && (
           <span className="absolute top-2 right-[11px]">

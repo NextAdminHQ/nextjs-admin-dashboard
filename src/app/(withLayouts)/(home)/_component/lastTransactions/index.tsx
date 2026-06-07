@@ -1,3 +1,5 @@
+"use client";
+
 import {
   DownloadIcon,
   FilterIcon,
@@ -22,8 +24,31 @@ import {
   TableRow,
 } from "@/components/tailgrids/core/table";
 import { MenuDotsIcon } from "@/utils/icon";
+import { useState } from "react";
 
 export default function LastTransactions() {
+  const [selectedTransactions, setSelectedTransactions] = useState<string[]>([]);
+
+  const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setSelectedTransactions(transactionsTableData.map((tx) => tx.id));
+    } else {
+      setSelectedTransactions([]);
+    }
+  };
+
+  const handleSelectTransaction = (id: string, checked: boolean) => {
+    if (checked) {
+      setSelectedTransactions((prev) => [...prev, id]);
+    } else {
+      setSelectedTransactions((prev) => prev.filter((item) => item !== id));
+    }
+  };
+
+  const isAllSelected =
+    transactionsTableData.length > 0 &&
+    selectedTransactions.length === transactionsTableData.length;
+
   return (
     <Card>
       {/* Header */}
@@ -51,7 +76,7 @@ export default function LastTransactions() {
             <TableRow className="[&_th]:border-t [&_th]:border-border-primary">
               <TableHead className="px-5 py-2.5 w-9">
                 <div className="flex items-center justify-center">
-                  <Checkbox />
+                  <Checkbox checked={isAllSelected} onChange={handleSelectAll} />
                 </div>
               </TableHead>
               <TableHead className="text-text-secondary leading-4 py-2.5 px-6 font-semibold text-xs">
@@ -79,7 +104,10 @@ export default function LastTransactions() {
               <TableRow key={tx.id} className="[&_td]:border-none">
                 <TableCell className="px-2.5 py-4">
                   <div className="flex items-center justify-center">
-                    <Checkbox />
+                    <Checkbox
+                      checked={selectedTransactions.includes(tx.id)}
+                      onChange={(e) => handleSelectTransaction(tx.id, e.target.checked)}
+                    />
                   </div>
                 </TableCell>
                 <TableCell className="font-medium text-sm leading-5 text-text-primary px-6 py-3.5">

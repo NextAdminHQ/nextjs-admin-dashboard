@@ -107,11 +107,11 @@ export default function Sidebar({
   isMobileSheet?: boolean;
 }) {
   return (
-    <div className={cn("flex flex-col h-full transition-all duration-300 overflow-hidden")}>
+    <div className={cn("flex flex-col h-full overflow-hidden")}>
       {/* Header */}
       <div
         className={cn(
-          "flex items-center px-4 pt-7 transition-all duration-300",
+          "flex items-center px-4 pt-7 text-text-primary",
           isSidebarOpen ? "justify-between" : "justify-center flex-col gap-4",
         )}
       >
