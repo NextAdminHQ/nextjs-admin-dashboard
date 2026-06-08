@@ -476,19 +476,24 @@
   --sidebar-navigation-nav-item-nav-hover-background: rgba(255, 255, 255, 0.05);
   --button-primary-outline-background: rgba(255, 255, 255, 0.05);
   --button-primary-outline-hover-background: #18181b;
+  --background-white-primary: #09090b;
+  --tooltip-background: #27272a;
 
-  /* text */
+  /* general color */
   --brand-500: #5750f1;
   --brand-600: #3c35d8;
   --base-white: #ffffff;
+  --green-600: #16a34a;
+  --red-600: #dc2626;
+
+  /* text */
   --text-tertiary: #a1a1aa;
   --text-secondary: #a1a1aa;
   --text-primary: rgba(255, 255, 255, 0.9);
   --input-placeholder-text-color: #71717a;
-  --green-600: #16a34a;
-  --red-600: #dc2626;
   --button-primary-outline-text: #e4e4e7;
   --logo-text: #ffffff;
+  --tooltip-text-color: #fff;
 
   /* icons */
   --icon-tertiary: #a1a1aa;

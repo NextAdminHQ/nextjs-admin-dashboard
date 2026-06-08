@@ -316,8 +316,8 @@
 
   /* ======== Checkbox Color =========*/
   --checkbox-background: #ffffff;
-  --checkbox-checked-border: #5750F1;
-  --checkbox-checked-background: #5750F1;
+  --checkbox-checked-border: #5750f1;
+  --checkbox-checked-background: #5750f1;
   --checkbox-checked-icon-color: #ffffff;
 
   /* ======== Scrollbar Color =========*/
@@ -478,19 +478,24 @@
   --button-primary-outline-background: #ffffff;
   --button-primary-outline-hover-background: #f4f4f5;
   --dropdowns-background: #ffffff;
+  --background-white-primary: #fff;
+  --tooltip-background: #ffffff;
 
-  /* text */
+  /* general color */
   --brand-500: #5750f1;
   --brand-600: #3c35d8;
   --base-white: #ffffff;
+  --green-600: #16a34a;
+  --red-600: #dc2626;
+
+  /* text */
   --text-tertiary: #71717a;
   --input-placeholder-text-color: #a1a1aa;
   --text-secondary: #52525b;
   --text-primary: #18181b;
-  --green-600: #16a34a;
-  --red-600: #dc2626;
   --button-primary-outline-text: #27272a;
   --logo-text: #18181b;
+  --tooltip-text-color: #52525b;
 
   /* icons */
   --icon-tertiary: #71717a;

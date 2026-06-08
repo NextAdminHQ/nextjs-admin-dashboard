@@ -26,7 +26,7 @@ export default function TrafficSources() {
             { name: "Referral", value: "57", percentage: 50 },
           ].map((source, index) => (
             <div key={index} className="flex items-center justify-between">
-              <div className="flex-1 max-w-[80%] h-8 flex items-center">
+              <div className="flex-1 max-w-[90%] h-8 flex items-center">
                 <div
                   className="bg-background-gray-secondary_alt h-full rounded flex items-center px-3"
                   style={{ width: `${source.percentage}%` }}

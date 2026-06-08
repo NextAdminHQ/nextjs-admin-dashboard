@@ -19,7 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistInter.className} antialiased h-full`}>
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${geistInter.className} antialiased h-full`}
+    >
       <body className="bg-background-gray-secondary_alt_2 h-full">
         <ThemeProvider defaultTheme="dark" enableSystem>
           {children}

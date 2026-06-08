@@ -488,18 +488,23 @@
   --color-button-primary-outline-background: var(--button-primary-outline-background);
   --color-button-primary-outline-hover-background: var(--button-primary-outline-hover-background);
   --color-dropdowns-background: var(--dropdowns-background);
+  --color-background-white-primary: var(--background-white-primary);
+  --color-tooltip-background: var(--tooltip-background);
 
-  /* text */
+  /* general color */
   --color-brand-500: var(--brand-500);
   --color-brand-600: var(--brand-600);
   --color-base-white: var(--base-white);
+  --color-green-600: var(--green-600);
+  --color-red-600: var(--red-600);
+
+  /* text */
   --color-text-tertiary: var(--text-tertiary);
   --color-text-secondary: var(--text-secondary);
   --color-text-primary: var(--text-primary);
   --color-input-placeholder-text-color: var(--input-placeholder-text-color);
-  --color-green-600: var(--green-600);
-  --color-red-600: var(--red-600);
   --color-button-primary-outline-text: var(--button-primary-outline-text);
+  --color-tooltip-text-color: var(--tooltip-text-color);
 
   /* icons */
   --color-icon-tertiary: var(--icon-tertiary);
