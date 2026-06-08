@@ -15,17 +15,18 @@ export function Card({ children, className }: ComponentProps<"div">) {
 }
 
 export function CardHeader({ children, className }: ComponentProps<"div">) {
-  return <div className={cn("w-full px-5 pt-5 relative", className)}>{children}</div>;
+  return (
+    <div
+      className={cn("w-full flex items-center justify-between relative flex-wrap gap-3", className)}
+    >
+      {children}
+    </div>
+  );
 }
 
 export function CardTitle({ children, className }: ComponentProps<"div">) {
   return (
-    <div
-      className={cn(
-        "text-xl md:text-2xl font-semibold text-title-50 leading-7 tracking-[-0.2px]",
-        className,
-      )}
-    >
+    <div className={cn("text-text-primary leading-6 font-semibold tracking-[-0.2px]", className)}>
       {children}
     </div>
   );

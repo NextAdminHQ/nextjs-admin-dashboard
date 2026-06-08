@@ -3,36 +3,32 @@ import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentProps } from "react";
 
 const tableRootStyles = cva(
-  "min-w-full border-base-200 border-separate border-spacing-0 overflow-clip text-left",
+  "min-w-full border-border-primary border-separate border-spacing-0 overflow-clip text-left",
   {
     variants: {
       fullBleed: {
         true: "border-y",
-        false: "rounded-lg border"
-      }
+        false: "rounded-lg border",
+      },
     },
     defaultVariants: {
-      fullBleed: false
-    }
-  }
+      fullBleed: false,
+    },
+  },
 );
 
-type TableRootProps = ComponentProps<"table"> &
-  VariantProps<typeof tableRootStyles>;
+type TableRootProps = ComponentProps<"table"> & VariantProps<typeof tableRootStyles>;
 
 export function TableRoot({ className, fullBleed, ...props }: TableRootProps) {
   return (
     <div className="overflow-x-auto">
-      <table
-        className={cn(tableRootStyles({ fullBleed }), className)}
-        {...props}
-      />
+      <table className={cn(tableRootStyles({ fullBleed }), className)} {...props} />
     </div>
   );
 }
 
 const tableHeaderStyles = cva(
-  "[&_th]:border-base-200 text-title-50 [&_th]:border-b [&_th]:text-xs"
+  "[&_th]:border-border-primary text-title-50 [&_th]:border-b [&_th]:text-xs",
 );
 
 export function TableHeader({ className, ...props }: ComponentProps<"thead">) {
@@ -52,7 +48,7 @@ export function TableHead({ className, ...props }: ComponentProps<"th">) {
 }
 
 const tableRowStyles = cva(
-  "not-last:[&>*]:border-base-200 not-last:[&>td]:border-b not-last:[&>th]:border-b"
+  "not-last:[&>*]:border-border-primary not-last:[&>td]:border-b not-last:[&>th]:border-b",
 );
 
 export function TableRow({ className, ...props }: ComponentProps<"tr">) {

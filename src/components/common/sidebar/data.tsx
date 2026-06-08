@@ -4,6 +4,7 @@ import {
   HomeIcon,
   PieChartIcon,
   TableIcon,
+  UserGroupIcon,
   UserIcon,
   Widget4Icon,
   WindowIcon,
@@ -48,6 +49,12 @@ export const NAV_DATA = [
             url: "/forms/form-layout",
           },
         ],
+      },
+      {
+        title: "Manage Team",
+        url: "/manage-team",
+        icon: <UserGroupIcon />,
+        items: [],
       },
       {
         title: "Tables",

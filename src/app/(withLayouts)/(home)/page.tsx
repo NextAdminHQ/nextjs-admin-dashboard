@@ -1,10 +1,10 @@
 import InventoryOverview from "@/app/(withLayouts)/(home)/_component/inventoryOverview";
-import LastTransactions from "@/app/(withLayouts)/(home)/_component/lastTransactions";
 import Overview from "@/app/(withLayouts)/(home)/_component/overview";
 import RegionLabels from "@/app/(withLayouts)/(home)/_component/regionlabels";
 import SalesChart from "@/app/(withLayouts)/(home)/_component/salesChat";
 import TopProducts from "@/app/(withLayouts)/(home)/_component/topProducts";
 import TrafficSources from "@/app/(withLayouts)/(home)/_component/trafficSources";
+import LastTransactionsTable from "@/app/(withLayouts)/tables/_component/lastTransactionsTable";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
           <TrafficSources />
           <RegionLabels />
         </div>
-        <LastTransactions />
+        <LastTransactionsTable />
       </div>
     </div>
   );

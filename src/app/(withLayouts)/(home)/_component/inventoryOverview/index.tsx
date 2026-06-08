@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/tailgrids/core/card";
+import { Card, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
 import { ChartContainer } from "@/components/tailgrids/core/chart";
 import { MenuDotsIcon } from "@/utils/icon";
 import { Pie, PieChart } from "recharts";
@@ -42,12 +42,14 @@ export default function InventoryOverview() {
   return (
     <Card className="p-2 pt-5 flex flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between px-3 mb-6">
-        <p className="text-text-primary font-semibold leading-6">Inventory Overview</p>
+      <CardHeader className="px-3 mb-6">
+        <CardTitle className="text-text-primary font-semibold leading-6">
+          Inventory Overview
+        </CardTitle>
         <button className="p-1.5 rounded-lg bg-button-primary-outline-background hover:bg-button-primary-outline-hover-background transition-colors">
           <MenuDotsIcon />
         </button>
-      </div>
+      </CardHeader>
 
       <div className="flex flex-col justify-between flex-1 lg:mt-10">
         <div>
