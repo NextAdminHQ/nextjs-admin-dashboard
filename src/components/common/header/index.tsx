@@ -1,6 +1,7 @@
 "use client";
 
-import { MenuIcon, MoonIcon } from "@/components/common/header/icons";
+import { MenuIcon } from "@/components/common/header/icons";
+import ThemeToggle from "@/components/common/header/themeToggle";
 import { ThreeDots } from "@/components/common/sidebar/icon";
 import { cn } from "@/utils/cn";
 import { LogoWithText } from "@/utils/icon";
@@ -17,9 +18,7 @@ function MobileInfoDrawer({ isOpen }: { isOpen: boolean }) {
         <div className="flex items-center justify-between gap-2.5">
           <div className="flex items-center gap-2.5">
             <NotificationsButton />
-            <button className="size-10 border border-card-border bg-card-background flex items-center justify-center rounded-lg shadow-xs text-icon-primary hover:bg-background-gray-primary transition-colors">
-              <MoonIcon />
-            </button>
+            <ThemeToggle />
             <SearchBar />
           </div>
 
@@ -90,9 +89,7 @@ export default function Header({ onMenuClick }: { onMenuClick?: () => void }) {
 
           {/* Right Side - Actions */}
           <div className="flex items-center gap-2.5">
-            <button className="size-10 border border-card-border bg-card-background flex items-center justify-center rounded-lg shadow-xs text-icon-primary hover:bg-background-gray-primary transition-colors">
-              <MoonIcon />
-            </button>
+            <ThemeToggle />
             <NotificationsButton />
             <UserProfileButton />
           </div>

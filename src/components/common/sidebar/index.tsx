@@ -8,6 +8,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/tailgrids/core/collapsible";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tailgrids/core/tooltip";
 import { cn } from "@/utils/cn";
 import { AltArrowUpIcon, Logo, LogoWithText } from "@/utils/icon";
 import Link from "next/link";
@@ -26,16 +27,22 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
   if (collapsed) {
     return (
       <div className="flex justify-center">
-        <Link
-          href={href ?? items?.[0]?.url ?? "#"}
-          title={label}
-          className={cn(
-            "px-3 py-2.5 flex items-center justify-center rounded-lg",
-            "text-icon-tertiary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
-          )}
-        >
-          {icon}
-        </Link>
+        <Tooltip placement="right">
+          <TooltipTrigger asChild>
+            <Link
+              href={href ?? items?.[0]?.url ?? "#"}
+              className={cn(
+                "px-3 py-2.5 flex items-center justify-center rounded-lg",
+                "text-icon-tertiary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
+              )}
+            >
+              {icon}
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{label}</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
     );
   }
@@ -107,11 +114,11 @@ export default function Sidebar({
   isMobileSheet?: boolean;
 }) {
   return (
-    <div className={cn("flex flex-col h-full transition-all duration-300 overflow-hidden")}>
+    <div className={cn("flex flex-col h-full overflow-hidden")}>
       {/* Header */}
       <div
         className={cn(
-          "flex items-center px-4 pt-7 transition-all duration-300",
+          "flex items-center px-4 pt-7 text-text-primary",
           isSidebarOpen ? "justify-between" : "justify-center flex-col gap-4",
         )}
       >

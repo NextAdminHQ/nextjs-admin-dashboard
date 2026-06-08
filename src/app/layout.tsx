@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -18,8 +19,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistInter.className} antialiased h-full`}>
-      <body className="bg-background-gray-secondary_alt_2 h-full">{children}</body>
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${geistInter.className} antialiased h-full`}
+    >
+      <body className="bg-background-gray-secondary_alt_2 h-full">
+        <ThemeProvider defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

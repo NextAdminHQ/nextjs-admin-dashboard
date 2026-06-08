@@ -18,17 +18,18 @@ interface UserProfileMenuItem {
   label: string;
 }
 
-interface UserProfileButtonProps {
-  name?: string;
-  email?: string;
+interface UserProfile {
+  name: string;
+  email: string;
   avatarUrl?: string;
 }
 
-export function UserProfileButton({
-  name = "Jhon Smith",
-  email = "jhonsmith@example.com",
-  avatarUrl,
-}: UserProfileButtonProps) {
+const user: UserProfile = {
+  name: "Jhon Smith",
+  email: "jhonsmith@example.com",
+  avatarUrl: "/images/user/jhon-smith.png",
+};
+export function UserProfileButton() {
   const menuItems: UserProfileMenuItem[] = [
     {
       href: "view-profile",
@@ -58,12 +59,12 @@ export function UserProfileButton({
         )}
       >
         <Avatar
-          fallback={name.charAt(0)}
-          src={avatarUrl}
+          fallback={user.name.charAt(0)}
+          src={user.avatarUrl}
           size="md"
           className="[&_div]:rounded-lg [&_img]:rounded-lg"
         />
-        <span className="text-sm font-medium leading-5 text-text-primary">{name}</span>
+        <span className="text-sm font-medium leading-5 text-text-primary">{user.name}</span>
         <span className="text-icon-tertiary">
           <AltArrowDownIcon className="transition-transform duration-200 group-data-[state=open]:-rotate-180" />
         </span>
@@ -78,10 +79,10 @@ export function UserProfileButton({
       >
         {/* User info header */}
         <div className="flex items-center gap-3 px-4 py-4 border-b border-border-secondary">
-          <Avatar fallback={name.charAt(0)} src={avatarUrl} size="lg" />
+          <Avatar fallback={user.name.charAt(0)} src={user.avatarUrl} size="lg" />
           <div className="min-w-0">
-            <p className="font-medium text-text-primary leading-6 truncate">{name}</p>
-            <p className="text-sm text-text-tertiary leading-5 truncate">{email}</p>
+            <p className="font-medium text-text-primary leading-6 truncate">{user.name}</p>
+            <p className="text-sm text-text-tertiary leading-5 truncate">{user.email}</p>
           </div>
         </div>
 

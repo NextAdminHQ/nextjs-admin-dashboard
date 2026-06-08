@@ -51,7 +51,7 @@ export const buttonStyles = cva(
         variant: "primary",
         appearance: "outline",
         className:
-          "border-button-outline-border bg-button-outline-background text-button-outline-text hover:bg-button-outline-hover-background hover:text-button-outline-hover-text focus:ring-button-outline-focus-ring",
+          "text-button-primary-outline-text bg-button-primary-outline-background border-button-primary-outline-stroke hover:bg-button-primary-outline-hover-background focus:ring-button-outline-focus-ring",
       },
       {
         variant: "danger",

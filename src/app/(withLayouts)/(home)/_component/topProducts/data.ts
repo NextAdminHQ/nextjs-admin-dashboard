@@ -1,0 +1,42 @@
+export const topProducts = [
+  {
+    name: "Keyboard H32",
+    sales: "1,284",
+    rank: 1,
+    revenue: "$192.3k",
+    change: "10.98%",
+    image: "/images/products/keyboard.png",
+  },
+  {
+    name: "Mouse M12 Pro",
+    sales: "985",
+    rank: 2,
+    revenue: "$143.7k",
+    change: "8.72%",
+    image: "/images/products/mouse.png",
+  },
+  {
+    name: "Gaming Chair X5",
+    sales: "732",
+    rank: 3,
+    revenue: "$117.4k",
+    change: "7.61%",
+    image: "/images/products/gaming-chair.png",
+  },
+  {
+    name: "Wireless Headset V7",
+    sales: "1,120",
+    rank: 4,
+    revenue: "$210.5k",
+    change: "4.55%",
+    image: "/images/products/headset.png",
+  },
+  {
+    name: "4K Monitor S24",
+    sales: "640",
+    rank: 5,
+    revenue: "$156.2k",
+    change: "2.49%",
+    image: "/images/products/monitor.png",
+  },
+];
