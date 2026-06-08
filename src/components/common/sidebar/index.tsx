@@ -8,6 +8,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/tailgrids/core/collapsible";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tailgrids/core/tooltip";
 import { cn } from "@/utils/cn";
 import { AltArrowUpIcon, Logo, LogoWithText } from "@/utils/icon";
 import Link from "next/link";
@@ -26,16 +27,22 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
   if (collapsed) {
     return (
       <div className="flex justify-center">
-        <Link
-          href={href ?? items?.[0]?.url ?? "#"}
-          title={label}
-          className={cn(
-            "px-3 py-2.5 flex items-center justify-center rounded-lg",
-            "text-icon-tertiary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
-          )}
-        >
-          {icon}
-        </Link>
+        <Tooltip placement="right">
+          <TooltipTrigger asChild>
+            <Link
+              href={href ?? items?.[0]?.url ?? "#"}
+              className={cn(
+                "px-3 py-2.5 flex items-center justify-center rounded-lg",
+                "text-icon-tertiary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
+              )}
+            >
+              {icon}
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{label}</p>
+          </TooltipContent>
+        </Tooltip>
       </div>
     );
   }

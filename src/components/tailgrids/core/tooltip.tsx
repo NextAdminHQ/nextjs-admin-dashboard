@@ -15,7 +15,7 @@ import {
   useInteractions,
   useMergeRefs,
   useRole,
-  type Placement
+  type Placement,
 } from "@floating-ui/react";
 import * as React from "react";
 
@@ -30,7 +30,7 @@ function useTooltip({
   initialOpen = false,
   placement = "top",
   open: controlledOpen,
-  onOpenChange: setControlledOpen
+  onOpenChange: setControlledOpen,
 }: TooltipOptions = {}) {
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
   const arrowRef = React.useRef(null);
@@ -49,13 +49,13 @@ function useTooltip({
       flip({
         crossAxis: placement.includes("-"),
         fallbackAxisSideDirection: "start",
-        padding: 5
+        padding: 5,
       }),
       shift({ padding: 5 }),
       arrow({
-        element: arrowRef
-      })
-    ]
+        element: arrowRef,
+      }),
+    ],
   });
 
   const context = data.context;
@@ -63,10 +63,10 @@ function useTooltip({
   const hover = useHover(context, {
     move: false,
     enabled: controlledOpen == null,
-    handleClose: safePolygon()
+    handleClose: safePolygon(),
   });
   const focus = useFocus(context, {
-    enabled: controlledOpen == null
+    enabled: controlledOpen == null,
   });
   const dismiss = useDismiss(context);
   const role = useRole(context, { role: "tooltip" });
@@ -79,9 +79,9 @@ function useTooltip({
       setOpen,
       ...interactions,
       ...data,
-      arrowRef
+      arrowRef,
     }),
-    [open, setOpen, interactions, data]
+    [open, setOpen, interactions, data],
   );
 }
 
@@ -99,16 +99,9 @@ const useTooltipContext = () => {
   return context;
 };
 
-export function Tooltip({
-  children,
-  ...options
-}: { children: React.ReactNode } & TooltipOptions) {
+export function Tooltip({ children, ...options }: { children: React.ReactNode } & TooltipOptions) {
   const tooltip = useTooltip(options);
-  return (
-    <TooltipContext.Provider value={tooltip}>
-      {children}
-    </TooltipContext.Provider>
-  );
+  return <TooltipContext.Provider value={tooltip}>{children}</TooltipContext.Provider>;
 }
 
 export const TooltipTrigger = React.forwardRef<
@@ -129,8 +122,8 @@ export const TooltipTrigger = React.forwardRef<
         ...(React.isValidElement(children) && typeof children.props === "object"
           ? children.props
           : {}),
-        "data-state": context.open ? "open" : "closed"
-      } as React.HTMLProps<Element>)
+        "data-state": context.open ? "open" : "closed",
+      } as React.HTMLProps<Element>),
     );
   }
 
@@ -160,18 +153,18 @@ export const TooltipContent = React.forwardRef<
         ref={ref}
         style={{
           ...context.floatingStyles,
-          ...style
+          ...style,
         }}
         {...context.getFloatingProps(props)}
         className={cn(
-          "bg-background-100 hidden sm:block rounded-lg px-3 py-2 text-sm font-medium text-tooltip-text shadow-md border border-tooltip-border",
-          className
+          "bg-tooltip-background hidden sm:block rounded-lg px-3 py-1.5 text-sm font-medium text-tooltip-text-color shadow-md border border-border-secondary",
+          className,
         )}
       >
         <FloatingArrow
           ref={context.arrowRef}
           context={context.context}
-          className="fill-background-100 [&>path:last-of-type]:stroke-tooltip-border"
+          className="fill-tooltip-background [&>path:last-of-type]:stroke-border-secondary"
           width={18}
           height={18}
           d="M0 20C0 20 2.06906 19.9829 5.91817 15.4092C7.49986 13.5236 8.97939 12.3809 10.0002 12.3809C11.0202 12.3809 12.481 13.6451 14.0814 15.5472C17.952 20.1437 20 20 20 20H0Z"
