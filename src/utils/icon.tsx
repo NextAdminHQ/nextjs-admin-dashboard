@@ -256,3 +256,43 @@ export const MinusIcon = (props: IconProps) => {
     </svg>
   );
 };
+export const AltArrowLeftIcon = (props: IconProps) => {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width={20}
+      height={20}
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M12.5 4.58335L7.5 10L12.5 15.4167"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+export const AltArrowRightIcon = (props: IconProps) => {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width={20}
+      height={20}
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M7.5 15.4166L12.5 9.99998L7.5 4.58331"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

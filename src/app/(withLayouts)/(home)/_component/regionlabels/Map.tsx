@@ -1,5 +1,5 @@
 "use client";
-import { Card } from "@/components/tailgrids/core/card";
+import { Card, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
 import { MenuDotsIcon, MinusIcon, PlusIcon } from "@/utils/icon";
 import type { Layer, LeafletMouseEvent, PathOptions } from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -203,12 +203,12 @@ export default function RegionLabelsMap() {
   return (
     <Card>
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <p className="text-text-primary font-semibold leading-6">Region Labels</p>
+      <CardHeader className="mb-6">
+        <CardTitle>Region Labels</CardTitle>
         <button className="p-1.5 rounded-lg bg-button-primary-outline-background hover:bg-button-primary-outline-hover-background transition-colors">
           <MenuDotsIcon />
         </button>
-      </div>
+      </CardHeader>
 
       {/* Map wrapper – position:relative so tooltip & zoom are anchored */}
       <div

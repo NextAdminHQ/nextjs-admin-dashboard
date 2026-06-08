@@ -3,12 +3,12 @@
 import {
   DownloadIcon,
   FilterIcon,
-} from "@/app/(withLayouts)/(home)/_component/lastTransactions/icon";
-import { transactionsTableData } from "@/app/(withLayouts)/(home)/_component/lastTransactions/transactionsTableData";
+} from "@/app/(withLayouts)/tables/_component/lastTransactionsTable/icon";
+import { transactionsTableData } from "@/app/(withLayouts)/tables/_component/lastTransactionsTable/transactionsTableData";
 import { SearchIcon } from "@/components/common/header/icons";
 import { Badge } from "@/components/tailgrids/core/badge";
 import { Button } from "@/components/tailgrids/core/button";
-import { Card } from "@/components/tailgrids/core/card";
+import { Card, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
 import { Checkbox } from "@/components/tailgrids/core/checkbox";
 import {
   InputGroup,
@@ -26,7 +26,7 @@ import {
 import { MenuDotsIcon } from "@/utils/icon";
 import { useState } from "react";
 
-export default function LastTransactions() {
+export default function LastTransactionsTable() {
   const [selectedTransactions, setSelectedTransactions] = useState<string[]>([]);
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,8 +52,8 @@ export default function LastTransactions() {
   return (
     <Card>
       {/* Header */}
-      <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
-        <p className="text-text-primary font-semibold leading-6">Last Transaction</p>
+      <CardHeader className="mb-6">
+        <CardTitle>Last Transaction</CardTitle>
         <div className="flex items-center gap-1">
           <InputGroup className="h-9">
             <InputGroupAddon align="inline-start" className="text-icon-tertiary pr-0">
@@ -68,12 +68,12 @@ export default function LastTransactions() {
             <DownloadIcon />
           </Button>
         </div>
-      </div>
+      </CardHeader>
       {/* table */}
       <div>
         <TableRoot className="min-w-[800px] w-full border-none rounded-none">
           <TableHeader>
-            <TableRow className="[&_th]:border-t [&_th]:border-border-primary">
+            <TableRow className="[&_th]:border-t">
               <TableHead className="px-5 py-2.5 w-9">
                 <div className="flex items-center justify-center">
                   <Checkbox checked={isAllSelected} onChange={handleSelectAll} />

@@ -1,16 +1,16 @@
-import { Card } from "@/components/tailgrids/core/card";
+import { Card, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
 import { MenuDotsIcon } from "@/utils/icon";
 
 export default function TrafficSources() {
   return (
     <Card>
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <p className="text-text-primary font-semibold leading-6">Traffic Sources</p>
+      <CardHeader className="mb-6">
+        <CardTitle className="text-text-primary font-semibold leading-6">Traffic Sources</CardTitle>
         <button className="p-1.5 rounded-lg bg-button-primary-outline-background hover:bg-button-primary-outline-hover-background transition-colors">
           <MenuDotsIcon />
         </button>
-      </div>
+      </CardHeader>
       {/* Traffic chart */}
       <div className="flex flex-col">
         <div className="flex items-center justify-between mb-3.5">

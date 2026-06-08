@@ -299,7 +299,7 @@
   --input-label-text: #9ca3af;
   --input-disabled-text: #ffffff26;
   --input-placeholder-text: #6b7280;
-  --input-primary-focus-border: #91aeff;
+  --input-primary-focus-border: #5750F1;
   --input-error-focus-border: #b91c1c;
   --input-success-focus-border: #15803d;
   --input-error: #dc2626;
@@ -485,6 +485,7 @@
   --base-white: #ffffff;
   --green-600: #16a34a;
   --red-600: #dc2626;
+  --gray-100: #f4f4f5;
 
   /* text */
   --text-tertiary: #a1a1aa;

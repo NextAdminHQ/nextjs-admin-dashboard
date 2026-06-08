@@ -210,7 +210,7 @@ function SelectContent({ children, className, ...props }: SelectContentProps) {
     return (
       <Popover
         className={cn(
-          "bg-dropdown-background w-(--trigger-width) overflow-auto rounded-xl border border-base-100 shadow-md",
+          "w-(--trigger-width) overflow-auto bg-background-white-secondary border border-border-secondary-alt rounded-lg",
           "entering:animate-in entering:fade-in-0 entering:zoom-in-95",
           "exiting:animate-out exiting:fade-out-0 exiting:zoom-out-95",
           className,
@@ -218,7 +218,7 @@ function SelectContent({ children, className, ...props }: SelectContentProps) {
         {...props}
       >
         <ListBox
-          className="p-1 outline-none"
+          className="p-1.5 outline-none"
           selectionMode={context.selectionMode}
           selectedKeys={
             context.value instanceof Set
@@ -241,14 +241,14 @@ function SelectContent({ children, className, ...props }: SelectContentProps) {
   return (
     <Popover
       className={cn(
-        "bg-dropdown-background w-(--trigger-width) overflow-auto rounded-xl border border-base-100 shadow-md",
+        "w-(--trigger-width) overflow-auto bg-background-white-secondary border border-border-secondary-alt rounded-lg",
         "entering:animate-in entering:fade-in-0 entering:zoom-in-95",
         "exiting:animate-out exiting:fade-out-0 exiting:zoom-out-95",
         className,
       )}
       {...props}
     >
-      <ListBox className="p-1 outline-none">{children}</ListBox>
+      <ListBox className="p-1.5 outline-none">{children}</ListBox>
     </Popover>
   );
 }
@@ -260,7 +260,7 @@ function SelectItem({ className, children, ...props }: ListBoxItemProps) {
   return (
     <ListBoxItem
       className={cn(
-        "group/item text-text-50 focus:text-title-50 focus:bg-dropdown-hover-background relative flex w-full text-sm cursor-pointer items-center gap-3 rounded-md py-1 pl-1.5 pr-7 outline-hidden select-none",
+        "group/item text-text-secondary focus:text-text-primary focus:bg-background-gray-secondary_alt relative flex w-full text-sm cursor-pointer items-center gap-3 rounded-md py-1 pl-1.5 pr-7 outline-hidden select-none",
         "data-disabled:text-input-disabled-text data-disabled:pointer-events-none",
         className,
       )}

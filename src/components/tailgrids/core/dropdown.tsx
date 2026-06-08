@@ -13,7 +13,7 @@ import {
   type MenuTriggerProps,
   Popover,
   type PopoverProps,
-  Separator
+  Separator,
 } from "react-aria-components";
 
 export function DropdownMenu(props: MenuTriggerProps) {
@@ -26,17 +26,13 @@ export function DropdownMenuTrigger({ className, ...props }: ButtonProps) {
 
 type DropdownContentProps = PopoverProps;
 
-export function DropdownMenuContent({
-  children,
-  className,
-  ...props
-}: DropdownContentProps) {
+export function DropdownMenuContent({ children, className, ...props }: DropdownContentProps) {
   return (
     <Popover {...props}>
       <Menu
         className={cn(
-          "outline-hidden shadow-md rounded-xl overflow-clip min-w-40 bg-dropdown-background",
-          className
+          "outline-hidden shadow-lg rounded-xl overflow-clip min-w-40 bg-background-white-secondary border border-border-secondary-alt p-1.5",
+          className,
         )}
       >
         {children}
@@ -47,16 +43,13 @@ export function DropdownMenuContent({
 
 type DropdownMenuItemProps = MenuItemProps;
 
-export function DropdownMenuItem({
-  className,
-  ...props
-}: DropdownMenuItemProps) {
+export function DropdownMenuItem({ className, ...props }: DropdownMenuItemProps) {
   return (
     <MenuItem
       {...props}
       className={cn(
-        "group text-text-50 text-sm focus:text-title-50 focus:bg-dropdown-hover-background flex w-full cursor-default items-center gap-3 rounded-md px-1.5 py-1 outline-hidden",
-        className
+        "group text-text-secondary text-sm focus:text-text-primary focus:bg-background-gray-secondary_alt flex w-full cursor-default items-center gap-3 rounded-lg px-3 py-2.5 outline-hidden font-medium",
+        className,
       )}
     />
   );
@@ -69,22 +62,11 @@ export function DropdownMenuSection<T extends object>({
   return <MenuSection {...props} className={cn("", className)} />;
 }
 
-export function DropdownMenuHeader({
-  className,
-  ...props
-}: ComponentProps<typeof Header>) {
-  return (
-    <Header
-      {...props}
-      className={cn("px-3 py-2 text-sm text-text-100", className)}
-    />
-  );
+export function DropdownMenuHeader({ className, ...props }: ComponentProps<typeof Header>) {
+  return <Header {...props} className={cn("px-3 py-2 text-sm text-text-100", className)} />;
 }
 
-export function DropdownMenuSeparator({
-  className,
-  ...props
-}: ComponentProps<"hr">) {
+export function DropdownMenuSeparator({ className, ...props }: ComponentProps<"hr">) {
   return (
     <Separator
       className={cn("bg-(--border-color-base-100) h-px border-none", className)}
