@@ -299,7 +299,7 @@
   --input-label-text: #9ca3af;
   --input-disabled-text: #ffffff26;
   --input-placeholder-text: #6b7280;
-  --input-primary-focus-border: #5750F1;
+  --input-primary-focus-border: #5750f1;
   --input-error-focus-border: #b91c1c;
   --input-success-focus-border: #15803d;
   --input-error: #dc2626;
@@ -422,10 +422,10 @@
   --hero-gradient-shade-2: #111827;
 
   /* ======== Toggle Color For Dark =========*/
-  --toggle-default-background: #4b5563;
+  --toggle-default-background: #52525B;
   --toggle-disabled-foreground: #ffffff66;
   --toggle-disabled-background: #1f2937;
-  --toggle-active-background: #3758f9;
+  --toggle-active-background: #5750F1;
 
   /* ======== Map Color For Dark =========*/
   --map-fill: #6b7280;
@@ -478,6 +478,7 @@
   --button-primary-outline-hover-background: #18181b;
   --background-white-primary: #09090b;
   --tooltip-background: #27272a;
+  --button-error-outline-background: rgba(239, 68, 68, 0.05);
 
   /* general color */
   --brand-500: #5750f1;
@@ -495,6 +496,8 @@
   --button-primary-outline-text: #e4e4e7;
   --logo-text: #ffffff;
   --tooltip-text-color: #fff;
+  --button-error-outline-text: #b91c1c;
+  --input-label-text-color: #a1a1aa;
 
   /* icons */
   --icon-tertiary: #a1a1aa;
@@ -509,6 +512,7 @@
   --border-primary: #27272a;
   --border-secondary: #18181b;
   --button-primary-outline-stroke: #27272a;
+  --button-error-outline-stroke: #ef4444;
 
   --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   --shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);

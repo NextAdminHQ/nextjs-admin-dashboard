@@ -303,7 +303,7 @@
   --input-label-text: #374151;
   --input-disabled-text: #d1d5db;
   --input-placeholder-text: #9ca3af;
-  --input-primary-focus-border: #5750F1;
+  --input-primary-focus-border: #5750f1;
   --input-error-focus-border: #ef4444;
   --input-success-focus-border: #22c55e;
   --input-error: #ef4444;
@@ -426,10 +426,10 @@
   --hero-gradient-shade-2: #ffffff;
 
   /* ======== Toggle Color =========*/
-  --toggle-default-background: #e5e7eb;
+  --toggle-default-background: #e4e4e7;
   --toggle-disabled-foreground: #ffffff;
   --toggle-disabled-background: #f3f4f6;
-  --toggle-active-background: #3758f9;
+  --toggle-active-background: #5750f1;
 
   /* ======== Map Color =========*/
   --map-fill: #d1d5db;
@@ -480,6 +480,7 @@
   --dropdowns-background: #ffffff;
   --background-white-primary: #fff;
   --tooltip-background: #ffffff;
+  --button-error-outline-background: #fef2f2;
 
   /* general color */
   --brand-500: #5750f1;
@@ -497,6 +498,8 @@
   --button-primary-outline-text: #27272a;
   --logo-text: #18181b;
   --tooltip-text-color: #52525b;
+  --button-error-outline-text: #b91c1c;
+  --input-label-text-color: #52525b;
 
   /* icons */
   --icon-tertiary: #71717a;
@@ -511,6 +514,7 @@
   --border-primary: #f4f4f5;
   --border-secondary: #e4e4e7;
   --button-primary-outline-stroke: #d4d4d8;
+  --button-error-outline-stroke: #ef4444;
 
   --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   --shadow-3xl: 0 32px 64px -12px rgba(16, 24, 40, 0.14);

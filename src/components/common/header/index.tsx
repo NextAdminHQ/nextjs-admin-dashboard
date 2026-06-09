@@ -39,7 +39,7 @@ export default function Header({ onMenuClick }: { onMenuClick?: () => void }) {
       <header
         className={cn(
           "bg-card-surface-area",
-          "border-b-[0.5px] border-card-border px-5 py-4",
+          "border-b-[0.5px] border-card-border lg:px-5 px-2 py-4",
           "sticky top-0 z-40 w-full",
         )}
       >
