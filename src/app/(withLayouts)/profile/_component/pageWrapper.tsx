@@ -1,7 +1,14 @@
 import SecurityTabContent from "@/app/(withLayouts)/profile/_component/securityTabContent";
 import { TabContent, TabList, TabRoot, TabTrigger } from "@/components/tailgrids/core/tabs";
 import AccountTabContent from "./accountTabContent";
-import { BellIcon, CrownIcon, PlugCircleIcon, ShieldIcon, UserIcon, UsersGroupIcon } from "./icon";
+import {
+  BellIcon,
+  CrownIcon,
+  PlugCircleIcon,
+  ShieldCheckIcon,
+  UserIcon,
+  UsersGroupIcon,
+} from "./icon";
 
 const tabsItems = [
   {
@@ -12,7 +19,7 @@ const tabsItems = [
   },
   {
     value: "security",
-    icon: <ShieldIcon />,
+    icon: <ShieldCheckIcon />,
     title: "Security",
     description: "Set your password, authentication & etc",
   },
@@ -47,7 +54,7 @@ export default function PageWrapper() {
     <TabRoot
       defaultValue="account"
       direction="horizontal"
-      className="border-card-border border-[0.5px] bg-card-background p-0 gap-6 lg:gap-8 flex-col lg:flex-row"
+      className="border-card-border border-[0.5px] bg-card-background p-0 gap-y-6 lg:gap-y-8 gap-x-0 flex-col lg:flex-row"
     >
       <TabList className="w-full shrink-0 border-r border-card-border gap-2 p-0 px-3 py-6 min-h-0 h-full">
         {tabsItems.map((item) => {
