@@ -8,10 +8,11 @@ export default function ThemeToggle() {
 
   return (
     <Button
+      size="lg"
       appearance="outline"
       iconOnly
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="size-10 border border-card-border bg-card-background rounded-lg [&>svg]:size-auto shadow-xs text-icon-primary"
+      className=" border border-card-border bg-card-background rounded-lg [&>svg]:size-auto shadow-xs text-icon-primary"
     >
       {theme === "dark" ? <SunIcon /> : <MoonIcon />}
     </Button>

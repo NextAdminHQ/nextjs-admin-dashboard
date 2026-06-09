@@ -34,7 +34,9 @@ export function CardTitle({ children, className }: ComponentProps<"div">) {
 
 export function CardDescription({ children, className }: ComponentProps<"div">) {
   return (
-    <div className={cn("mt-0.5 text-base text-text-100 leading-6 tracking-[-0.2px]", className)}>
+    <div
+      className={cn("mt-0.5 text-base text-text-secondary leading-6 tracking-[-0.2px]", className)}
+    >
       {children}
     </div>
   );
@@ -45,7 +47,7 @@ export function CardAction({ children, className }: ComponentProps<"div">) {
 }
 
 export function CardContent({ children, className }: ComponentProps<"div">) {
-  return <div className={cn("px-5 text-text-100", className)}>{children}</div>;
+  return <div className={cn("p-6 text-text-primary", className)}>{children}</div>;
 }
 
 export function CardFooter({ children, className }: ComponentProps<"div">) {

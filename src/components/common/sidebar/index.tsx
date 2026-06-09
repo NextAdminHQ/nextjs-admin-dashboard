@@ -181,7 +181,7 @@ export default function Sidebar({
             <small className="text-sm text-text-tertiary leading-5 tracking-[-0.15px]">
               Get all dashboard and 200+ essential UI elements
             </small>
-            <Button variant="primary" size="sm" className="w-full mt-4">
+            <Button variant="primary" size="lg" className="w-full mt-4">
               Upgrade to Pro
             </Button>
           </div>
