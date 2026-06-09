@@ -490,6 +490,7 @@
   --color-dropdowns-background: var(--dropdowns-background);
   --color-background-white-primary: var(--background-white-primary);
   --color-tooltip-background: var(--tooltip-background);
+  --color-button-error-outline-background: var(--button-error-outline-background);
 
   /* general color */
   --color-brand-500: var(--brand-500);
@@ -506,6 +507,8 @@
   --color-input-placeholder-text-color: var(--input-placeholder-text-color);
   --color-button-primary-outline-text: var(--button-primary-outline-text);
   --color-tooltip-text-color: var(--tooltip-text-color);
+  --color-button-error-outline-text: var(--button-error-outline-text);
+  --color-input-label-text-color: var(--input-label-text-color);
 
   /* icons */
   --color-icon-tertiary: var(--icon-tertiary);
@@ -520,6 +523,7 @@
   --color-border-primary: var(--border-primary);
   --color-border-secondary: var(--border-secondary);
   --color-button-primary-outline-stroke: var(--button-primary-outline-stroke);
+  --color-button-error-outline-stroke: var(--button-error-outline-stroke);
 
   /* Shadow Overrides */
   --shadow-xs: var(--shadow-xs);

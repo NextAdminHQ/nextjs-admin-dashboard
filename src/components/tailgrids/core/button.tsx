@@ -63,7 +63,7 @@ export const buttonStyles = cva(
         variant: "danger",
         appearance: "outline",
         className:
-          "border-button-error-outline-border bg-button-error-outline-background text-button-error-outline-text hover:bg-button-error-outline-hover-background hover:text-button-error-outline-hover-text focus:ring-button-error-outline-focus-ring",
+          "border-button-error-outline-stroke bg-button-error-outline-background text-button-error-outline-text hover:bg-button-error-outline-hover-background hover:text-button-error-outline-hover-text focus:ring-button-error-outline-focus-ring",
       },
       {
         variant: "success",

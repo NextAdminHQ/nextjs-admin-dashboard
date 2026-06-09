@@ -9,9 +9,10 @@ const groupStyles = cva("flex items-center", {
       md: "gap-3",
       lg: "gap-3",
       xl: "gap-4",
-      xxl: "gap-4"
-    }
-  }
+      xxl: "gap-4",
+      "3xl": "gap-4",
+    },
+  },
 });
 
 const avatarStyles = cva(
@@ -24,10 +25,11 @@ const avatarStyles = cva(
         md: "size-10 text-base font-semibold",
         lg: "size-12 text-lg font-semibold",
         xl: "size-14 text-xl font-semibold",
-        xxl: "size-16 text-2xl font-semibold"
-      }
-    }
-  }
+        xxl: "size-16 text-2xl font-semibold",
+        "3xl": "size-18 text-2xl font-semibold",
+      },
+    },
+  },
 );
 
 type PropsType = VariantProps<typeof avatarStyles> & {
@@ -53,17 +55,13 @@ export function Avatar({
   size = "md",
   style,
   status = "none",
-  label
+  label,
 }: PropsType) {
   return (
     <figure className={cn(groupStyles({ size }), className)} style={style}>
       <div className={avatarStyles({ size })}>
         {src ? (
-          <img
-            src={src}
-            className="size-full aspect-square rounded-full object-cover"
-            alt={alt}
-          />
+          <img src={src} className="size-full aspect-square rounded-full object-cover" alt={alt} />
         ) : (
           <span className="uppercase">{fallback}</span>
         )}
@@ -71,9 +69,7 @@ export function Avatar({
         {status !== "none" && <Indicator size={size} status={status} />}
       </div>
 
-      {label && (
-        <LabelGroup size={size} title={label.title} subtitle={label.subtitle} />
-      )}
+      {label && <LabelGroup size={size} title={label.title} subtitle={label.subtitle} />}
     </figure>
   );
 }
@@ -85,7 +81,7 @@ const indicatorStyles = cva(
       status: {
         online: "bg-green-500",
         offline: "bg-red-500",
-        busy: "bg-yellow-500"
+        busy: "bg-yellow-500",
       },
       size: {
         xs: "size-1.5",
@@ -93,14 +89,15 @@ const indicatorStyles = cva(
         md: "size-2.5",
         lg: "size-3",
         xl: "size-3.5",
-        xxl: "size-4"
-      }
+        xxl: "size-4",
+        "3xl": "size-4",
+      },
     },
     defaultVariants: {
       size: "md",
-      status: "online"
-    }
-  }
+      status: "online",
+    },
+  },
 );
 
 type IndicatorProps = VariantProps<typeof indicatorStyles>;
@@ -117,9 +114,10 @@ const titleStyles = cva("font-medium text-text-50", {
       md: "text-sm",
       lg: "text-md",
       xl: "text-lg",
-      xxl: "text-lg"
-    }
-  }
+      xxl: "text-lg",
+      "3xl": "text-xl",
+    },
+  },
 });
 
 const subtitleStyles = cva("text-text-100", {
@@ -130,9 +128,10 @@ const subtitleStyles = cva("text-text-100", {
       md: "text-xs",
       lg: "text-sm",
       xl: "text-base",
-      xxl: "text-base"
-    }
-  }
+      xxl: "text-base",
+      "3xl": "text-lg",
+    },
+  },
 });
 
 type LabelGroupProps = VariantProps<typeof titleStyles> & {
@@ -159,11 +158,7 @@ type AvatarGroupPropsType = {
   }[];
 };
 
-export function AvatarGroup({
-  className,
-  size = "md",
-  data
-}: AvatarGroupPropsType) {
+export function AvatarGroup({ className, size = "md", data }: AvatarGroupPropsType) {
   return (
     <div className={cn("flex items-center -space-x-2", className)}>
       {data.map(({ src, alt }, i) => (
@@ -175,7 +170,7 @@ export function AvatarGroup({
           fallback={alt.charAt(0)}
           className="rounded-full ring-[1.5px] ring-background-50"
           style={{
-            zIndex: i
+            zIndex: i,
           }}
         />
       ))}

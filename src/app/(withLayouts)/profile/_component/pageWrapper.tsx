@@ -97,37 +97,34 @@ export default function PageWrapper() {
         <TabContent value="account" className="p-0">
           <div className="space-y-6">
             {/* Account Details Card */}
-            <Card className="p-6">
-              <h2 className="text-lg font-semibold text-text-primary mb-6">Account Details</h2>
+            <Card className="bg-transparent p-5">
+              <h2 className="text-xl leading-7 font-semibold text-text-primary mb-6">
+                Account Details
+              </h2>
 
-              <div className="flex items-center gap-5 mb-8">
+              <div className="flex items-center gap-4 mb-6">
                 <Avatar
                   src="https://avatars.githubusercontent.com/u/124599?v=4"
                   alt="Jhon Smith"
-                  size="xxl"
+                  size="3xl"
                   fallback="JS"
-                  className="size-[72px]"
+                  className="size-18"
                 />
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2.5">
                   <div className="flex items-center gap-3">
-                    <Button
-                      appearance="outline"
-                      variant="primary"
-                      size="sm"
-                      className="h-[38px] font-medium text-text-primary border-border-primary"
-                    >
+                    <Button appearance="outline" size="sm" className="py-1.5 px-2 h-8">
                       Change Avatar
                     </Button>
                     <Button
                       appearance="outline"
                       variant="danger"
                       size="sm"
-                      className="h-[38px] font-medium text-red-500 border-red-500 hover:bg-red-50"
+                      className="py-1.5 px-2 h-8"
                     >
                       Remove
                     </Button>
                   </div>
-                  <p className="text-[13px] text-text-tertiary">
+                  <p className="text-xs leading-4 text-text-tertiary">
                     Accepts PNG, JPEG, GIF; max size 2MB.
                   </p>
                 </div>
