@@ -422,10 +422,10 @@
   --hero-gradient-shade-2: #111827;
 
   /* ======== Toggle Color For Dark =========*/
-  --toggle-default-background: #4b5563;
+  --toggle-default-background: #52525B;
   --toggle-disabled-foreground: #ffffff66;
   --toggle-disabled-background: #1f2937;
-  --toggle-active-background: #3758f9;
+  --toggle-active-background: #5750F1;
 
   /* ======== Map Color For Dark =========*/
   --map-fill: #6b7280;

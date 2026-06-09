@@ -1,4 +1,3 @@
-import SecurityTabContent from "@/app/(withLayouts)/profile/_component/securityTabContent";
 import { TabContent, TabList, TabRoot, TabTrigger } from "@/components/tailgrids/core/tabs";
 import AccountTabContent from "./accountTabContent";
 import {
@@ -9,6 +8,8 @@ import {
   UserIcon,
   UsersGroupIcon,
 } from "./icon";
+import NotificationTabContent from "./notificationTabContent";
+import SecurityTabContent from "./securityTabContent";
 
 const tabsItems = [
   {
@@ -39,7 +40,7 @@ const tabsItems = [
     value: "billing",
     icon: <CrownIcon />,
     title: "Billing and Plan",
-    description: "Manage your billing information and subscription plan",
+    description: "View and update your payment methods",
   },
   {
     value: "apps",
@@ -54,9 +55,9 @@ export default function PageWrapper() {
     <TabRoot
       defaultValue="account"
       direction="horizontal"
-      className="border-card-border border-[0.5px] bg-card-background p-0 gap-y-6 lg:gap-y-8 gap-x-0 flex-col lg:flex-row"
+      className="border-card-border border-[0.5px] bg-card-background p-0 gap-y-6 md:gap-y-8 gap-x-0 flex-col md:flex-row"
     >
-      <TabList className="w-full shrink-0 border-r border-card-border gap-2 p-0 px-3 py-6 min-h-0 h-full">
+      <TabList className="w-full shrink-0 border-r border-card-border gap-2 p-0 px-3 py-6 min-h-0 h-full max-w-84.5 justify-start">
         {tabsItems.map((item) => {
           return (
             <TabTrigger
@@ -82,6 +83,9 @@ export default function PageWrapper() {
         </TabContent>
         <TabContent value="security" className="p-0">
           <SecurityTabContent />
+        </TabContent>
+        <TabContent value="notification" className="p-0">
+          <NotificationTabContent />
         </TabContent>
       </div>
     </TabRoot>
