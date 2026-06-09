@@ -47,45 +47,38 @@ export const BellIcon = () => {
 };
 export const UsersGroupIcon = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <g clip-path="url(#clip0_23439_92487)">
-        <circle cx="9.99996" cy="4.99984" r="3.33333" stroke="currentColor" stroke-width="1.5" />
+    <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20" fill="none">
+      <g clipPath="url(#clip0_23439_92487)">
+        <circle cx="9.99996" cy="4.99984" r="3.33333" stroke="currentColor" strokeWidth="1.5" />
         <path
           d="M15 7.50016C16.3807 7.50016 17.5 6.56742 17.5 5.41683C17.5 4.26624 16.3807 3.3335 15 3.3335"
           stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
         <path
           d="M5 7.50016C3.61929 7.50016 2.5 6.56742 2.5 5.41683C2.5 4.26624 3.61929 3.3335 5 3.3335"
           stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
-        <ellipse
-          cx="10"
-          cy="14.1668"
-          rx="5"
-          ry="3.33333"
-          stroke="currentColor"
-          stroke-width="1.5"
-        />
+        <ellipse cx={10} cy="14.1668" rx={5} ry="3.33333" stroke="currentColor" strokeWidth="1.5" />
         <path
           d="M16.6666 15.8332C18.1285 15.5126 19.1666 14.7007 19.1666 13.7498C19.1666 12.7989 18.1285 11.9871 16.6666 11.6665"
           stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
         <path
           d="M3.33337 15.8332C1.8715 15.5126 0.833374 14.7007 0.833374 13.7498C0.833374 12.7989 1.8715 11.9871 3.33337 11.6665"
           stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
       </g>
       <defs>
         <clipPath id="clip0_23439_92487">
-          <rect width="20" height="20" fill="white" />
+          <rect width={20} height={20} fill="white" />
         </clipPath>
       </defs>
     </svg>
@@ -123,49 +116,49 @@ export const PlugCircleIcon = () => {
 export const LogoutIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20" fill="none">
-      {" "}
       <path
-        d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
+        d="M7.50171 5.83366C7.5118 4.02114 7.59217 3.03955 8.23249 2.39923C8.96473 1.66699 10.1432 1.66699 12.5003 1.66699L13.3336 1.66699C15.6906 1.66699 16.8691 1.66699 17.6014 2.39923C18.3336 3.13146 18.3336 4.30997 18.3336 6.66699L18.3336 13.3337C18.3336 15.6907 18.3336 16.8692 17.6014 17.6014C16.8691 18.3337 15.6906 18.3337 13.3336 18.3337L12.5003 18.3337C10.1432 18.3337 8.96473 18.3337 8.23249 17.6014C7.59217 16.9611 7.5118 15.9795 7.50171 14.167"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12.5 10L1.66667 10M4.58333 12.5L1.66667 10L4.58333 7.5"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />{" "}
-      <path
-        d="M13.3333 14.1667L17.5 10L13.3333 5.83333"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />{" "}
-      <path
-        d="M17.5 10H7.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />{" "}
+      />
     </svg>
   );
 };
 export const TrashIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20" fill="none">
-      {" "}
+      <path d="M17.0832 5H2.9165" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       <path
-        d="M2.5 5H4.16667H17.5"
+        d="M15.6946 7.08301L15.3113 12.8323C15.1638 15.0447 15.09 16.1509 14.3692 16.8253C13.6483 17.4997 12.5397 17.4997 10.3223 17.4997H9.67787C7.46054 17.4997 6.35187 17.4997 5.63103 16.8253C4.91019 16.1509 4.83644 15.0447 4.68895 12.8323L4.30566 7.08301"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
-        strokeLinejoin="round"
-      />{" "}
+      />
       <path
-        d="M6.66663 5.00001V3.33334C6.66663 2.89131 6.84222 2.46739 7.15478 2.15483C7.46734 1.84227 7.89127 1.66667 8.33329 1.66667H11.6666C12.1087 1.66667 12.5326 1.84227 12.8451 2.15483C13.1577 2.46739 13.3333 2.89131 13.3333 3.33334V5.00001M15.8333 5.00001V16.6667C15.8333 17.1087 15.6577 17.5326 15.3451 17.8452C15.0326 18.1577 14.6087 18.3333 14.1666 18.3333H5.83329C5.39127 18.3333 4.96734 18.1577 4.65478 17.8452C4.34222 17.5326 4.16663 17.1087 4.16663 16.6667V5.00001H15.8333Z"
+        d="M7.91675 9.16699L8.33342 13.3337"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
-        strokeLinejoin="round"
-      />{" "}
+      />
+      <path
+        d="M12.0834 9.16699L11.6667 13.3337"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M5.41675 5C5.46331 5 5.4866 5 5.50771 4.99947C6.19391 4.98208 6.79927 4.54576 7.03276 3.90027C7.03994 3.88041 7.04731 3.85832 7.06203 3.81415L7.14294 3.57143C7.212 3.36423 7.24654 3.26063 7.29234 3.17267C7.47509 2.82173 7.8132 2.57803 8.20392 2.51564C8.30186 2.5 8.41106 2.5 8.62947 2.5H11.3707C11.5891 2.5 11.6983 2.5 11.7962 2.51564C12.187 2.57803 12.5251 2.82173 12.7078 3.17267C12.7536 3.26063 12.7882 3.36423 12.8572 3.57143L12.9381 3.81415C12.9528 3.85826 12.9602 3.88042 12.9674 3.90027C13.2009 4.54576 13.8063 4.98208 14.4925 4.99947C14.5136 5 14.5368 5 14.5834 5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
     </svg>
   );
 };

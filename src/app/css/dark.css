@@ -478,7 +478,7 @@
   --button-primary-outline-hover-background: #18181b;
   --background-white-primary: #09090b;
   --tooltip-background: #27272a;
-  --button-error-outline-background: #fef2f2;
+  --button-error-outline-background: rgba(239, 68, 68, 0.05);
 
   /* general color */
   --brand-500: #5750f1;
@@ -496,7 +496,8 @@
   --button-primary-outline-text: #e4e4e7;
   --logo-text: #ffffff;
   --tooltip-text-color: #fff;
-  --button-error-outline-text: #B91C1C;
+  --button-error-outline-text: #b91c1c;
+  --input-label-text-color: #a1a1aa;
 
   /* icons */
   --icon-tertiary: #a1a1aa;
