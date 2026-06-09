@@ -70,7 +70,7 @@ export default function AccountTabContent() {
           <div className="w-full">
             <Label>Website</Label>
             <InputGroup className="overflow-hidden">
-              <InputGroupAddon className="bg-transparent text-input-placeholder-text-color">
+              <InputGroupAddon className="bg-transparent text-input-placeholder-text-color relative after:absolute after:right-0  after:bg-input-border after:w-px after:h-10">
                 https://
               </InputGroupAddon>
               <InputGroupInput placeholder="www.nextadmin.co" />

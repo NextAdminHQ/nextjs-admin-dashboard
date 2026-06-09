@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "@/components/tailgrids/core/breadcrumbs";
 import { Button } from "@/components/tailgrids/core/button";
+import { ButtonGroup } from "@/components/tailgrids/core/button-group";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
 import { AltArrowLeftIcon, AltArrowRightIcon, BellIcon } from "@/utils/icon";
 
@@ -88,6 +89,11 @@ function ButtonsPage() {
             <Button size="xl">Button Text</Button>
             <Button size="xxl">Button Text</Button>
           </CardContent>
+        </Card>
+        <Card className="p-0">
+          <CardHeader className="px-6 py-4 border-b border-card-border">
+            <CardTitle className="font-medium">Icons Button</CardTitle>
+          </CardHeader>
           <CardContent className="flex items-center justify-center gap-5">
             <Button iconOnly={true} size="xs">
               <BellIcon />
@@ -107,6 +113,37 @@ function ButtonsPage() {
             <Button iconOnly={true} size="xxl">
               <BellIcon />
             </Button>
+          </CardContent>
+        </Card>
+        <Card className="p-0">
+          <CardHeader className="px-6 py-4 border-b border-card-border">
+            <CardTitle className="font-medium">Group Button</CardTitle>
+          </CardHeader>
+          <CardContent className="flex items-center justify-center flex-col gap-5">
+            <div className="flex items-center justify-center gap-5">
+              <ButtonGroup>
+                <button>Button Text</button>
+                <button>Button Text</button>
+                <button>Month</button>
+              </ButtonGroup>
+              <ButtonGroup variant={"secondary"}>
+                <button>Button Text</button>
+                <button>Button Text</button>
+                <button>Button Text</button>
+              </ButtonGroup>
+            </div>
+            <div className="flex items-center justify-center gap-5">
+              <ButtonGroup size={"lg"}>
+                <button>Button Text</button>
+                <button>Button Text</button>
+                <button>Button Text</button>
+              </ButtonGroup>
+              <ButtonGroup size={"lg"} variant={"secondary"}>
+                <button>Button Text</button>
+                <button>Button Text</button>
+                <button>Button Text</button>
+              </ButtonGroup>
+            </div>
           </CardContent>
         </Card>
       </div>
