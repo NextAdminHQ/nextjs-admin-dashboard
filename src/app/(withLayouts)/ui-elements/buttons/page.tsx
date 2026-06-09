@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/tailgrids/core/breadcrumbs";
 import { Button } from "@/components/tailgrids/core/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
-import { AltArrowLeftIcon, AltArrowRightIcon } from "@/utils/icon";
+import { AltArrowLeftIcon, AltArrowRightIcon, BellIcon } from "@/utils/icon";
 
 function ButtonsPage() {
   return (
@@ -73,6 +73,39 @@ function ButtonsPage() {
               <AltArrowLeftIcon />
               Primary Disable
               <AltArrowRightIcon />
+            </Button>
+          </CardContent>
+        </Card>
+        <Card className="p-0">
+          <CardHeader className="px-6 py-4 border-b border-card-border">
+            <CardTitle className="font-medium">Button Size</CardTitle>
+          </CardHeader>
+          <CardContent className="flex items-center justify-center gap-5">
+            <Button size="xs">Button Text</Button>
+            <Button size="sm">Button Text</Button>
+            <Button size="md">Button Text</Button>
+            <Button size="lg">Button Text</Button>
+            <Button size="xl">Button Text</Button>
+            <Button size="xxl">Button Text</Button>
+          </CardContent>
+          <CardContent className="flex items-center justify-center gap-5">
+            <Button iconOnly={true} size="xs">
+              <BellIcon />
+            </Button>
+            <Button iconOnly={true} size="sm">
+              <BellIcon />
+            </Button>
+            <Button iconOnly={true} size="md">
+              <BellIcon />
+            </Button>
+            <Button iconOnly={true} size="lg">
+              <BellIcon />
+            </Button>
+            <Button iconOnly={true} size="xl">
+              <BellIcon />
+            </Button>
+            <Button iconOnly={true} size="xxl">
+              <BellIcon />
             </Button>
           </CardContent>
         </Card>

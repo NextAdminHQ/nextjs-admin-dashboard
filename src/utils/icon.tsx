@@ -296,3 +296,20 @@ export const AltArrowRightIcon = (props: IconProps) => {
     </svg>
   );
 };
+export const BellIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
+      <path
+        d="M18.9996 9.7041V9C18.9996 5.13401 15.8656 2 11.9996 2C8.13358 2 4.99958 5.13401 4.99958 9V9.7041C4.99958 10.5491 4.74946 11.3752 4.28074 12.0783L3.13214 13.8012C2.083 15.3749 2.88393 17.5139 4.70864 18.0116C9.48209 19.3134 14.5171 19.3134 19.2905 18.0116C21.1152 17.5139 21.9161 15.3749 20.867 13.8012L19.7184 12.0783C19.2497 11.3752 18.9996 10.5491 18.9996 9.7041Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M7.5 19C8.15503 20.7478 9.92246 22 12 22C14.0775 22 15.845 20.7478 16.5 19"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
