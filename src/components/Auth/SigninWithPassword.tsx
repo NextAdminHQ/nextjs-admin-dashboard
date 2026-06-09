@@ -1,62 +1,33 @@
 "use client";
 
 import { EmailIcon, PasswordIcon } from "@/assets/icons";
-import { signIn } from "@/lib/auth/auth-client";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { toast } from "sonner";
 import InputGroup from "../FormElements/InputGroup";
 import { Checkbox } from "../FormElements/checkbox";
 
 export default function SigninWithPassword() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const [data, setData] = useState({
-    email: process.env.NEXT_PUBLIC_DEMO_USER_MAIL || "",
-    password: process.env.NEXT_PUBLIC_DEMO_USER_PASS || "",
-    remember: false,
-  });
-
+  const [data, setData] = useState({ email: "", password: "", remember: false });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
-    setLoading(true);
 
-    try {
-      const callbackURL = searchParams.get("callbackUrl") || "/";
-
-      const result = await signIn.email({
-        email: data.email,
-        password: data.password,
-        rememberMe: data.remember,
-      });
-
-      if (!result.data) {
-        throw new Error(result.error?.message || "Failed to sign in");
-      }
-
-      router.push(callbackURL);
-      router.refresh();
-      toast.success("Sign in successful");
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Sign in failed");
-      toast.error(
-        `Error: ${err instanceof Error ? err.message : (err as { error?: { message?: string } }).error?.message}`,
-      );
-    } finally {
-      setLoading(false);
+    if (!data.email || !data.password) {
+      setError("Veuillez remplir tous les champs.");
+      return;
     }
+
+    setLoading(true);
+    window.location.href = "/";
   };
 
   return (
@@ -65,7 +36,7 @@ export default function SigninWithPassword() {
         type="email"
         label="Email"
         className="mb-4 [&_input]:py-3.75"
-        placeholder="Enter your email"
+        placeholder="Entrez votre email"
         name="email"
         handleChange={handleChange}
         value={data.email}
@@ -74,9 +45,9 @@ export default function SigninWithPassword() {
 
       <InputGroup
         type="password"
-        label="Password"
+        label="Mot de passe"
         className="mb-5 [&_input]:py-3.75"
-        placeholder="Enter your password"
+        placeholder="Entrez votre mot de passe"
         name="password"
         handleChange={handleChange}
         value={data.password}
@@ -85,24 +56,18 @@ export default function SigninWithPassword() {
 
       <div className="mb-6 flex items-center justify-between gap-2 py-2 font-medium">
         <Checkbox
-          label="Remember me"
+          label="Se souvenir de moi"
           name="remember"
           withIcon="check"
           minimal
           radius="md"
-          onChange={(e) =>
-            setData({
-              ...data,
-              remember: e.target.checked,
-            })
-          }
+          onChange={(e) => setData({ ...data, remember: e.target.checked })}
         />
-
         <Link
           href="/"
           className="ring-primary outline-0 hover:text-primary focus-visible:text-primary focus-visible:ring dark:text-white dark:hover:text-primary"
         >
-          Forgot Password?
+          Mot de passe oublié ?
         </Link>
       </div>
 
@@ -112,13 +77,14 @@ export default function SigninWithPassword() {
           disabled={loading}
           className="hover:bg-opacity-90 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-4 font-medium text-white transition disabled:cursor-not-allowed disabled:opacity-70"
         >
-          Sign In
+          Se connecter
           {loading && (
-            <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-white border-t-transparent dark:border-primary dark:border-t-transparent" />
+            <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-white border-t-transparent" />
           )}
         </button>
       </div>
-      {error && <p className="text-sm text-red-500">{error}</p>}
+
+      {error && <p className="text-sm text-red">{error}</p>}
     </form>
   );
 }

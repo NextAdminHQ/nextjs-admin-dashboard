@@ -4,43 +4,38 @@ import { OverviewCard } from "./card";
 import * as icons from "./icons";
 
 export async function OverviewCardsGroup() {
-  const { views, profit, products, users } = await getOverviewData();
+  const { tauxOccupation, arriveesAujourdhui, departsAujourdhui, revenuMois, logementsDisponibles, enMaintenance } = await getOverviewData();
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+    <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 2xl:grid-cols-6 2xl:gap-7.5">
       <OverviewCard
-        label="Total Views"
-        data={{
-          ...views,
-          value: compactFormat(views.value),
-        }}
+        label="Taux d'occupation"
+        data={{ value: tauxOccupation.value + "%", growthRate: tauxOccupation.growthRate }}
         Icon={icons.Views}
       />
-
       <OverviewCard
-        label="Total Profit"
-        data={{
-          ...profit,
-          value: "$" + compactFormat(profit.value),
-        }}
+        label="Arrivées aujourd'hui"
+        data={{ value: compactFormat(arriveesAujourdhui.value), growthRate: arriveesAujourdhui.growthRate }}
+        Icon={icons.Users}
+      />
+      <OverviewCard
+        label="Départs aujourd'hui"
+        data={{ value: compactFormat(departsAujourdhui.value), growthRate: departsAujourdhui.growthRate }}
+        Icon={icons.Views}
+      />
+      <OverviewCard
+        label="Revenu du mois (FCFA)"
+        data={{ value: revenuMois.value.toLocaleString("fr-FR"), growthRate: revenuMois.growthRate }}
         Icon={icons.Profit}
       />
-
       <OverviewCard
-        label="Total Products"
-        data={{
-          ...products,
-          value: compactFormat(products.value),
-        }}
+        label="Logements disponibles"
+        data={{ value: compactFormat(logementsDisponibles.value), growthRate: logementsDisponibles.growthRate }}
         Icon={icons.Product}
       />
-
       <OverviewCard
-        label="Total Users"
-        data={{
-          ...users,
-          value: compactFormat(users.value),
-        }}
+        label="En maintenance"
+        data={{ value: compactFormat(enMaintenance.value), growthRate: enMaintenance.growthRate }}
         Icon={icons.Users}
       />
     </div>

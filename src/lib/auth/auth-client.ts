@@ -1,9 +1,41 @@
-import { inferAdditionalFields } from "better-auth/client/plugins";
-import { createAuthClient } from "better-auth/react";
-import { auth } from "./auth";
+"use client";
 
-export const authClient = createAuthClient({
-  plugins: [inferAdditionalFields<typeof auth>()],
-});
+// Auth client fictif — projet frontend only
+export function signIn() {
+  return Promise.resolve({ data: true, error: null });
+}
 
-export const { signIn, signOut, signUp, useSession, getSession } = authClient;
+export function signOut() {
+  return Promise.resolve();
+}
+
+export function signUp() {
+  return Promise.resolve({ data: true, error: null });
+}
+
+export function useSession() {
+  return {
+    data: {
+      user: {
+        name: "Admin Djem's Stay",
+        email: "admin@djemsstay.com",
+        image: "/images/user/user-01.png",
+      },
+    },
+    isPending: false,
+  };
+}
+
+export const authClient = {
+  updateUser: (_data: Record<string, unknown>) => Promise.resolve({ data: true, error: null }),
+};
+
+export function getSession() {
+  return Promise.resolve({
+    user: {
+      name: "Admin Djem's Stay",
+      email: "admin@djemsstay.com",
+      image: "/images/user/user-01.png",
+    },
+  });
+}

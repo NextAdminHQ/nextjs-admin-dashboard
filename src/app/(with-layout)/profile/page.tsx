@@ -1,31 +1,16 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
 import Image from "next/image";
 import { CameraIcon } from "./_components/icons";
 import { ProfileImageUploader } from "./_components/profile-image";
 import { SocialAccounts } from "./_components/social-accounts";
 
-type ProfileUser = {
-  name?: string;
-  image?: string | null;
-  bio?: string | null;
-  role?: string | null;
-};
-
 export default async function Page() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  const user = session?.user as ProfileUser;
-
   const profile = {
-    name: user?.name!,
-    profilePhoto: user?.image ?? null,
+    name: "Admin Djem's Stay",
+    profilePhoto: "/images/user/user-01.png",
     coverPhoto: "/images/cover/cover-01.png",
-    bio: user?.bio || "Bio not available",
-    role: user?.role || "Role not set",
+    bio: "Gestionnaire principal de la plateforme Djem's Stay.",
+    role: "Administrateur",
   };
 
   return (

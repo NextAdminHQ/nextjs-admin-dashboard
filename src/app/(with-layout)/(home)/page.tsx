@@ -1,19 +1,16 @@
 import { PaymentsOverview } from "@/components/Charts/payments-overview";
-import { UsedDevices } from "@/components/Charts/used-devices";
 import { WeeksProfit } from "@/components/Charts/weeks-profit";
-import { TopChannels } from "@/components/Tables/top-channels";
-import { TopChannelsSkeleton } from "@/components/Tables/top-channels/skeleton";
 import { createTimeFrameExtractor } from "@/utils/timeframe-extractor";
 import { Suspense } from "react";
+import { AlertesOperationnelles } from "./_components/alertes-operationnelles";
+import { ArriveesDeparts } from "./_components/arrivees-departs";
 import { ChatsCard } from "./_components/chats-card";
+import { OccupationEtablissements } from "./_components/occupation-etablissements";
 import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
-import { RegionLabels } from "./_components/region-labels";
 
 type PropsType = {
-  searchParams: Promise<{
-    selected_time_frame?: string;
-  }>;
+  searchParams: Promise<{ selected_time_frame?: string }>;
 };
 
 export default async function Home({ searchParams }: PropsType) {
@@ -22,9 +19,25 @@ export default async function Home({ searchParams }: PropsType) {
 
   return (
     <>
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-dark dark:text-white">Tableau de bord</h2>
+        <p className="text-sm text-gray-500 dark:text-dark-6">
+          Bienvenue sur Djem&apos;s Stay — suivez l&apos;occupation, les réservations et la performance de vos établissements.
+        </p>
+      </div>
+
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewCardsGroup />
       </Suspense>
+
+      <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6">
+        <Suspense fallback={null}>
+          <ArriveesDeparts />
+        </Suspense>
+        <Suspense fallback={null}>
+          <AlertesOperationnelles />
+        </Suspense>
+      </div>
 
       <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-9 2xl:gap-7.5">
         <PaymentsOverview
@@ -32,27 +45,14 @@ export default async function Home({ searchParams }: PropsType) {
           key={extractTimeFrame("payments_overview")}
           timeFrame={extractTimeFrame("payments_overview")?.split(":")[1]}
         />
-
         <WeeksProfit
           key={extractTimeFrame("weeks_profit")}
           timeFrame={extractTimeFrame("weeks_profit")?.split(":")[1]}
           className="col-span-12 xl:col-span-5"
         />
-
-        <UsedDevices
-          className="col-span-12 xl:col-span-5"
-          key={extractTimeFrame("used_devices")}
-          timeFrame={extractTimeFrame("used_devices")?.split(":")[1]}
-        />
-
-        <RegionLabels />
-
-        <div className="col-span-12 grid xl:col-span-8">
-          <Suspense fallback={<TopChannelsSkeleton />}>
-            <TopChannels />
-          </Suspense>
-        </div>
-
+        <Suspense fallback={null}>
+          <OccupationEtablissements />
+        </Suspense>
         <Suspense fallback={null}>
           <ChatsCard />
         </Suspense>

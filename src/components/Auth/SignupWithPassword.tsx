@@ -1,15 +1,12 @@
 "use client";
 
 import { EmailIcon, PasswordIcon } from "@/assets/icons";
-import { signUp } from "@/lib/auth/auth-client";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { toast } from "sonner";
 import InputGroup from "../FormElements/InputGroup";
 
 export default function SignupWithPassword() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -30,25 +27,9 @@ export default function SignupWithPassword() {
     setError("");
     setLoading(true);
 
-    try {
-      const callbackURL = searchParams.get("callbackUrl") || "/";
-
-      await signUp.email({
-        name: data.name,
-        email: data.email,
-        password: data.password,
-        callbackURL,
-      });
-      router.push(callbackURL);
-      toast.success("Sign up successful");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Sign up failed");
-      toast.error(
-        `Error: ${err instanceof Error ? err.message : (err as { error?: { message?: string } }).error?.message}`,
-      );
-    } finally {
-      setLoading(false);
-    }
+    await new Promise((r) => setTimeout(r, 600));
+    router.push("/");
+    setLoading(false);
   };
 
   return (

@@ -20,7 +20,7 @@ export async function WeeksProfit({ className, timeFrame }: PropsType) {
     >
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h2 className="text-body-2xlg font-bold text-dark dark:text-white">
-          Profit {timeFrame || "this week"}
+          Revenus {timeFrame === "last week" ? "semaine dernière" : "cette semaine"}
         </h2>
 
         <PeriodPicker

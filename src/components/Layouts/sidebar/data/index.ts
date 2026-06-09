@@ -2,93 +2,153 @@ import * as Icons from "../icons";
 
 export const NAV_DATA = [
   {
-    label: "MAIN MENU",
+    label: "TABLEAU DE BORD",
     items: [
       {
-        title: "Dashboard",
+        title: "Tableau de bord",
+        url: "/",
         icon: Icons.HomeIcon,
-        items: [
-          {
-            title: "eCommerce",
-            url: "/",
-          },
-        ],
+        items: [],
       },
       {
-        title: "Calendar",
+        title: "Calendrier",
         url: "/calendar",
         icon: Icons.Calendar,
         items: [],
       },
+    ],
+  },
+  {
+    label: "HÉBERGEMENT",
+    items: [
       {
-        title: "Profile",
+        title: "Résidences",
+        url: "/residences",
+        icon: Icons.Table,
+        items: [],
+      },
+      {
+        title: "Logements",
+        url: "/logements",
+        icon: Icons.FourCircle,
+        items: [],
+      },
+      {
+        title: "Réservations",
+        url: "/reservations",
+        icon: Icons.PieChart,
+        items: [],
+      },
+      {
+        title: "Check-in",
+        url: "/check-in",
+        icon: Icons.Authentication,
+        items: [],
+      },
+      {
+        title: "Check-out",
+        url: "/check-out",
+        icon: Icons.Authentication,
+        items: [],
+      },
+      {
+        title: "Cautions",
+        url: "/cautions",
+        icon: Icons.Alphabet,
+        items: [],
+      },
+    ],
+  },
+  {
+    label: "OPÉRATIONS",
+    items: [
+      {
+        title: "Housekeeping",
+        url: "/housekeeping",
+        icon: Icons.FourCircle,
+        items: [],
+      },
+      {
+        title: "Maintenance",
+        url: "/maintenance",
+        icon: Icons.Table,
+        items: [],
+      },
+      {
+        title: "Restaurant & Bar",
+        url: "/restaurant",
+        icon: Icons.PieChart,
+        items: [],
+      },
+      {
+        title: "Stocks",
+        url: "/stocks",
+        icon: Icons.Alphabet,
+        items: [],
+      },
+      {
+        title: "Événements",
+        url: "/evenements",
+        icon: Icons.Calendar,
+        items: [],
+      },
+    ],
+  },
+  {
+    label: "ADMINISTRATION",
+    items: [
+      {
+        title: "Finances",
+        url: "/finances",
+        icon: Icons.PieChart,
+        items: [],
+      },
+      {
+        title: "Personnel",
+        url: "/personnel",
+        icon: Icons.User,
+        items: [],
+      },
+      {
+        title: "Rapports",
+        url: "/rapports",
+        icon: Icons.Table,
+        items: [],
+      },
+      {
+        title: "Notifications",
+        url: "/notifications",
+        icon: Icons.FourCircle,
+        items: [],
+      },
+      {
+        title: "Administration",
+        url: "/administration",
+        icon: Icons.Authentication,
+        items: [],
+      },
+      {
+        title: "IA",
+        url: "/intelligence-artificielle",
+        icon: Icons.Alphabet,
+        items: [],
+      },
+    ],
+  },
+  {
+    label: "COMPTE",
+    items: [
+      {
+        title: "Profil",
         url: "/profile",
         icon: Icons.User,
         items: [],
       },
       {
-        title: "Forms",
+        title: "Paramètres",
+        url: "/pages/settings",
         icon: Icons.Alphabet,
-        items: [
-          {
-            title: "Form Elements",
-            url: "/forms/form-elements",
-          },
-          {
-            title: "Form Layout",
-            url: "/forms/form-layout",
-          },
-        ],
-      },
-      {
-        title: "Tables",
-        url: "/tables",
-        icon: Icons.Table,
-        items: [
-          {
-            title: "Tables",
-            url: "/tables",
-          },
-        ],
-      },
-      {
-        title: "Pages",
-        icon: Icons.Alphabet,
-        items: [
-          {
-            title: "Settings",
-            url: "/pages/settings",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: "OTHERS",
-    items: [
-      {
-        title: "Charts",
-        icon: Icons.PieChart,
-        items: [
-          {
-            title: "Basic Chart",
-            url: "/charts/basic-chart",
-          },
-        ],
-      },
-      {
-        title: "UI Elements",
-        icon: Icons.FourCircle,
-        items: [
-          {
-            title: "Alerts",
-            url: "/ui-elements/alerts",
-          },
-          {
-            title: "Buttons",
-            url: "/ui-elements/buttons",
-          },
-        ],
+        items: [],
       },
     ],
   },

@@ -36,9 +36,9 @@ export function Header() {
 
       <div className="max-xl:hidden">
         <h1 className="text-heading-5 text-dark mb-0.5 font-bold dark:text-white">
-          Dashboard
+          Djem&apos;s Stay
         </h1>
-        <p className="font-medium">Next.js Admin Dashboard Solution</p>
+        <p className="font-medium">Tableau de bord de gestion</p>
       </div>
 
       <div className="2xsm:gap-4 flex flex-1 items-center justify-end gap-2">

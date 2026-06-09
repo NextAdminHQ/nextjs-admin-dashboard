@@ -6,13 +6,12 @@ import {
   DropdownContent,
   DropdownTrigger,
 } from "@/components/ui/dropdown";
-import { signOut, useSession } from "@/lib/auth/auth-client";
+import { useSession } from "@/lib/auth/auth-client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { toast } from "sonner";
 import { LogOutIcon, SettingsIcon, UserIcon } from "./icons";
 
 export function UserInfo() {
@@ -20,19 +19,9 @@ export function UserInfo() {
   const router = useRouter();
   const session = useSession();
 
-  async function handleLogout() {
+  function handleLogout() {
     setIsOpen(false);
-    const loadingId = toast.loading("Logging out...");
-
-    try {
-      await signOut();
-      router.push("/auth/sign-in");
-      toast.success("Logged out successfully");
-    } catch {
-      toast.error("Failed to log out");
-    } finally {
-      toast.dismiss(loadingId);
-    }
+    router.push("/auth/sign-in");
   }
 
   if (session.isPending) {
