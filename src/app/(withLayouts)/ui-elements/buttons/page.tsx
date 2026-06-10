@@ -135,24 +135,24 @@ function ButtonsPage() {
           <CardContent className="flex items-center justify-center flex-col gap-5">
             <div className="flex items-center justify-center gap-5">
               <ButtonGroup>
-                <button>Button Text</button>
+                <button className="active">Button Text</button>
                 <button>Button Text</button>
                 <button>Month</button>
               </ButtonGroup>
               <ButtonGroup variant={"secondary"}>
-                <button>Button Text</button>
+                <button className="active">Button Text</button>
                 <button>Button Text</button>
                 <button>Button Text</button>
               </ButtonGroup>
             </div>
             <div className="flex items-center justify-center gap-5">
               <ButtonGroup size={"lg"}>
-                <button>Button Text</button>
+                <button className="active">Button Text</button>
                 <button>Button Text</button>
                 <button>Button Text</button>
               </ButtonGroup>
               <ButtonGroup size={"lg"} variant={"secondary"}>
-                <button>Button Text</button>
+                <button className="active">Button Text</button>
                 <button>Button Text</button>
                 <button>Button Text</button>
               </ButtonGroup>

@@ -8,9 +8,9 @@ const groupStyles = cva(
     variants: {
       variant: {
         primary:
-          "[&>button]:hover:bg-button-group-primary-hover-background text-button-group-primary-text [&>button]:border-primary-500 divide-primary-500 [&>button]:hover:text-button-group-primary-hover-text",
+          "[&>button]:hover:bg-button-group-primary-hover-background [&>button.active]:bg-button-group-primary-hover-background text-button-group-primary-text [&>button]:border-primary-500 divide-primary-500 [&>button]:hover:text-button-group-primary-hover-text [&>button.active]:text-button-group-primary-hover-text",
         secondary:
-          "divide-button-outline-border [&>button]:bg-button-primary-outline-background text-button-outline-text [&>button]:border-button-primary-outline-stroke [&>button]:hover:bg-button-primary-outline-hover-background [&>button]:hover:text-button-outline-hover-text",
+          "divide-button-outline-border [&>button]:bg-button-primary-outline-background text-button-outline-text [&>button]:border-button-primary-outline-stroke [&>button]:hover:bg-button-primary-outline-hover-background [&>button.active]:bg-button-primary-outline-hover-background [&>button]:hover:text-button-outline-hover-text [&>button.active]:text-button-outline-hover-text",
       },
       size: {
         sm: "text-sm [&>button]:px-3 [&>button]:py-1.5 h-8",
