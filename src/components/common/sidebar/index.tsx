@@ -60,7 +60,7 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
   if (items && items.length > 0) {
     return (
       <Collapsible
-        isExpanded={hasActiveChild}
+        defaultExpanded={hasActiveChild}
         className="bg-transparent border-none data-expanded:pb-0!"
       >
         <CollapsibleTrigger
@@ -87,7 +87,7 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
           <AltArrowUpIcon className="text-icon-tertiary rotate-180 group-data-expanded:rotate-0 duration-200" />
         </CollapsibleTrigger>
 
-        <CollapsibleContent className="mt-2 pr-0 space-y-1">
+        <CollapsibleContent className="pr-0 space-y-1 group-data-expanded:mt-2">
           {items.map((item) => {
             const isChildActive = pathname === item.url;
 
