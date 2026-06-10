@@ -2,7 +2,16 @@ import { Breadcrumbs } from "@/components/tailgrids/core/breadcrumbs";
 import { Button } from "@/components/tailgrids/core/button";
 import { ButtonGroup } from "@/components/tailgrids/core/button-group";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/tailgrids/core/card";
-import { AltArrowLeftIcon, AltArrowRightIcon, BellIcon } from "@/utils/icon";
+import { SocialButton } from "@/components/tailgrids/core/social-button";
+import {
+  AltArrowLeftIcon,
+  AltArrowRightIcon,
+  AppleIcon,
+  BellIcon,
+  FacebookIcon,
+  GoogleIcon,
+  TwitterIcon,
+} from "@/utils/icon";
 
 function ButtonsPage() {
   return (
@@ -41,10 +50,14 @@ function ButtonsPage() {
           </CardHeader>
           <CardContent className="flex items-center justify-center gap-5">
             <Button variant="danger">Error Fill</Button>
+            <Button variant="danger" focused>
+              Error Fill
+            </Button>
             <Button variant="danger" appearance="outline">
               Error Outline
             </Button>
             <Button variant="success">Success Fill</Button>
+            <Button variant="success" focused>Success Fill</Button>
             <Button variant="success" appearance="outline">
               Success Outline
             </Button>
@@ -65,7 +78,7 @@ function ButtonsPage() {
               Secondary
               <AltArrowRightIcon />
             </Button>
-            <Button>
+            <Button focused>
               <AltArrowLeftIcon />
               Primary Focus
               <AltArrowRightIcon />
@@ -144,6 +157,29 @@ function ButtonsPage() {
                 <button>Button Text</button>
               </ButtonGroup>
             </div>
+          </CardContent>
+        </Card>
+        <Card className="p-0">
+          <CardHeader className="px-6 py-4 border-b border-card-border">
+            <CardTitle className="font-medium">Social Button</CardTitle>
+          </CardHeader>
+          <CardContent className="flex items-center justify-center gap-5">
+            <SocialButton>
+              <GoogleIcon />
+              Continue with Google
+            </SocialButton>
+            <SocialButton>
+              <FacebookIcon />
+              Continue with Facebook
+            </SocialButton>
+            <SocialButton>
+              <TwitterIcon />
+              Continue with Twitter
+            </SocialButton>
+            <SocialButton>
+              <AppleIcon />
+              Continue with Apple
+            </SocialButton>
           </CardContent>
         </Card>
       </div>

@@ -115,7 +115,7 @@
   --button-success-hover-background: #15803d;
   --button-success-border: #22c55e;
   --button-success-text: #ffffff;
-  --button-success-focus-ring: rgba(22, 163, 74, 0.2);
+  --button-success-focus-ring: rgba(22, 163, 74, 0.20);
 
   /* Success Outline */
   --button-success-outline-background: #f0fdf4;
