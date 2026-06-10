@@ -53,6 +53,17 @@ export default function NewReservationPage() {
             <input type="number" className="mt-2 block w-full rounded-[10px] border border-stroke bg-white px-4 py-3 text-sm text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 dark:border-dark-3 dark:bg-dark dark:text-white" name="montant" placeholder="10000" />
           </label>
           <label className="block text-sm text-dark dark:text-white">
+            Caution
+            <input type="number" className="mt-2 block w-full rounded-[10px] border border-stroke bg-white px-4 py-3 text-sm text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 dark:border-dark-3 dark:bg-dark dark:text-white" name="caution" placeholder="20000" />
+          </label>
+          <label className="block text-sm text-dark dark:text-white">
+            Statut caution
+            <select className="mt-2 block w-full rounded-[10px] border border-stroke bg-white px-4 py-3 text-sm text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 dark:border-dark-3 dark:bg-dark dark:text-white" name="cautionStatut">
+              <option value="payee">Payée</option>
+              <option value="non_payee">Non payée</option>
+            </select>
+          </label>
+          <label className="block text-sm text-dark dark:text-white">
             Paiement
             <input className="mt-2 block w-full rounded-[10px] border border-stroke bg-white px-4 py-3 text-sm text-dark outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 dark:border-dark-3 dark:bg-dark dark:text-white" name="paiement" placeholder="Orange Money" />
           </label>

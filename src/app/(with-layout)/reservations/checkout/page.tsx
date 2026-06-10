@@ -46,7 +46,7 @@ export default function CheckOutPage() {
           <table className="w-full min-w-full table-auto text-left">
             <thead>
               <tr className="border-b border-stroke bg-gray-1 text-xs uppercase tracking-wide text-dark-4 dark:border-dark-3 dark:bg-dark-2 dark:text-dark-6">
-                {["ID", "Client", "Chambre", "Arrivée", "Départ", "Statut"].map((heading) => (
+                {["ID", "Client", "Chambre", "Arrivée", "Départ", "Caution", "Statut"].map((heading) => (
                   <th key={heading} className="px-4 py-3 font-semibold">
                     {heading}
                   </th>
@@ -64,6 +64,7 @@ export default function CheckOutPage() {
                   <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">{reservation.chambre}</td>
                   <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">{reservation.debut}</td>
                   <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">{reservation.fin}</td>
+                  <td className="px-4 py-3 text-sm font-medium text-dark dark:text-white">{reservation.caution ? `${reservation.caution.toLocaleString('fr-FR')} ${reservation.devise}` : '-'}</td>
                   <td className="px-4 py-3">
                     <span className={cn("rounded-full px-2.5 py-1 text-xs font-medium", STATUT_STYLE[reservation.statut])}>
                       {STATUT_LABEL[reservation.statut]}

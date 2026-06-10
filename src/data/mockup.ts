@@ -11,6 +11,8 @@ export type Reservation = {
   fin: string;   // YYYY-MM-DD
   montant: number;
   devise: string;
+  caution?: number;
+  cautionStatut?: "payee" | "non_payee";
   statut: StatutReservation;
   paiement: "orange_money" | "mtn_money" | "wave" | "carte" | "especes";
   notes?: string;
@@ -28,6 +30,8 @@ export const RESERVATIONS_MOCKUP: Reservation[] = [
     fin: "2025-07-04",
     montant: 75000,
     devise: "FCFA",
+    caution: 20000,
+    cautionStatut: "payee",
     statut: "confirmee",
     paiement: "orange_money",
   },
@@ -42,6 +46,8 @@ export const RESERVATIONS_MOCKUP: Reservation[] = [
     fin: "2025-07-07",
     montant: 180000,
     devise: "FCFA",
+    caution: 25000,
+    cautionStatut: "non_payee",
     statut: "attente",
     paiement: "wave",
   },
@@ -56,6 +62,8 @@ export const RESERVATIONS_MOCKUP: Reservation[] = [
     fin: "2025-07-10",
     montant: 120000,
     devise: "FCFA",
+    caution: 30000,
+    cautionStatut: "payee",
     statut: "checkin",
     paiement: "carte",
     notes: "Client VIP, vue sur mer demandée",
@@ -143,6 +151,8 @@ export const RESERVATIONS_MOCKUP: Reservation[] = [
     fin: "2025-07-20",
     montant: 50000,
     devise: "FCFA",
+    caution: 15000,
+    cautionStatut: "payee",
     statut: "checkout",
     paiement: "especes",
   },
@@ -157,6 +167,8 @@ export const RESERVATIONS_MOCKUP: Reservation[] = [
     fin: "2025-07-27",
     montant: 350000,
     devise: "FCFA",
+    caution: 25000,
+    cautionStatut: "non_payee",
     statut: "confirmee",
     paiement: "orange_money",
   },

@@ -45,15 +45,18 @@ export default function ReservationsClient() {
   const totalPending = reservations.filter((r) => r.statut === "attente").length;
   const totalCheckin = reservations.filter((r) => r.statut === "checkin").length;
   const totalCheckout = reservations.filter((r) => r.statut === "checkout").length;
+  const totalCautions = reservations.filter((r) => (r.caution ?? 0) > 0).length;
+  const totalCautionsDue = reservations.filter((r) => r.cautionStatut === "non_payee").length;
 
   return (
     <>
-      <div className="mb-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <div className="mb-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
         <SummaryCard label="Total réservations" value={totalReservations.toString()} color="text-primary" />
         <SummaryCard label="Confirmées" value={totalConfirmed.toString()} color="text-green-600" />
         <SummaryCard label="En attente" value={totalPending.toString()} color="text-yellow-600" />
         <SummaryCard label="Check-in" value={totalCheckin.toString()} color="text-blue-600" />
         <SummaryCard label="Check-out" value={totalCheckout.toString()} color="text-gray-600" />
+        <SummaryCard label="Cautions dues" value={totalCautionsDue.toString()} color="text-red-600" />
       </div>
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -90,6 +93,7 @@ export default function ReservationsClient() {
                   "Arrivée",
                   "Départ",
                   "Montant",
+                  "Caution",
                   "Paiement",
                   "Statut",
                 ].map((heading) => (
@@ -113,6 +117,9 @@ export default function ReservationsClient() {
                   <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">{reservation.debut}</td>
                   <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">{reservation.fin}</td>
                   <td className="px-4 py-3 text-sm font-medium text-dark dark:text-white">{reservation.montant.toLocaleString("fr-FR")} {reservation.devise}</td>
+                  <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">
+                    {reservation.caution ? `${reservation.caution.toLocaleString("fr-FR")} ${reservation.devise}` : "-"}
+                  </td>
                   <td className="px-4 py-3 text-sm text-dark-4 dark:text-dark-6">{PAIEMENT_LABEL[reservation.paiement]}</td>
                   <td className="px-4 py-3">
                     <span className={cn("rounded-full px-2.5 py-1 text-xs font-medium", STATUT_STYLE[reservation.statut])}>
