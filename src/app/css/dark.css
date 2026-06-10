@@ -306,8 +306,8 @@
   --input-success: #16a34a;
 
   /* ======== Tab Color For Dark =========*/
-  --tab-background: #111827;
-  --tab-active-background: #1f2937;
+  --tab-background: #00000050;
+  --tab-active-background: #27272a;
   --tab-secondary-active-background: #7592ff33;
 
   /* ======== Checkbox Color For Dark =========*/
