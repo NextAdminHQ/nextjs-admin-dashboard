@@ -35,7 +35,7 @@ const buttonVariants = cva(
 
 type ButtonProps = HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonVariants> & {
-    label: string;
+    label: React.ReactNode;
     icon?: React.ReactNode;
   };
 

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/lib/theme";
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "./icons";
 
