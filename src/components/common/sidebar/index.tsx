@@ -12,6 +12,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tailgrids/
 import { cn } from "@/utils/cn";
 import { AltArrowUpIcon, Logo, LogoWithText } from "@/utils/icon";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 interface NavItemProps {
@@ -23,6 +24,12 @@ interface NavItemProps {
 }
 
 function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
+  const pathname = usePathname();
+
+  const isActive = href ? pathname === href : false;
+
+  const hasActiveChild = items?.some((item) => item.url && pathname === item.url);
+
   // Collapsed: icon-only button centered, no dropdown
   if (collapsed) {
     return (
@@ -33,7 +40,9 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
               href={href ?? items?.[0]?.url ?? "#"}
               className={cn(
                 "px-3 py-2.5 flex items-center justify-center rounded-lg",
-                "text-icon-tertiary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
+                isActive || hasActiveChild
+                  ? "bg-sidebar-navigation-nav-item-nav-hover-background text-icon-primary"
+                  : "text-icon-tertiary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-icon-primary transition-colors duration-200",
               )}
             >
               {icon}
@@ -50,37 +59,54 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
   // Expanded: with sub-items → collapsible
   if (items && items.length > 0) {
     return (
-      <Collapsible className="bg-transparent border-none data-expanded:pb-0!">
+      <Collapsible
+        isExpanded={hasActiveChild}
+        className="bg-transparent border-none data-expanded:pb-0!"
+      >
         <CollapsibleTrigger
           className={cn(
-            "w-full flex items-center justify-between gap-3 sm:px-3 sm:py-2 px-3 py-2 border-none bg-transparent rounded-lg",
-            "text-sm font-medium",
-            "text-text-secondary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
+            "w-full flex items-center justify-between gap-3 sm:px-3 sm:py-2 px-3 py-2 border-none bg-transparent rounded-lg text-sm font-medium group/collapsible",
+            hasActiveChild
+              ? "bg-sidebar-navigation-nav-item-nav-hover-background text-text-primary"
+              : "text-text-secondary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
           )}
         >
           <div className="flex items-center gap-3 flex-1">
-            <span className="text-icon-tertiary">{icon}</span>
+            <span
+              className={cn(
+                hasActiveChild
+                  ? "text-icon-primary"
+                  : "text-icon-tertiary group-hover/collapsible:text-icon-primary transition-colors duration-200",
+              )}
+            >
+              {icon}
+            </span>
             <span>{label}</span>
           </div>
 
           <AltArrowUpIcon className="text-icon-tertiary rotate-180 group-data-expanded:rotate-0 duration-200" />
         </CollapsibleTrigger>
 
-        <CollapsibleContent className="mt-2 pr-0">
-          {items.map((item) => (
-            <div key={item.title} className="px-0">
-              <Link
-                href={item.url ?? "#"}
-                className={cn(
-                  "block w-full text-left px-3 py-2 rounded-lg",
-                  "text-sm font-medium transition-colors",
-                  "text-text-secondary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
-                )}
-              >
-                {item.title}
-              </Link>
-            </div>
-          ))}
+        <CollapsibleContent className="mt-2 pr-0 space-y-1">
+          {items.map((item) => {
+            const isChildActive = pathname === item.url;
+
+            return (
+              <div key={item.title} className="px-0">
+                <Link
+                  href={item.url ?? "#"}
+                  className={cn(
+                    "block px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                    isChildActive
+                      ? "bg-sidebar-navigation-nav-item-nav-hover-background text-text-primary"
+                      : "text-text-secondary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary",
+                  )}
+                >
+                  {item.title}
+                </Link>
+              </div>
+            );
+          })}
         </CollapsibleContent>
       </Collapsible>
     );
@@ -92,9 +118,10 @@ function NavItem({ icon, label, href, items, collapsed }: NavItemProps) {
       <Link
         href={href}
         className={cn(
-          "w-full px-3 py-2 rounded-lg flex items-center gap-3",
-          "text-sm font-medium transition-colors",
-          "text-text-secondary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary transition-colors duration-200",
+          "w-full px-3 py-2 rounded-lg flex items-center gap-3 text-sm font-medium transition-colors",
+          isActive
+            ? "bg-sidebar-navigation-nav-item-nav-hover-background text-text-primary"
+            : "text-text-secondary hover:bg-sidebar-navigation-nav-item-nav-hover-background hover:text-text-primary",
         )}
       >
         <span className="text-icon-tertiary">{icon}</span>
