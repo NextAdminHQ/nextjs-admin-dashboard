@@ -191,7 +191,7 @@ export const PopoverContent = React.forwardRef<
           aria-describedby={context.descriptionId}
           {...context.getFloatingProps(props)}
           className={cn(
-            "max-w-97.5 p-5 pt-3 border z-50 border-popover-border text-text-50 bg-background-100 rounded-xl",
+            "max-w-97.5 p-5 pt-3 border z-999 border-popover-border text-text-50 bg-background-100 rounded-xl",
             className
           )}
         >

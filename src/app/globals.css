@@ -491,6 +491,8 @@
   --color-background-white-primary: var(--background-white-primary);
   --color-tooltip-background: var(--tooltip-background);
   --color-button-error-outline-background: var(--button-error-outline-background);
+  --color-badge-gray-background: var(--badge-gray-background);
+  --color-badge-gray-icon: var(--badge-gray-icon);
 
   /* general color */
   --color-brand-500: var(--brand-500);

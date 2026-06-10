@@ -129,8 +129,8 @@
 
   /* Button Group Primary */
   --button-group-primary-background: #ffffff00;
-  --button-group-primary-hover-background: #3758f9;
-  --button-group-primary-text: #3758f9;
+  --button-group-primary-hover-background: #5750f1;
+  --button-group-primary-text: #5750f1;
   --button-group-primary-hover-text: #ffffff;
 
   /* Button Group Secondary */
@@ -422,10 +422,10 @@
   --hero-gradient-shade-2: #111827;
 
   /* ======== Toggle Color For Dark =========*/
-  --toggle-default-background: #52525B;
+  --toggle-default-background: #52525b;
   --toggle-disabled-foreground: #ffffff66;
   --toggle-disabled-background: #1f2937;
-  --toggle-active-background: #5750F1;
+  --toggle-active-background: #5750f1;
 
   /* ======== Map Color For Dark =========*/
   --map-fill: #6b7280;
@@ -479,6 +479,8 @@
   --background-white-primary: #09090b;
   --tooltip-background: #27272a;
   --button-error-outline-background: rgba(239, 68, 68, 0.05);
+  --badge-gray-background: #52525b;
+  --badge-gray-icon: #e4e4e7;
 
   /* general color */
   --brand-500: #5750f1;

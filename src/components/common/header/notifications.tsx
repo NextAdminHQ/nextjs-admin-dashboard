@@ -67,13 +67,13 @@ export function NotificationsButton() {
     <Popover placement="bottom-end">
       <PopoverTrigger
         className={cn(
-          buttonStyles({ appearance: "outline", iconOnly: true }),
-          "relative size-10 border border-card-border bg-card-background rounded-lg [&>svg]:size-auto shadow-xs text-icon-primary",
+          buttonStyles({ appearance: "outline", iconOnly: true, size: "lg" }),
+          "relative border border-card-border bg-card-background rounded-lg [&>svg]:size-auto shadow-xs text-icon-primary",
         )}
       >
         <BellIcon />
         {unreadCount > 0 && (
-          <span className="absolute top-2 right-[11px]">
+          <span className="absolute top-2 right-2.75">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={10}
@@ -86,7 +86,7 @@ export function NotificationsButton() {
           </span>
         )}
       </PopoverTrigger>
-      <PopoverContent className="w-[338px] p-0 border border-border-secondary-alt bg-background-white-secondary shadow-3xl rounded-2xl overflow-hidden">
+      <PopoverContent className="w-84.5 p-0 border border-border-secondary-alt bg-background-white-secondary shadow-3xl rounded-2xl overflow-hidden">
         <div className="max-h-150 flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between px-5 pt-5 pb-4">
@@ -151,9 +151,7 @@ export function NotificationsButton() {
             >
               Mark all as read
             </button>
-            <Button variant="primary" size="sm" className="h-9">
-              View All
-            </Button>
+            <Button variant="primary">View All</Button>
           </div>
         </div>
       </PopoverContent>

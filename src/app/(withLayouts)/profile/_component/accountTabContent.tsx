@@ -41,10 +41,10 @@ export default function AccountTabContent() {
           />
           <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-3">
-              <Button appearance="outline" size="sm" className="py-1.5 px-3 h-8">
+              <Button appearance="outline" size="sm">
                 Change Avatar
               </Button>
-              <Button appearance="outline" variant="danger" size="sm" className="py-1.5 px-3 h-8">
+              <Button appearance="outline" variant="danger" size="sm">
                 Remove
               </Button>
             </div>
@@ -70,7 +70,7 @@ export default function AccountTabContent() {
           <div className="w-full">
             <Label>Website</Label>
             <InputGroup className="overflow-hidden">
-              <InputGroupAddon className="bg-transparent text-input-placeholder-text-color">
+              <InputGroupAddon className="bg-transparent text-input-placeholder-text-color relative after:absolute after:right-0  after:bg-input-border after:w-px after:h-10">
                 https://
               </InputGroupAddon>
               <InputGroupInput placeholder="www.nextadmin.co" />
@@ -112,10 +112,10 @@ export default function AccountTabContent() {
             />
           </div>
           <div className="col-span-1 md:col-span-2 flex justify-end items-center gap-3">
-            <Button appearance="outline" variant="primary" className="px-4 h-10">
+            <Button appearance="outline" variant="primary" size="lg">
               Cancel
             </Button>
-            <Button variant="primary" className="px-5 h-10">
+            <Button variant="primary" size="lg">
               Save Changes
             </Button>
           </div>
@@ -133,12 +133,7 @@ export default function AccountTabContent() {
               End all active sessions across your devices.
             </p>
           </div>
-          <Button
-            appearance="outline"
-            variant="primary"
-            size="sm"
-            className="px-3.5 py-2 h-9 gap-2"
-          >
+          <Button appearance="outline" variant="primary" className="gap-2">
             <LogoutIcon />
             Sign Out
           </Button>
@@ -152,7 +147,7 @@ export default function AccountTabContent() {
               Delete your account permanently along with all associated data.
             </p>
           </div>
-          <Button appearance="outline" variant="danger" size="sm" className="px-3.5 py-2 h-9 gap-2">
+          <Button appearance="outline" variant="danger" className="gap-2">
             <TrashIcon />
             Delete Account
           </Button>

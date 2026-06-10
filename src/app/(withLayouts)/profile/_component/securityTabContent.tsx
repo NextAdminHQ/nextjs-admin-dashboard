@@ -118,14 +118,10 @@ export default function SecurityTabContent() {
               </div>
             </div>
             <DialogFooter className="px-5 py-4 gap-3 border-t- border-border-secondary items-center flex">
-              <DialogClose
-                className={cn(buttonStyles({ appearance: "outline", size: "sm" }), "h-10")}
-              >
+              <DialogClose className={cn(buttonStyles({ appearance: "outline", size: "lg" }))}>
                 Cancel
               </DialogClose>
-              <Button size="sm" className="h-10">
-                Apply Changes
-              </Button>
+              <Button size="lg">Apply Changes</Button>
             </DialogFooter>
           </DialogContent>
         </DialogOverlay>

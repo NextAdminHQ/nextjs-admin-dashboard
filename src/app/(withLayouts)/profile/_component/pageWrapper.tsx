@@ -63,9 +63,9 @@ export default function PageWrapper() {
             <TabTrigger
               key={item.value}
               value={item.value}
-              className="w-full flex items-start gap-3 p-2 rounded-xl justify-start data-[active=true]:bg-background-gray-secondary data-[active=true]:border-none"
+              className="w-full flex items-start gap-3 p-2 rounded-xl justify-start data-[active=true]:bg-background-gray-secondary_alt data-[active=true]:border-none"
             >
-              <div className="text-icon-secondary bg-background-gray-secondary rounded-lg size-11 flex items-center justify-center shrink-0">
+              <div className="text-icon-secondary bg-background-gray-secondary_alt rounded-lg size-11 flex items-center justify-center shrink-0 border border-border-secondary-alt">
                 {item.icon}
               </div>
               <div className="flex flex-col items-start gap-1">

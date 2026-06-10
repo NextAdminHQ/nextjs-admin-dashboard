@@ -133,8 +133,8 @@
 
   /* Button Group Primary */
   --button-group-primary-background: #ffffff;
-  --button-group-primary-hover-background: #3758f9;
-  --button-group-primary-text: #3758f9;
+  --button-group-primary-hover-background: #5750f1;
+  --button-group-primary-text: #5750f1;
   --button-group-primary-hover-text: #ffffff;
 
   /* Button Group Secondary */
@@ -294,7 +294,7 @@
   --alert-default-close-icon: #4b5563;
   --alert-default-title: #1f2937;
   --alert-default-description: #374151;
-  --alert-default-button-background: #4b5563;
+  --alert-default-button-background: #52525b;
   --alert-default-button-hover-background: #374151;
   --alert-default-button-text: #374151;
 
@@ -481,6 +481,8 @@
   --background-white-primary: #fff;
   --tooltip-background: #ffffff;
   --button-error-outline-background: #fef2f2;
+  --badge-gray-background: #f4f4f5;
+  --badge-gray-icon: #71717a;
 
   /* general color */
   --brand-500: #5750f1;
