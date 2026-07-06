@@ -57,6 +57,9 @@ Full docs at [nextadmin.co/docs](https://nextadmin.co/docs). Component-level doc
 
 
 ## Update Logs
+### Version 1.3.0 - [May 03, 2026]
+- Updated to Next.js Latest
+- Updated dependencies
 
 ### Version 1.3.0 - [April 30, 2026]
 
