@@ -1,28 +1,65 @@
-## [📖 Docs](https://docs.nextadmin.co/)
+# NextAdmin - Next.js Admin Dashboard Template and Components
 
-## Installation
+**NextAdmin** is a Free, open-source Next.js admin dashboard toolkit featuring 200+ UI components and templates that come with pre-built elements, components, pages, high-quality design, integrations, and much more to help you create powerful admin dashboards with ease.
 
-1. Download/fork/clone the repo. Once you're in the correct directory, it's time to install all the necessary dependencies. You can do this by typing the following command:
+[![nextjs admin template](https://cdn.pimjo.com/nextadmin-2.png)](https://nextadmin.co/)
 
+---
+
+## Useful Links
+
+- [Website](https://nextadmin.co/)
+- [Live Demo](https://demo.nextadmin.co/)
+- [Docs](https://nextadmin.co/docs)
+- [Components](https://nextadmin.co/components)
+
+## Quick start
+
+You'll need Node.js installed. Then:
+
+```bash
+git clone https://github.com/NextAdminHQ/nextjs-admin-dashboard.git
+cd nextjs-admin-dashboard
 ```
+
+Install dependencies — pick your poison:
+
+```bash
 npm install
 ```
 
-1. Okay, you're almost there. Now all you need to do is start the development server. If you're using **npm**, the command is:
+Then start the dev server:
 
-```
+```bash
 npm run dev
 ```
 
-And if you're using **Yarn**, it's:
+Open [http://localhost:3000](http://localhost:3000) and you're good. **Happy coding**!
 
-```
-yarn dev
-```
+## Deploying
 
-And voila! You're now ready to start developing. **Happy coding**!
+Works out of the box with any provider supporting Next.js, including Vercel, Netlify, and Cloudflare.
+
+## Docs
+
+Full docs of the project are available at [nextadmin.co/docs](https://nextadmin.co/docs).
+
+## Community
+
+- [Discord](https://pimjo.com/community)
+- [X / Twitter](https://twitter.com/PimjoHQ)
+- [GitHub](https://github.com/NextAdminHQ/)
 
 ## Update Logs
+
+### Version 2.0.0 - [July 20, 2026]
+
+- **Complete UI/UX Overhaul**: Redesigned the entire dashboard with a modern aesthetic and enhanced visual hierarchy.
+- **Design System Integration**: Replaced raw UI components with Tailgrids UI for improved design consistency and accessibility.
+- **Expanded Page & Component Library**: Added 10+ new pages and 20+ customizable component variants.
+- **Functional Mock API Integration**: Made all pages interactive and connected them with mock REST APIs.
+- **AI-Native Repository**: Optimized codebase architecture following deep modularity principles and added comprehensive AI guidelines in `AGENTS.md`.
+- **Custom Agent Skills & Accessibility**: Integrated `/api-integration` for instant API binding and `/react-aria` to enforce WCAG best practices and accessible UI primitives.
 
 ### Version 1.3.0 - [May 14, 2026]
 
