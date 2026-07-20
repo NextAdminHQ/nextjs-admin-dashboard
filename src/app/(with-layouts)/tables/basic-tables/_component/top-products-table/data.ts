@@ -1,0 +1,42 @@
+export const topProducts = [
+  {
+    name: "Keyboard H32",
+    category: "Electronics",
+    price: "$269",
+    sold: "1,284",
+    profit: "$2442",
+    image: "/images/products/keyboard.png",
+  },
+  {
+    name: "Mouse M12 Pro",
+    category: "Electronics",
+    price: "$54",
+    sold: "934",
+    profit: "$1752",
+    image: "/images/products/mouse.png",
+  },
+  {
+    name: "Gaming Chair X5",
+    category: "Electronics",
+    price: "$140",
+    sold: "732",
+    profit: "$1471",
+    image: "/images/products/gaming-chair.png",
+  },
+  {
+    name: "Wireless Headset V7",
+    category: "Electronics",
+    price: "$45",
+    sold: "1120",
+    profit: "$1400",
+    image: "/images/products/headset.png",
+  },
+  {
+    name: "4K Monitor S24",
+    category: "Electronics",
+    price: "$350",
+    sold: "64",
+    profit: "$590",
+    image: "/images/products/monitor.png",
+  },
+];

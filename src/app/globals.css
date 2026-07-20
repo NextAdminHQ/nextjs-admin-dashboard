@@ -1,0 +1,597 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "tailwind-scrollbar";
+
+@import "./css/default.css";
+@import "./css/dark.css";
+
+@theme {
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  --color-primary-text: var(--primary-text);
+  --color-neutral-brand-color: var(--neutral-brand-color);
+
+  /* Text Color */
+  --color-text-50: var(--text-50);
+  --color-text-100: var(--text-100);
+  --color-text-200: var(--text-200);
+  --color-text-300: var(--text-300);
+
+  /* Context Color */
+  --color-error-500: var(--error-500);
+  --color-success-500: var(--success-500);
+  --color-warning-500: var(--warning-500);
+  --color-info-500: var(--info-500);
+
+  /* Title */
+  --color-title-50: var(--title-50);
+
+  /* White */
+  --color-white-100: var(--white-100);
+  --color-white-90: var(--white-90);
+  --color-white-80: var(--white-80);
+  --color-white-70: var(--white-70);
+  --color-white-60: var(--white-60);
+
+  /* Border Color */
+  --border-color-base-50: var(--border-color-base-50);
+  --border-color-base-100: var(--border-color-base-100);
+  --border-color-base-200: var(--border-color-base-200);
+  --border-color-base-300: var(--border-color-base-300);
+
+  --color-chart-line: var(--chart-line);
+
+  /* Foreground Colors */
+  --color-foreground-50: var(--foreground-50);
+  --color-foreground-100: var(--foreground-100);
+
+  /* Gray */
+  --color-foreground-soft-50: var(--foreground-soft-50);
+  --color-foreground-soft-100: var(--foreground-soft-100);
+  --color-foreground-soft-200: var(--foreground-soft-200);
+  --color-foreground-soft-300: var(--foreground-soft-300);
+  --color-foreground-soft-400: var(--foreground-soft-400);
+  --color-foreground-soft-500: var(--foreground-soft-500);
+
+  /* Background Colors */
+  --color-background-50: var(--background-50);
+  --color-background-100: var(--background-100);
+
+  /* Gray colors */
+  --color-background-soft-50: var(--background-soft-50);
+  --color-background-soft-100: var(--background-soft-100);
+  --color-background-soft-200: var(--background-soft-200);
+  --color-background-soft-300: var(--background-soft-300);
+  --color-background-soft-400: var(--background-soft-400);
+  --color-background-soft-500: var(--background-soft-500);
+
+  --color-background-success-600: var(--background-success-600);
+
+  /* ======== Button Color =========*/
+
+  /* Primary */
+  --color-button-primary-background: var(--button-primary-background);
+  --color-button-primary-hover-background: var(--button-primary-hover-background);
+  --color-button-primary-text: var(--button-primary-text);
+  --color-button-primary-focus-ring: var(--button-primary-focus-ring);
+
+  /* Outline */
+  --color-button-outline-background: var(--button-outline-background);
+  --color-button-outline-hover-background: var(--button-outline-hover-background);
+  --color-button-outline-border: var(--button-outline-border);
+  --color-button-outline-focus-ring: var(--button-outline-focus-ring);
+  --color-button-outline-text: var(--button-outline-text);
+  --color-button-outline-hover-text: var(--button-outline-hover-text);
+  --color-button-outline-disabled-background: var(--button-outline-disabled-background);
+  --color-button-outline-disabled-text: var(--button-outline-disabled-text);
+  --color-button-outline-disabled-border: var(--button-outline-disabled-border);
+
+  /* Disable */
+  --color-button-disabled-background: var(--button-disabled-background);
+  --color-button-disabled-border: var(--button-disabled-border);
+  --color-button-disabled-text: var(--button-disabled-text);
+
+  /* Error */
+  --color-button-error-background: var(--button-error-background);
+  --color-button-error-hover-background: var(--button-error-hover-background);
+  --color-button-error-border: var(--button-error-border);
+  --color-button-error-text: var(--button-error-text);
+  --color-button-error-focus-ring: var(--button-error-focus-ring);
+
+  /* Error Outline */
+  --color-button-error-outline-background: var(--button-error-outline-background);
+  --color-button-error-outline-hover-background: var(--button-error-outline-hover-background);
+  --color-button-error-outline-border: var(--button-error-outline-border);
+  --color-button-error-outline-focus-border: var(--button-error-outline-focus-border);
+  --color-button-error-outline-focus-ring: var(--button-error-outline-focus-ring);
+  --color-button-error-outline-text: var(--button-error-outline-text);
+  --color-button-error-outline-hover-text: var(--button-error-outline-hover-text);
+
+  /* Success */
+  --color-button-success-background: var(--button-success-background);
+  --color-button-success-hover-background: var(--button-success-hover-background);
+  --color-button-success-border: var(--button-success-border);
+  --color-button-success-text: var(--button-success-text);
+  --color-button-success-focus-ring: var(--button-success-focus-ring);
+
+  /* Success Outline */
+  --color-button-success-outline-background: var(--button-success-outline-background);
+  --color-button-success-outline-hover-background: var(--button-success-outline-hover-background);
+  --color-button-success-outline-border: var(--button-success-outline-border);
+  --color-button-success-outline-focus-border: var(--button-success-outline-focus-border);
+  --color-button-success-outline-text: var(--button-success-outline-text);
+  --color-button-success-outline-hover-text: var(--button-success-outline-hover-text);
+  --color-button-success-outline-focus-ring: var(--button-success-outline-focus-ring);
+
+  /* Ghost */
+  --color-button-ghost-text: var(--button-ghost-text);
+  --color-button-ghost-hover-text: var(--button-ghost-hover-text);
+  --color-button-ghost-hover-background: var(--button-ghost-hover-background);
+
+  /* Button Group Primary */
+  --color-button-group-primary-background: var(--button-group-primary-background);
+  --color-button-group-primary-hover-background: var(--button-group-primary-hover-background);
+  --color-button-group-primary-text: var(--button-group-primary-text);
+  --color-button-group-primary-hover-text: var(--button-group-primary-hover-text);
+
+  /* Button Group Secondary */
+  --color-button-group-secondary-background: var(--button-group-secondary-background);
+  --color-button-group-secondary-text: var(--button-group-secondary-text);
+
+  /* ======== Badge Color =========*/
+
+  /* Badge Neutral */
+  --color-badge-neutral-background: var(--badge-neutral-background);
+  --color-badge-neutral-text: var(--badge-neutral-text);
+  --color-badge-neutral-icon-color: var(--badge-neutral-icon-color);
+
+  /* Badge Primary */
+  --color-badge-primary-background: var(--badge-primary-background);
+  --color-badge-primary-text: var(--badge-primary-text);
+  --color-badge-primary-icon-color: var(--badge-primary-icon-color);
+
+  /* Badge Error */
+  --color-badge-error-background: var(--badge-error-background);
+  --color-badge-error-text: var(--badge-error-text);
+  --color-badge-error-icon-color: var(--badge-error-icon-color);
+
+  /* Badge Warning*/
+  --color-badge-warning-background: var(--badge-warning-background);
+  --color-badge-warning-text: var(--badge-warning-text);
+  --color-badge-warning-icon-color: var(--badge-warning-icon-color);
+
+  /* Badge Success*/
+  --color-badge-success-background: var(--badge-success-background);
+  --color-badge-success-text: var(--badge-success-text);
+  --color-badge-success-icon-color: var(--badge-success-icon-color);
+
+  /* Badge Cyan */
+  --color-badge-cyan-background: var(--badge-cyan-background);
+  --color-badge-cyan-text: var(--badge-cyan-text);
+  --color-badge-cyan-icon-color: var(--badge-cyan-icon-color);
+
+  /* Badge Sky */
+  --color-badge-sky-background: var(--badge-sky-background);
+  --color-badge-sky-text: var(--badge-sky-text);
+  --color-badge-sky-icon-color: var(--badge-sky-icon-color);
+
+  /* Badge Blue */
+  --color-badge-blue-background: var(--badge-blue-background);
+  --color-badge-blue-text: var(--badge-blue-text);
+  --color-badge-blue-icon-color: var(--badge-blue-icon-color);
+
+  /* Badge Violet */
+  --color-badge-violet-background: var(--badge-violet-background);
+  --color-badge-violet-text: var(--badge-violet-text);
+  --color-badge-violet-icon-color: var(--badge-violet-icon-color);
+
+  /* Badge Purple */
+  --color-badge-purple-background: var(--badge-purple-background);
+  --color-badge-purple-text: var(--badge-purple-text);
+  --color-badge-purple-icon-color: var(--badge-purple-icon-color);
+
+  /* Badge Pink */
+  --color-badge-pink-background: var(--badge-pink-background);
+  --color-badge-pink-text: var(--badge-pink-text);
+  --color-badge-pink-icon-color: var(--badge-pink-icon-color);
+
+  /* Badge Rose */
+  --color-badge-rose-background: var(--badge-rose-background);
+  --color-badge-rose-text: var(--badge-rose-text);
+  --color-badge-rose-icon-color: var(--badge-rose-icon-color);
+
+  /* Badge Orange */
+  --color-badge-orange-background: var(--badge-orange-background);
+  --color-badge-orange-text: var(--badge-orange-text);
+  --color-badge-orange-icon-color: var(--badge-orange-icon-color);
+
+  /* ======== Chart =========*/
+
+  --color-chart-tick: var(--color-text-50);
+  --color-chart-legend: var(--color-text-50);
+  --color-chart-grid: var(--border-color-base-100);
+
+  /* ======== Sidebar =========*/
+
+  /* Nav Item */
+  --color-sidebar-nav-default-background: var(--sidebar-nav-default-background);
+  --color-sidebar-nav-hover-background: var(--sidebar-nav-hover-background);
+  --color-sidebar-nav-secondary-hover-background: var(--sidebar-nav-secondary-hover-background);
+  --color-sidebar-nav-hover-text: var(--sidebar-nav-hover-text);
+  --color-sidebar-nav-active-text: var(--sidebar-nav-active-text);
+  --color-sidebar-nav-active-background: var(--sidebar-nav-active-background);
+  --color-sidebar-nav-focused-background: var(--sidebar-nav-focused-background);
+  --color-sidebar-nav-default-text: var(--sidebar-nav-default-text);
+  --color-sidebar-nav-icon: var(--sidebar-nav-icon);
+
+  /* Sidebar Badge */
+  --color-sidebar-badge-background: var(--sidebar-badge-background);
+  --color-sidebar-badge-text: var(--sidebar-badge-text);
+
+  /* Sidebar Footer */
+  --color-sidebar-footer-background: var(--sidebar-footer-background);
+  --color-sidebar-footer-title: var(--sidebar-footer-title);
+  --color-sidebar-footer-subtitle: var(--sidebar-footer-subtitle);
+  --color-sidebar-footer-button-text: var(--sidebar-footer-button-text);
+
+  /* ======== Card Color =========*/
+  --color-card-background-50: var(--card-background-50);
+  --color-card-background-100: var(--card-background-100);
+  --color-card-background-200: var(--card-background-200);
+  --color-card-background-300: var(--card-background-300);
+
+  /* ======== Alert Success Color =========*/
+  --color-alert-success-background: var(--alert-success-background);
+  --color-alert-success-icon-background: var(--alert-success-icon-background);
+  --color-alert-success-border: var(--alert-success-border);
+  --color-alert-success-close-icon: var(--alert-success-close-icon);
+  --color-alert-success-title: var(--alert-success-title);
+  --color-alert-success-description: var(--alert-success-description);
+  --color-alert-success-button-background: var(--alert-success-button-background);
+  --color-alert-success-button-hover-background: var(--alert-success-button-hover-background);
+  --color-alert-success-button-text: var(--alert-success-button-text);
+
+  /* ======== Alert Danger Color =========*/
+  --color-alert-danger-background: var(--alert-danger-background);
+  --color-alert-danger-icon-background: var(--alert-danger-icon-background);
+  --color-alert-danger-border: var(--alert-danger-border);
+  --color-alert-danger-close-icon: var(--alert-danger-close-icon);
+  --color-alert-danger-title: var(--alert-danger-title);
+  --color-alert-danger-description: var(--alert-danger-description);
+  --color-alert-danger-button-background: var(--alert-danger-button-background);
+  --color-alert-danger-button-hover-background: var(--alert-danger-button-hover-background);
+  --color-alert-danger-button-text: var(--alert-danger-button-text);
+
+  /* ======== Alert Info Color =========*/
+  --color-alert-info-background: var(--alert-info-background);
+  --color-alert-info-icon-background: var(--alert-info-icon-background);
+  --color-alert-info-border: var(--alert-info-border);
+  --color-alert-info-close-icon: var(--alert-info-close-icon);
+  --color-alert-info-title: var(--alert-info-title);
+  --color-alert-info-description: var(--alert-info-description);
+  --color-alert-info-button-background: var(--alert-info-button-background);
+  --color-alert-info-button-hover-background: var(--alert-info-button-hover-background);
+  --color-alert-info-button-text: var(--alert-info-button-text);
+
+  /* ======== Alert Warning Color =========*/
+  --color-alert-warning-background: var(--alert-warning-background);
+  --color-alert-warning-icon-background: var(--alert-warning-icon-background);
+  --color-alert-warning-border: var(--alert-warning-border);
+  --color-alert-warning-close-icon: var(--alert-warning-close-icon);
+  --color-alert-warning-title: var(--alert-warning-title);
+  --color-alert-warning-description: var(--alert-warning-description);
+  --color-alert-warning-button-background: var(--alert-warning-button-background);
+  --color-alert-warning-button-hover-background: var(--alert-warning-button-hover-background);
+  --color-alert-warning-button-text: var(--alert-warning-button-text);
+
+  /* ======== Alert Default Color =========*/
+  --color-alert-default-background: var(--alert-default-background);
+  --color-alert-default-icon-background: var(--alert-default-icon-background);
+  --color-alert-default-border: var(--alert-default-border);
+  --color-alert-default-close-icon: var(--alert-default-close-icon);
+  --color-alert-default-title: var(--alert-default-title);
+  --color-alert-default-description: var(--alert-default-description);
+  --color-alert-default-button-background: var(--alert-default-button-background);
+  --color-alert-default-button-hover-background: var(--alert-default-button-hover-background);
+  --color-alert-default-button-text: var(--alert-default-button-text);
+
+  /* ======== Input Color =========*/
+  --color-input-background: var(--input-background);
+  --color-input-label-text: var(--input-label-text);
+  --color-input-disabled-text: var(--input-disabled-text);
+  --color-input-disabled-background: var(--input-disabled-background);
+  --color-input-disabled-border: var(--input-disabled-border);
+  --color-input-placeholder-text: var(--input-placeholder-text);
+  --color-input-primary-focus-border: var(--input-primary-focus-border);
+  --color-input-error-focus-border: var(--input-error-focus-border);
+  --color-input-success-focus-border: var(--input-success-focus-border);
+  --color-input-error: var(--input-error);
+  --color-input-success: var(--input-success);
+
+  /* ======== Tab Color =========*/
+  --color-tab-background: var(--tab-background);
+  --color-tab-active-background: var(--tab-active-background);
+  --color-tab-secondary-active-background: var(--tab-secondary-active-background);
+
+  /* ======== Checkbox Color =========*/
+  --color-checkbox-background: var(--checkbox-background);
+  --color-checkbox-checked-border: var(--checkbox-checked-border);
+  --color-checkbox-checked-background: var(--checkbox-checked-background);
+  --color-checkbox-checked-icon-color: var(--checkbox-checked-icon-color);
+
+  /* ======== Scrollbar Color =========*/
+  --color-scrollbar-background: var(--scrollbar-background);
+
+  /* ======== Datepicker Color =========*/
+  --color-datepicker-background: var(--datepicker-background);
+  --color-datepicker-selected-background: var(--datepicker-selected-background);
+  --color-datepicker-selected-hover-background: var(--datepicker-selected-hover-background);
+
+  /* ======== Dropdowns Color =========*/
+  --color-dropdown-background: var(--dropdown-background);
+  --color-dropdown-hover-background: var(--dropdown-hover-background);
+  --color-dropdown-secondary-background: var(--dropdown-secondary-background);
+  --color-dropdown-divider: var(--dropdown-divider);
+
+  /* ======== Calendar Color =========*/
+  --color-calendar-primary-badge: var(--calendar-primary-badge);
+  --color-calendar-primary-background: var(--calendar-primary-background);
+  --color-calendar-success-badge: var(--calendar-success-badge);
+  --color-calendar-success-background: var(--calendar-success-background);
+  --color-calendar-warning-badge: var(--calendar-warning-badge);
+  --color-calendar-warning-background: var(--calendar-warning-background);
+  --color-calendar-danger-badge: var(--calendar-danger-badge);
+  --color-calendar-danger-background: var(--calendar-danger-background);
+  --color-calendar-info-badge: var(--calendar-info-badge);
+  --color-calendar-info-background: var(--calendar-info-background);
+  --color-calendar-text: var(--calendar-text);
+  --color-calendar-menu-text: var(--calendar-menu-text);
+  --color-calendar-dropdown-background: var(--calendar-dropdown-background);
+
+  /* ======== Pricing Table Color =========*/
+  --color-pricing-active-switcher-background: var(--pricing-active-switcher-background);
+  --color-pricing-active-card-background: var(--pricing-active-card-background);
+  --color-pricing-button-background: var(--pricing-button-background);
+  --color-pricing-icon-color: var(--pricing-icon-color);
+  --color-pricing-icon-background: var(--pricing-icon-background);
+
+  /* ======== FAQ's Color =========*/
+  --color-faq-primary-active-background: var(--faq-primary-active-background);
+  --color-faq-secondary-active-background: var(--faq-secondary-active-background);
+  --color-faq-secondary-active-border: var(--faq-secondary-active-border);
+  --color-faq-secondary-active-title: var(--faq-secondary-active-title);
+  --color-faq-secondary-active-text: var(--faq-secondary-active-text);
+
+  /* ======== Chat List Color =========*/
+  --color-chat-list-background-primary: var(--chat-list-background-primary);
+  --color-chat-list-background-primary-alt: var(--chat-list-background-primary-alt);
+  --color-chat-list-background-secondary: var(--chat-list-background-secondary);
+  --color-chat-list-background-secondary-alt: var(--chat-list-background-secondary-alt);
+
+  /* ======== Tooltip Color =========*/
+  --color-tooltip-text: var(--tooltip-text);
+  --color-tooltip-border: var(--tooltip-border);
+
+  /* ======== Popovers Color =========*/
+  --color-popover-title-background: var(--popover-title-background);
+  --color-popover-border: var(--popover-border);
+
+  /* ======== Skeleton Color =========*/
+  --color-skeleton-gradient-50: var(--skeleton-gradient-50);
+  --color-skeleton-gradient-100: var(--skeleton-gradient-100);
+  --color-skeleton-gradient-200: var(--skeleton-gradient-200);
+
+  /* ======== 404 Page Color =========*/
+  --color-404-background: var("--404-background");
+  --color-404-foreground: var("--404-foreground");
+
+  /* ======== Blogs Color =========*/
+  --color-blog-shape: var(--blog-shape);
+
+  /* ======== Modal Color =========*/
+  --color-modal-button-success-background: var(--modal-button-success-background);
+  --color-modal-button-info-background: var(--modal-button-info-background);
+  --color-modal-button-warning-background: var(--modal-button-warning-background);
+  --color-modal-button-error-background: var(--modal-button-error-background);
+
+  /* ======== Section Title Color =========*/
+  --color-section-title-badge: var(--section-title-badge);
+  --color-section-title-badge-background: var(--section-title-badge-background);
+
+  /* ======== Mobile Nav Menu Button Color =========*/
+  --color-mobile-nav-icon: var(--mobile-nav-icon);
+  --color-mobile-nav-background: var(--mobile-nav-background);
+  --color-mobile-nav-hover-background: var(--mobile-nav-hover-background);
+
+  /* ======== Footer Color =========*/
+  --color-footer-card-background: var(--footer-card-background);
+  --color-footer-background: var(--footer-background);
+
+  /* ======== Bento Color =========*/
+  --color-bento-card-background: var(--bento-card-background);
+  --color-bento-gradient-shade-1: var(--bento-gradient-shade-1);
+  --color-bento-gradient-shade-2: var(--bento-gradient-shade-2);
+  --color-bento-gradient-shade-3: var(--bento-gradient-shade-3);
+
+  /* ======== CTA Color =========*/
+  --color-cta-icon-background: var(--cta-icon-background);
+  --color-cta-background: var(--cta-background);
+
+  /* ======== Hero Color =========*/
+  --color-hero-background: var(--hero-background);
+  --color-hero-card-background: var(--hero-card-background);
+  --color-hero-card-2-background: var(--hero-card-2-background);
+  --color-hero-gradient-shade-1: var(--hero-gradient-shade-1);
+  --color-hero-gradient-shade-2: var(--hero-gradient-shade-2);
+
+  /* ======== Toggle Color =========*/
+  --color-toggle-default-background: var(--toggle-default-background);
+  --color-toggle-disabled-foreground: var(--toggle-disabled-foreground);
+  --color-toggle-disabled-background: var(--toggle-disabled-background);
+  --color-toggle-active-background: var(--toggle-active-background);
+
+  /* ======== Map Color =========*/
+  --color-map-fill: var(--map-fill);
+
+  /* ======== AI Sidebar Gradient Color =========*/
+  --color-ai-sidebar-primary-gradient-shade-1: var(--ai-sidebar-primary-gradient-shade-1);
+  --color-ai-sidebar-primary-gradient-shade-2: var(--ai-sidebar-primary-gradient-shade-2);
+  --color-ai-sidebar-secondary-gradient-shade-1: var(--ai-sidebar-secondary-gradient-shade-1);
+  --color-ai-sidebar-secondary-gradient-shade-2: var(--ai-sidebar-secondary-gradient-shade-2);
+
+  /* ======== AI Sidebar Menu Color =========*/
+  --color-ai-sidebar-hover-primary-shade-1: var(--ai-sidebar-hover-primary-shade-1);
+  --color-ai-sidebar-hover-primary-shade-2: var(--ai-sidebar-hover-primary-shade-2);
+  --color-ai-sidebar-hover-secondary-shade-1: var(--ai-sidebar-hover-secondary-shade-1);
+  --color-ai-sidebar-hover-secondary-shade-2: var(--ai-sidebar-hover-secondary-shade-2);
+  --color-ai-sidebar-hover-primary-background: var(--ai-sidebar-hover-primary-background);
+  --color-ai-sidebar-hover-secondary-background: var(--ai-sidebar-hover-secondary-background);
+  --color-ai-title-gradient-shade-1: var(--ai-title-gradient-shade-1);
+  --color-ai-title-gradient-shade-2: var(--ai-title-gradient-shade-2);
+  --color-ai-hero-blend-1: var(--ai-hero-blend-1);
+  --color-ai-hero-blend-2: var(--ai-hero-blend-2);
+  /* Shadows */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-3xl: var(--shadow-3xl);
+  --drop-shadow-theme-3xl: var(--drop-shadow-theme-3xl);
+  --popover-shadow: var(--popover-shadow);
+  --shadow-hero: var(--shadow-hero);
+
+  --animate-pulse-custom: var(--animate-pulse-custom);
+
+  /* ======================= Next Admin Dashboard ======================= */
+  /* backgrounds */
+  --color-background-gray-secondary_alt_2: var(--background-gray-secondary_alt_2);
+  --color-background-gray-secondary_alt: var(--background-gray-secondary_alt);
+  --color-background-gray-primary: var(--background-gray-primary);
+  --color-background-gray-secondary: var(--background-gray-secondary);
+  --color-background-gray-tertiary: var(--background-gray-tertiary);
+  --color-input-background: var(--input-background);
+  --color-card-surface-area: var(--card-surface-area);
+  --color-card-background: var(--card-background);
+  --color-sidebar-navigation-nav-item-nav-hover-background: var(
+    --sidebar-navigation-nav-item-nav-hover-background
+  );
+  --color-background-white-secondary: var(--background-white-secondary);
+  --color-button-primary-outline-background: var(--button-primary-outline-background);
+  --color-button-primary-outline-hover-background: var(--button-primary-outline-hover-background);
+  --color-dropdowns-background: var(--dropdowns-background);
+  --color-background-white-primary: var(--background-white-primary);
+  --color-tooltip-background: var(--tooltip-background);
+  --color-button-error-outline-background: var(--button-error-outline-background);
+  --color-badge-gray-background: var(--badge-gray-background);
+  --color-badge-gray-icon: var(--badge-gray-icon);
+  --color-background-gray-quaternary: var(--background-gray-quaternary);
+
+  /* general color */
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-base-white: var(--base-white);
+  --color-green-600: var(--green-600);
+  --color-red-600: var(--red-600);
+  --color-gray-100: var(--gray-100);
+  --color-purple-300: var(--purple-300);
+  --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
+  --color-blue-900: var(--blue-900);
+  --color-violet-300: var(--violet-300);
+  --color-pink-200: var(--pink-200);
+
+  /* text */
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-input-placeholder-text-color: var(--input-placeholder-text-color);
+  --color-button-primary-outline-text: var(--button-primary-outline-text);
+  --color-tooltip-text-color: var(--tooltip-text-color);
+  --color-button-error-outline-text: var(--button-error-outline-text);
+  --color-input-label-text-color: var(--input-label-text-color);
+  --color-text-disable: var(--text-disable);
+
+  /* icons */
+  --color-icon-tertiary: var(--icon-tertiary);
+  --color-icon-secondary: var(--icon-secondary);
+  --color-icon-primary: var(--icon-primary);
+
+  /* borders */
+  --color-input-border: var(--input-border);
+  --color-card-border: var(--card-border);
+  --color-card-surface-border: var(--card-surface-border);
+  --color-border-secondary-alt: var(--border-secondary-alt);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-button-primary-outline-stroke: var(--button-primary-outline-stroke);
+  --color-button-error-outline-stroke: var(--button-error-outline-stroke);
+
+  /* Shadow Overrides */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-3xl: var(--shadow-3xl);
+
+  --animate-marquee: marquee 35s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Marquee Scroller Wrapper */
+.scroller {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.scroller .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+.scroller:hover .scroller__inner {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroller .scroller__inner {
+    animation: none !important;
+    flex-wrap: wrap !important;
+    width: auto !important;
+  }
+}
