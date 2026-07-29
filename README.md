@@ -11,35 +11,64 @@
 - [Docs](https://nextadmin.co/docs)
 - [Components](https://nextadmin.co/components)
 
-## Quick start
+## Prerequisites
 
-You'll need Node.js installed. Then:
+Before you begin, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [PostgreSQL](https://www.postgresql.org/) (v14 or later)
+- A running PostgreSQL database instance
+
+## Getting Started
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/NextAdminHQ/nextjs-admin-dashboard.git
 cd nextjs-admin-dashboard
 ```
 
-Install dependencies — pick your poison:
+### 2. Install dependencies
 
 ```bash
 npm install
 # or: yarn / pnpm install / bun install
 ```
 
-Copy the example env file and fill in your credentials:
+### 3. Set up environment variables
+
+Copy the example environment file and update it with your own values:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then start the dev server:
+### 4. Set up the database
+
+This project uses [Prisma](https://www.prisma.io/) as its ORM. You **must** run the database migration to create the required tables before starting the application:
+
+```bash
+npm run db:migrate
+```
+
+Then generate the Prisma client:
+
+```bash
+npm run db:generate
+```
+
+> **Tip:** You can inspect your database using Prisma Studio:
+> ```bash
+> npm run db:studio
+> ```
+
+### 5. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and you're good.
+Open [http://localhost:3000](http://localhost:3000) in your browser and you're all set!
 
 ## Deploying
 
