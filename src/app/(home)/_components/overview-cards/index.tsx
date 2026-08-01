@@ -22,7 +22,7 @@ export async function OverviewCardsGroup({ weekly, latest }: KPIProps) {
     <div className="py-6 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
       <OverviewCard
         label="Last Update"
-        data={{ ...lastSeen, value: lastSeen.value }}
+        data={{ ...lastSeen, value: compactFormat(0) }}
         Icon={icons.Views}
       />
 
