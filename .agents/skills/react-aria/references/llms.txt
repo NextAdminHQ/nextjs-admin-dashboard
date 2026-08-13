@@ -1,0 +1,161 @@
+# React Aria Components Documentation
+
+> Plain-text markdown documentation for React Aria components.
+
+## Documentation
+- [Accessible Color Descriptions for Improved Color Pickers](blog/accessible-color-descriptions.md): Recently, we released a suite of color picker components in React Aria and React Spectrum. These components help users choose a color in various ways, including a 2D [ColorArea](../ColorArea.md), channel-based [ColorSlider](../ColorSlider.md), circular [ColorWheel](../ColorWheel.md), preset [ColorSwatchPicker](../ColorSwatchPicker.md), and a hex value [ColorField](../ColorField.md). You can compose these individual pieces together to create a full [ColorPicker](../ColorPicker.md) with whatever custom layout or configuration you need.
+- [Autocomplete](Autocomplete.md): An autocomplete allows users to search or filter a list of suggestions.
+- [Blog](blog/index.md): <PostList
+- [Breadcrumbs](Breadcrumbs.md): Breadcrumbs display a hierarchy of links to the current page or resource in an application.
+- [Building a Button Part 1: Press Events](blog/building-a-button-part-1.md): UI development is really hard. While building components has become much easier with modern UI frameworks like React, handling interactions across devices and supporting proper accessibility and internationalization is still extraordinarily difficult. Building UIs has a very [long tail](https://en.wikipedia.org/wiki/Long_tail): it's fairly easy to get the basics for a given component working, but there are many details to consider, and these add up to a majority of the work.
+- [Building a Button Part 2: Hover Interactions](blog/building-a-button-part-2.md): This is the second post in our three part series on building a button component. In the [first post](building-a-button-part-1.md), we covered how React Spectrum and React Aria implement adaptive press events across mouse, touch, keyboard, and screen readers. Today, we'll cover hover interactions.
+- [Building a Button Part 3: Keyboard Focus Behavior](blog/building-a-button-part-3.md): This is the last post in our three part series on building a button component. In the [first post](building-a-button-part-1.md), we covered how React Spectrum and React Aria implement adaptive press events across mouse, touch, keyboard, and screen readers. In the [second post](building-a-button-part-2.md), we covered hover interactions. Today, we'll cover keyboard focus behavior.
+- [Button](Button.md): A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
+- [Calendar](Calendar.md): A calendar displays one or more date grids and allows users to select a single date.
+- [Calendar](internationalized/date/Calendar.md): Calendars display a grid of days in one or more months and allow users to select a single date.
+- [CalendarDate](internationalized/date/CalendarDate.md): A CalendarDate represents a date without any time components in a specific calendar system.
+- [CalendarDateTime](internationalized/date/CalendarDateTime.md): A CalendarDateTime represents a date and time without a time zone, in a specific calendar system.
+- [Checkbox](Checkbox.md): A checkbox allows a user to select an item, with support for validation and help text.
+- [CheckboxGroup](CheckboxGroup.md): A CheckboxGroup allows users to select one or more items from a list of choices.
+- [Collections](collections.md): Many components display a collection of items, and provide functionality such as keyboard navigation, and selection. Learn how to load and render collections using React Aria's compositional API.
+- [ColorArea](ColorArea.md): A color area allows users to adjust two channels of an RGB, HSL or HSB color value against a
+- [ColorField](ColorField.md): A color field allows users to edit a hex color or individual color channel value.
+- [ColorPicker](ColorPicker.md): A ColorPicker synchronizes a color value between multiple React Aria color components.
+- [ColorSlider](ColorSlider.md): A color slider allows users to adjust an individual channel of a color value.
+- [ColorSwatch](ColorSwatch.md): A ColorSwatch displays a preview of a selected color.
+- [ColorSwatchPicker](ColorSwatchPicker.md): A ColorSwatchPicker displays a list of color swatches and allows a user to select one of them.
+- [ColorWheel](ColorWheel.md): A color wheel allows users to adjust the hue of an HSL or HSB color value on a circular track.
+- [ComboBox](ComboBox.md): A combo box combines a text input with a listbox, allowing users to filter a list of options to
+- [Creating a pointer-friendly submenu experience](blog/creating-a-pointer-friendly-submenu-experience.md): We are excited to announce support of submenus in the latest release of [React Spectrum](s2:Menu.md#submenus) and [React Aria](../Menu.md#submenus)! In the process of adding this feature, we found ourselves solving some unique challenges while working to make submenus user-friendly and accessible across an array of devices and input types. In doing so, we wanted to share our thought process in solving one of the challenges we faced along the way.
+- [Creating an accessible autocomplete experience](blog/building-a-combobox.md): After many months of research, development, and extensive testing across browsers, devices, and assistive technology, we're excited to announce that the React Spectrum [ComboBox](s2:ComboBox.md) component and React Aria [useComboBox](../ComboBox/useComboBox.md) hook are now available! We've focused on the following areas to help you build quality autocomplete experiences.
+- [Customization](customization.md): React Aria is built using a flexible and composable API. Learn how to use contexts and slots to create custom component patterns, or mix and match with the lower level Hook-based API for even more control over rendering and behavior.
+- [Date and Time Pickers for All](blog/date-and-time-pickers-for-all.md): We are very excited to announce the release of the [React Aria](../DateField/useDateField.md) and [React Spectrum](s2:DatePicker.md) date and time picker components! This includes a full suite of fully featured components and hooks including calendars, date and time fields, and range pickers, all with a focus on internationalization and accessibility. It also includes [@internationalized/date](../internationalized/date/.md), a brand new framework-agnostic library for locale-aware date and time manipulation.
+- [DateField](DateField.md): A date field allows users to enter and edit date and time values using a keyboard.
+- [DateFormatter](internationalized/date/DateFormatter.md): A wrapper around Intl.DateTimeFormat that fixes various browser bugs, and polyfills new features.
+- [DatePicker](DatePicker.md): A date picker combines a DateField and a Calendar popover to allow users to enter or select a
+- [DateRangePicker](DateRangePicker.md): DateRangePickers combine two DateFields and a RangeCalendar popover to allow users
+- [Disclosure](Disclosure.md): A disclosure is a collapsible section of content. It is composed of a a header with a heading and
+- [DisclosureGroup](DisclosureGroup.md): A DisclosureGroup is a grouping of related disclosures, sometimes called an accordion.
+- [Drag and Drop](dnd.md): React Aria collection components support drag and drop with mouse and touch interactions, and full keyboard and screen reader accessibility. Learn how to provide drag data and handle drop events to move, insert, or reorder items.
+- [DropZone](DropZone.md): A drop zone is an area into which one or multiple objects can be dragged and dropped.
+- [Emoji Picker](examples/emoji-picker.md): An emoji picker with autocomplete, virtualized scrolling, and arrow key navigation.
+- [Examples](examples/index.md): <ExampleList pages={props.pages}/>
+- [FileTrigger](FileTrigger.md): A FileTrigger allows a user to access the file system with any pressable React Aria or React
+- [Filterable CRUD Table](examples/crud.md): A plant tracking app with CRUD operations, search, filters, table column resizing, form validation, and more.
+- [FocusRing](FocusRing.md): A utility component that applies a CSS class when an element has keyboard focus.
+- [FocusScope](FocusScope.md): A FocusScope manages focus for its descendants. It supports containing focus inside
+- [Form](Form.md): A form is a group of inputs that allows users to submit data to a server,
+- [Forms](forms.md): Learn how to integrate with HTML forms, validate and submit data, and use React Aria with form libraries.
+- [Framework setup](frameworks.md): Learn how to integrate React Aria with your framework.
+- [Gesture Driven Sheet](examples/sheet.md): An iOS-style gesture driven sheet built with React Aria Components, [Motion](https://motion.dev/), and [Tailwind CSS](https://tailwindcss.com/).
+- [Getting started](getting-started.md): How to install React Aria and build your first component.
+- [GridList](GridList.md): A grid list displays a list of interactive items, with support for keyboard navigation,
+- [Group](Group.md): A group represents a set of related UI controls, and supports interactive states for styling.
+- [How we internationalized our number field](blog/how-we-internationalized-our-numberfield.md): Number fields are commonly used form components, but are frequently not a great user experience. They often lack support for advanced formatting, such as currency and unit values, and do not provide a localized experience for users around the world. In this post, we'll discuss how we approached building our number field component with support for formatting and internationalization in mind.
+- [I18nProvider](I18nProvider.md): Provides the locale for the application to all child components.
+- [Improving Internationalization Support in Our Date and Time Components](blog/rtl-date-time.md): Internationalization is a core feature of our Date and Time components. We support 13 different calendar systems as well as locale-specific formatting, number systems, and 12 and 24 hour time. However, we identified an issue in our support for several right-to-left (RTL) languages where in some, the format of the date and time fields was incorrect. While investigating this bug, we faced several challenges in ensuring accurate date and time representation in RTL languages and implemented various strategies that we'd like to share.
+- [index](index.md)
+- [Internationalized Date](internationalized/date/index.md): The `@internationalized/date` package provides objects and functions for representing and manipulating dates and times in a locale-aware manner.
+- [Internationalized Number](internationalized/number/index.md): The `@internationalized/number` package provides utilities for formatting and parsing numbers across locales and numbering systems.
+- [Introducing React Spectrum](blog/introducing-react-spectrum.md): We're excited to announce [React Spectrum](https://react-spectrum.adobe.com/), a collection of libraries and tools that help you build adaptive, accessible, and robust user experiences. [Check it out on Github](https://github.com/adobe/react-spectrum)! React Spectrum includes three libraries:
+- [iOS List View](examples/ios-list.md): A re-creation of the iOS List View built with React Aria Components, [Motion](https://motion.dev/), and [Tailwind CSS](https://tailwindcss.com/) with support for swipe gestures, layout animations, and multiple selection mode.
+- [Kanban Board](examples/kanban.md): A kanban board with accessible drag and drop, styled with Tailwind CSS.
+- [Link](Link.md): A link allows a user to navigate to another page or resource within a web page
+- [ListBox](ListBox.md): A listbox displays a list of options and allows a user to select one or more of them.
+- [Menu](Menu.md): A menu displays a list of actions or options that a user can choose.
+- [mergeProps](mergeProps.md): Merges multiple props objects together. Event handlers are chained,
+- [Meter](Meter.md): A meter represents a quantity within a known range, or a fractional value.
+- [Modal](Modal.md): A modal is an overlay element which blocks interaction with elements outside it.
+- [NumberField](NumberField.md): A number field allows a user to enter a number, and increment or decrement the value using
+- [NumberFormatter](internationalized/number/NumberFormatter.md): A wrapper around Intl.NumberFormat providing additional options, polyfills, and caching for
+- [NumberParser](internationalized/number/NumberParser.md): A NumberParser can be used to perform locale-aware parsing of numbers from Unicode strings,
+- [Photo Library](examples/photos.md): A photo library app with virtualized scrolling, view transitions, adjustable waterfall layout, folder tree, search, multi-selection, and accessible drag and drop.
+- [Popover](Popover.md): A popover is an overlay element positioned relative to a trigger.
+- [PortalProvider](PortalProvider.md): Sets the portal container for all overlay elements rendered by its children.
+- [ProgressBar](ProgressBar.md): Progress bars show either determinate or indeterminate progress of an operation
+- [Quality](quality.md): React Aria is built around three core principles: **Accessibility**, **Internationalization**, and **Interactions**. Learn how to apply these tools to build high quality UIs that work for everyone, everywhere, and on every device.
+- [RadioGroup](RadioGroup.md): A radio group allows a user to select a single item from a list of mutually exclusive options.
+- [RangeCalendar](RangeCalendar.md): RangeCalendars display a grid of days in one or more months and allow users to select a
+- [Releases](releases/index.md): <PostList
+- [Ripple Button](examples/ripple-button.md): A [Button](../Button.md) with an animated ripple effect styled with [Tailwind CSS](https://tailwindcss.com/).
+- [SearchField](SearchField.md): A search field allows a user to enter and clear a search query.
+- [Select](Select.md): A select displays a collapsible list of options and allows a user to select one of them.
+- [Selection](selection.md): Many collection components support selecting items by clicking or tapping them, or by using the keyboard. Learn how to handle selection events, how to control selection programmatically, and the data structures used to represent a selection.
+- [Separator](Separator.md): A separator is a visual divider between two groups of content, e.g. groups of menu items or
+- [Slider](Slider.md): A slider allows a user to select one or more values within a range.
+- [SSRProvider](SSRProvider.md): When using SSR with React Aria in React 16 or 17, applications must be wrapped in an SSRProvider.
+- [Styling](styling.md): React Aria does not include any styles by default. Learn how to build custom designs to fit your application or design system using any styling solution.
+- [Swipeable Tabs](examples/swipeable-tabs.md): A swipeable [Tabs](../Tabs.md) component with [CSS scroll snapping](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_snap), [scroll-driven animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations), and [anchor positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning).
+- [Switch](Switch.md): A switch allows a user to turn a setting on or off.
+- [Table](Table.md): A table displays data in rows and columns and enables a user to navigate its contents via
+- [Tabs](Tabs.md): Tabs organize content into multiple sections and allow users to navigate between them.
+- [TagGroup](TagGroup.md): A tag group is a focusable list of labels, categories, keywords, filters, or other items, with
+- [Taming the dragon: Accessible drag and drop](blog/drag-and-drop.md): We are excited to announce the release of drag and drop support in [React Aria](../dnd.md) and [React Spectrum](s2:v3/dnd.md)! This includes a suite of hooks for implementing drag and drop interactions, with support for both mouse and touch, as well as full parity for keyboard and screen reader input. We've designed these hooks with the following features in mind:
+- [Testing](testing.md): Learn how to test components and applications built with React Aria using test utilities to simulate common user interactions.
+- [Testing CheckboxGroup](CheckboxGroup/testing.md)
+- [Testing ComboBox](ComboBox/testing.md)
+- [Testing GridList](GridList/testing.md)
+- [Testing ListBox](ListBox/testing.md)
+- [Testing Menu](Menu/testing.md)
+- [Testing Modal](Modal/testing.md)
+- [Testing Popover](Popover/testing.md)
+- [Testing RadioGroup](RadioGroup/testing.md)
+- [Testing Select](Select/testing.md)
+- [Testing Table](Table/testing.md)
+- [Testing Tabs](Tabs/testing.md)
+- [Testing Tree](Tree/testing.md)
+- [TextField](TextField.md): A text field allows a user to enter a plain text value with a keyboard.
+- [Time](internationalized/date/Time.md): A Time represents a clock time without any date components.
+- [TimeField](TimeField.md): TimeFields allow users to enter and edit time values using a keyboard.
+- [Toast](Toast.md): {docs.exports.UNSTABLE_Toast.description}
+- [ToggleButton](ToggleButton.md): A toggle button allows a user to toggle a selection on or off, for example switching between two
+- [ToggleButtonGroup](ToggleButtonGroup.md): A toggle button group allows a user to toggle multiple options, with single or multiple
+- [Toolbar](Toolbar.md): A toolbar is a container for a set of interactive controls, such as buttons, dropdown menus, or
+- [Tooltip](Tooltip.md): A tooltip displays a description of an element on hover or focus.
+- [Tree](Tree.md): A tree provides users with a way to navigate nested hierarchical information, with support for
+- [useClipboard](useClipboard.md): Handles clipboard interactions for a focusable element. Supports items of multiple
+- [useCollator](useCollator.md): Provides localized string collation for the current locale. Automatically updates when the locale
+- [useDateFormatter](useDateFormatter.md): Provides localized date formatting for the current locale. Automatically updates when the locale
+- [useDrag](useDrag.md): Handles drag interactions for an element, with support for traditional mouse and touch
+- [useDrop](useDrop.md): Handles drop interactions for an element, with support for traditional mouse and touch
+- [useField](useField.md): Provides the accessibility implementation for input fields. Fields accept user input, gain
+- [useFilter](useFilter.md): Provides localized string search functionality that is useful for filtering or matching items in
+- [useFocus](useFocus.md): Handles focus events for the immediate target.
+- [useFocusRing](useFocusRing.md): Determines whether a focus ring should be shown to indicate keyboard focus.
+- [useFocusVisible](useFocusVisible.md): Manages focus visible state for the page, and subscribes individual components for updates.
+- [useFocusWithin](useFocusWithin.md): Handles focus events for the target and its descendants.
+- [useHover](useHover.md): Handles pointer hover interactions for an element. Normalizes behavior
+- [useId](useId.md): If a default is not provided, generate an id.
+- [useIsSSR](useIsSSR.md): Returns whether the component is currently being server side rendered or
+- [useKeyboard](useKeyboard.md): Handles keyboard interactions for a focusable element.
+- [useLabel](useLabel.md): Provides the accessibility implementation for labels and their associated elements.
+- [useLandmark](useLandmark.md): Provides landmark navigation in an application. Call this with a role and label to register a
+- [useLocale](useLocale.md): Returns the current locale and layout direction.
+- [useLongPress](useLongPress.md): Handles long press interactions across mouse and touch devices. Supports a customizable time
+- [useMove](useMove.md): Handles move interactions across mouse, touch, and keyboard, including dragging with
+- [useNumberFormatter](useNumberFormatter.md): Provides localized number formatting for the current locale. Automatically updates when the
+- [useObjectRef](useObjectRef.md): Offers an object ref for a given callback ref or an object ref. Especially
+- [usePress](usePress.md): Handles press interactions across mouse, touch, keyboard, and screen readers.
+- [v1.0.0](releases/v1-0-0.md): Welcome to the last release of the year! After a year of work, we are happy to announce the GA release of React Aria Components 🎉 This component library, built on top of our React Aria hooks, provides a simpler way to craft world-class accessible components with custom styles. See our new React Aria [landing page](../.md) for all of the details, including interactive examples. To help get you started even faster, we now also have a downloadable Storybook [starter kit](../getting-started.md#storybook-starter-kits) including an example CSS theme.
+- [v1.1.0](releases/v1-1-0.md): Welcome to the first release of the new year! We have had a great response to our GA release of React Aria Components. If you haven't tried it out, visit [our docs](../.md) to explore the examples. To help get you started, we have also created a few starter kits. These downloadable [starter kits](../getting-started.md#storybook-starter-kits) contain beautifully styled implementations of every available component and includes a working storybook. Available in vanilla and Tailwind CSS!
+- [v1.10.0](releases/v1-10-0.md): Drop everything! Drag and drop support in React Aria Tree has been released! 🫳🎤 This supports moving items within a tree or between collection components, with full keyboard and screen reader accessibility. It's interoperable with our existing drag and drop support in components like Table and GridList, and with third party apps via native HTML APIs. Check out our [previous blog post](../blog/drag-and-drop.md) on drag and drop to learn about the interactions, and our new [Tree drag and drop documentation](../Tree.md#drag-and-drop).
+- [v1.11.0](releases/v1-11-0.md): Happy summer! This release adds support for async loading and infinite scrolling, improves form integration and drag and drop interactions, and adds support for additional DOM events and attributes.
+- [v1.12.0](releases/v1-12-0.md): Summer might be winding down but we're definitely not! Back with another release, we have added support for origin-aware overlay animations in [Popover](../Popover.md) and [Tooltip](../Tooltip.md), which enable scale transitions to appear as if they are emerging from the trigger. We have also advanced Autocomplete to RC, and added support for filtering GridList, Table, and TagGroup (virtual focus support is still to come). Section support in [GridList](../GridList.md#sections) has also been added as an alpha, laying the groundwork for similar support in Tree and Table.
+- [v1.13.0](releases/v1-13-0.md): Happy fall! This release brings some long-awaited features, including multi-selection in [React Aria Select](../Select.md#value) and enhanced animation support across our components. For example, [Disclosure](../Disclosure.md) now provides CSS variables to easily animate expanding and collapsing. We’ve also added a new `<SelectionIndicator>` component that can be used within components that support single selection such as [Tabs](../Tabs.md) and [ToggleButtonGroup](../ToggleButtonGroup.md#animation) to animate selection changes. In addition, we have significantly improved the behavior of scrolling modals on iOS 26. Lastly, `onAction` can now be used on a [`ComboBoxItem`](../ComboBox.md#item-actions), enabling you to add a “create” option.
+- [v1.14.0](releases/v1-14-0.md): Wrapping up this year with a bang and our most exciting release yet! Meet our new website. We heard your feedback and have reimagined the docs to be more concise and make greater use of interactive examples using prop controls. Code examples have been refined to highlight what matters most, and real-world app examples show how all these pieces come together. The new search experience includes image previews and category and library filtering, helping you find what you need faster. There are more component examples, new guides, AI-friendly page markdown, and MCP servers, all wrapped up in a fresh new look. 🎁 Explore the updated experience of [React Aria](react-aria:.md).
+- [v1.15.0](releases/v1-15-0.md): New year, new release, and the shine hasn’t worn off from our new documentation website: we’ve already added new [Agent Skills](../ai.md#agent-skills) and improved the search experience 😍. This month’s release includes a big update to our compatibility, with DOM customization options via a [new `render` prop](../customization.md#dom-elements) for React Aria Components. This feature will help with cases such as rendering Router Link components, or for use with animation libraries. We have also fixed our most upvoted issue: we now constrain dates on blur instead of as you type, allowing more input flexibility and greatly improving the user experience of our date fields.
+- [v1.16.0](releases/v1-16-0.md): In today’s release, we are excited to announce support for [multi-select ComboBox](../ComboBox.md#taggroup), one of our most requested features! You can now use `selectionMode="multiple"`
+- [v1.17.0](releases/v1-17-0.md): This release brings support for several long-awaited features, including support for [expandable rows](../Table.md#expandable-rows) in Table, and window scrolling in [Virtualizer](../Virtualizer.md). Expandable rows enable macOS Finder-like file trees by designating a `treeColumn` and rendering a chevron button within its cells. Window scrolling in Virtualizer enables virtualized collections to automatically scroll with the rest of the page. We've also added support for horizontally virtualized GridLists and ListBoxes! Finally, we significantly improved how we manage our dependencies – see below for details.
+- [v1.18.0](releases/v1-18-0.md): This release packs in several new features! [Calendar](../Calendar.md) now supports multiple date selection, as well as new [CalendarHeading](../Calendar.md#calendarheading), [CalendarMonthPicker](../Calendar.md#month-and-year-pickers), and [CalendarYearPicker](../Calendar.md#month-and-year-pickers) components that allow the user to jump to a different month or year. [RangeCalendar](../RangeCalendar.md#validation) now supports determining the available dates based on the first date a user selects. We have also added a [TableFooter](../Table.md#content) component, description and error messages for [Checkbox](../Checkbox.md#forms), [Radio](../RadioGroup.md), and [Switch](../Switch.md#forms), and a [SliderFill](../Slider.md#value-scale) component that simplifies the process of styling the fill portion in a Slider.
+- [v1.2.0](releases/v1-2-0.md): We have a huge release today! Its a GA bonanza 🎊 – [Submenu](../Menu.md#submenus), [unavailable menu items](s2:v3/Menu.md#unavailable-items), [DropZone](../DropZone.md) and [FileTrigger](../FileTrigger.md) components are now in GA. Check our [blog post](react-aria:blog/creating-a-pointer-friendly-submenu-experience.md) on the intricacies of the submenu interactions and how we handled them.
+- [v1.3.0](releases/v1-3-0.md): For this summer release, we have been busy working on improving virtualization in many of our Spectrum components including TableView, ListView, and ListBox. We have significantly reduced the complexity of our implementation, resulting in smaller bundle size, better performance, and improved stability. In our testing, this resulted in 14x faster per-frame render times on large tables due to better reuse of DOM nodes as you scroll. We are also working on bringing virtualization support to React Aria Components, which is available as an unstable API in this version.
+- [v1.4.0](releases/v1-4-0.md): Happy fall! 🍁 We're excited to announce that our color picker components are now generally available! This includes [ColorPicker](../ColorPicker.md), [ColorArea](../ColorArea.md), [ColorField](../ColorField.md), [ColorSlider](../ColorSlider.md), [ColorSwatch](../ColorSwatch.md), [ColorSwatchPicker](../ColorSwatchPicker.md), and [ColorWheel](../ColorWheel.md). These enable you to build fully customizable color pickers, including accessible color descriptions for screen reader support.
+- [v1.5.0](releases/v1-5-0.md): We're excited to announce that our Disclosure components are now generally available! This includes [Disclosure](../Disclosure.md) and [DisclosureGroup](../DisclosureGroup.md) in React Aria. These components now also use the `hidden="until-found"` API currently supported in Chrome to enable searching collapsed content with ctrl + F.
+- [v1.6.0](releases/v1-6-0.md): Happy New Year! Our first release of 2025 includes a new [firstDayOfWeek](../Calendar.md#display-options) prop for our calendar and date picker components, support for [CSS transitions](../styling.md#animation) in our overlay components, a new [Autocomplete](../Autocomplete.md) component in alpha, and a new [React Aria test utils](../testing.md#react-aria-test-utils) package.
+- [v1.7.0](releases/v1-7-0.md): Buckle in because this is a big one! In this React Aria release, we’re excited to announce three new components: [Toast](../Toast.md), [Tree](../Tree.md), and [Virtualizer](../Virtualizer.md). In addition, we have improved [Autocomplete](../Autocomplete.md) to enable UI patterns like [Searchable Menus](../Menu.md#autocomplete), [Searchable Selects](../Select.md#autocomplete), and [Command Palettes](../Autocomplete.md), added support for custom [Menu](../Menu.md#custom-trigger), [Popover](../Popover.md#custom-trigger), and [Tooltip](../Tooltip.md#custom-trigger) triggers, introduced `colSpan` support in Table, and upgraded to Tailwind CSS v4. Last but not least, we have a major refactor of [usePress](../usePress.md), which fixes many longstanding issues and improves compatibility with third party libraries.
+- [v1.8.0](releases/v1-8-0.md): In today's release, we are excited to announce custom calendar support in React Aria Components! This feature allows you to create your own calendar that implements custom business logic, such as a [4-5-4 fiscal calendar](https://nrf.com/resources/4-5-4-calendar), either by extending an existing Calendar implementation or building from scratch. Please see the [React Aria docs](../Calendar.md#custom-calendar-systems) for an example implementation. A special shout out to [@ToyWalrus](https://github.com/ToyWalrus) for all the hard work that went into this contribution!
+- [v1.9.0](releases/v1-9-0.md): This release includes a range of enhancements and fixes such as improved keyboard accessibility in TagGroup and increased stability for dynamic table updates. It also brings support for React 19's ref cleanup behavior, performance improvements for collection updates in React transitions and pressable elements, and TypeScript updates including backwards compatibility with older TypeScript and `@types/react` versions.
+- [Virtualizer](Virtualizer.md): A Virtualizer renders a scrollable collection of data using customizable layouts.
+- [VisuallyHidden](VisuallyHidden.md): VisuallyHidden hides its children visually, while keeping content visible
+- [Working with AI](ai.md): Learn how to use the React Aria MCP Server, Agent Skills, and more to help you build with AI.
+- [ZonedDateTime](internationalized/date/ZonedDateTime.md): A ZonedDateTime represents a date and time in a specific time zone and calendar system.

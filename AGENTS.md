@@ -2,14 +2,28 @@
 
 > Next.js admin dashboard template · Tailwind CSS · React Aria · Recharts · TanStack Table
 
-- [Next.js](#nextjs)
-- [Conventions](#conventions)
-- [Styling](#styling)
-- [Components & icons](#components--icons)
-- [Data fetching & state](#data-fetching--state)
-- [Forms, charts, tables](#forms-charts-tables)
-- [Don'ts](#donts)
-- [Verification](#verification)
+## Project structure
+
+```
+src/
+  app/
+    (with-layouts)/   # route groups sharing a layout
+      (dashboard)/ (forms)/ (pages)/ (support)/   # grouped routes
+      calendar/ charts/ tables/ ui-elements/        # top-level feature routes
+      manage-team/ profile/ task/                   # misc top-level routes
+    (without-layouts)/                              # routes without the shell
+    css/                                             # global + calendar overrides
+    globals.css  layout.tsx  providers.tsx
+  components/
+    tailgrids/core/                                  # design-system primitives (Button, Card, …)
+    common/                                          # shared app chrome (sidebar, header, previews)
+  services/api/                                      # one folder per feature (ai,    analytics, crm, …)
+  hooks/                                             # cross-cutting client hooks
+  utils/                                             # cn, formatters, icon map
+  types/                                             # ambient module declarations
+```
+
+Drill into a specific folder to discover its files — naming is kebab-case for files, PascalCase for component exports.
 
 ## Next.js
 
@@ -21,17 +35,25 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Prefer Client Components but keep `layout.tsx` SSR; add `"use client"` when necessary.
 - File naming: kebab-case for files, PascalCase for component exports.
 
-## Styling
+## Styling rules
 
-- Never hardcode hex colors — use semantic tokens (`text-text-*`, `bg-card-*`, `border-*`, etc.). Look up the full list in `src/app/css/default.css` (light) and `src/app/css/dark.css` (dark).
-- Keep both theme files aligned; map via `globals.css`.
+- Use **Tailwind CSS** with the project's **semantic tokens** (`text-text-*`, `bg-card-*`, `border-*`, etc.).
+- Never hardcode hex colors — always reference tokens from `src/app/globals.css`.
+- Do NOT create new CSS utility classes.
 - FullCalendar overrides belong in `src/app/css/calendars.css`.
 
-## Components & icons
+## Component rules
 
-- Prefer primitives in `src/components/tailgrids/core/` over raw implementations.
-- Use `react-aria` skill for component architecture.
-- Icons: `@tailgrids/icons` for standard controls, feature-local `icons.tsx` otherwise. Never generate SVG icons — use letters as placeholders.
+- **Modular sub-components**: Never place all code into a single monolithic file. Split complex UI into focused, single-responsibility sub-components in separate files (e.g. `header.tsx`, `filter-bar.tsx`, `card-item.tsx`).
+- **Follow React composition best practices**:
+    - **Single Responsibility**: Keep sub-components focused on one concern—separate container/state logic from presentational rendering.
+    - **Composition over prop drilling**: Prefer passing `children` or using compound component patterns over passing deeply nested props through intermediate layers.
+    - **Avoid inline render helpers**: Extract repeated or section-level JSX into dedicated sub-component files rather than helper functions like `renderHeader()` inside `index.tsx`.
+    - **Typed prop contracts**: Define explicit, strongly typed interfaces for each sub-component in `types.ts` or co-located with the sub-component.
+- Prefer primitives from `src/components/tailgrids/core/` (Button, Card, Badge, Select, Tabs, Dialog, etc.) over raw HTML or third-party equivalents.
+- Use `react-aria` skill for accessible component architecture when building interactive primitives.
+- Icons: use `@tailgrids/icons` for standard controls. For feature-local icons, place them in `icons.tsx`. Never generate SVG icons — use letter placeholders if no icon is available.
+- Add `"use client"` directive when the component uses hooks, event handlers, or browser APIs.
 
 ## Data fetching & state
 
@@ -46,7 +68,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Don'ts
 
-- Don't install new packages without asking.
+- Don't install new packages without asking the user.
 - Don't overwrite primitives in `src/components/tailgrids/core/` without asking.
 - Don't create new CSS utility classes — use existing tokens.
 - Don't place pages outside the `(with-layouts)` route group unless intentional.
