@@ -1,5 +1,4 @@
-# NextAdmin - AI-First Next.js Admin Dashboard Template and Components
-
+# NextAdmin - AI-First Next.js Admin Dashboard Template
 **NextAdmin** is a free, open-source Next.js admin dashboard with essential UI components, blocks, pages, and multiple dashboards. Version 2.0 also ships AI rules and context files, so Claude Code, Cursor, Codex, and any other agent can read your project and build features that match your patterns instead of inventing their own.
 
 [![nextjs admin template](nextadmin-v2.png)](https://nextadmin.co/)
