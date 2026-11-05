@@ -1,4 +1,5 @@
 # NextAdmin - AI-First Next.js Admin Dashboard Template
+
 **NextAdmin** is a free, open-source Next.js admin dashboard with essential UI components, blocks, pages, and multiple dashboards. Version 2.0 also ships AI rules and context files, so Claude Code, Cursor, Codex, and any other agent can read your project and build features that match your patterns instead of inventing their own.
 
 [![nextjs admin template](nextadmin-v2.png)](https://nextadmin.co/)
@@ -96,6 +97,16 @@ The free version covers most of what you need to get a dashboard running. If you
 Issues and pull requests are welcome. If something is broken or missing, open an issue and we'll take a look.
 
 ## Update Logs
+
+### Version 2.0.1 - [Nov 05, 2026]
+
+- Updated Next.js, React, and other dependencies to their latest versions.
+- Installed `tw-animate-css` and added micro animations to UI primitives.
+- Added an `AnimatedHeight` common component for smooth height transitions.
+- Improved drag-and-drop feedback in the kanban and list task pages.
+- Updated the line chart tooltip cursor style across all line charts.
+- Updated the invoices print style to match the preview.
+- Improved table filtration using `@tanstack/react-table`.
 
 ### Version 2.0.0 - [July 20, 2026]
 
