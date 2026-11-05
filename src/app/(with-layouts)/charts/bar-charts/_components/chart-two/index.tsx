@@ -11,7 +11,7 @@ export default function BarChartTwo() {
     <Card className="p-0">
       {/* Header Container */}
       <div className="border-b border-card-border px-6 py-4">
-        <h3 className="text-base font-medium text-text-primary">Bar Chart 2</h3>
+        <h2 className="text-base font-medium text-text-primary">Bar Chart 2</h2>
       </div>
 
       {/* Body Container */}
@@ -44,16 +44,8 @@ export default function BarChartTwo() {
                 ticks={[0, 5000, 10000, 15000, 20000]}
                 tickFormatter={(value) => (value === 0 ? "0" : `${value / 1000}K`)}
               />
-              <ChartTooltip
-                cursor={{ fill: "transparent" }}
-                content={BarChartTwoTooltip}
-              />
-              <Bar
-                dataKey="groupA"
-                stackId="a"
-                fill="var(--color-brand-500)"
-                barSize={20}
-              />
+              <ChartTooltip cursor={{ fill: "transparent" }} content={BarChartTwoTooltip} />
+              <Bar dataKey="groupA" stackId="a" fill="var(--color-brand-500)" barSize={20} />
               <Bar
                 dataKey="groupB"
                 stackId="a"

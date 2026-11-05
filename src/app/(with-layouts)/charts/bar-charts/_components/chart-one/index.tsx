@@ -11,7 +11,7 @@ export default function BarChartOne() {
     <Card className="p-0">
       {/* Header Container */}
       <div className="border-b border-card-border px-6 py-4">
-        <h3 className="text-base font-medium text-text-primary">Bar Chart 1</h3>
+        <h2 className="text-base font-medium text-text-primary">Bar Chart 1</h2>
       </div>
 
       {/* Body Container */}
@@ -30,10 +30,7 @@ export default function BarChartOne() {
                 domain={[0, 800]}
                 ticks={[0, 200, 400, 600, 800]}
               />
-              <ChartTooltip
-                cursor={{ fill: "transparent" }}
-                content={BarChartOneTooltip}
-              />
+              <ChartTooltip cursor={{ fill: "transparent" }} content={BarChartOneTooltip} />
               <Bar
                 dataKey="sales"
                 fill="var(--color-background-gray-quaternary)"
