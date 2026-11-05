@@ -1,6 +1,9 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 @plugin "@tailwindcss/forms";
 @plugin "tailwind-scrollbar";
+
+@variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
 
 @import "./css/default.css";
 @import "./css/dark.css";
