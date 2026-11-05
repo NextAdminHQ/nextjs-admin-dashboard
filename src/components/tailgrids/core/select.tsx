@@ -202,7 +202,7 @@ function SelectIndicator({ className, children, ...props }: ComponentProps<"span
     <span
       aria-hidden="true"
       className={cn(
-        "shrink-0 text-text-100 transition-transform",
+        "shrink-0 text-text-100 transition-transform duration-200",
         !children && "group-data-open:rotate-180",
         className,
       )}
@@ -226,8 +226,7 @@ function SelectContent({ children, className, ...props }: SelectContentProps) {
       <Popover
         className={cn(
           "w-(--trigger-width) overflow-auto rounded-lg bg-dropdowns-background shadow-md",
-          "entering:animate-in entering:fade-in-0 entering:zoom-in-95",
-          "exiting:animate-out exiting:fade-out-0 exiting:zoom-out-95",
+          "duration-100 outline-none data-entering:animate-in data-entering:fade-in-0 data-entering:zoom-in-95 data-exiting:animate-out data-exiting:overflow-hidden data-exiting:fade-out-0 data-exiting:zoom-out-95 data-[placement^=bottom]:slide-in-from-top-2 data-[placement^=top]:slide-in-from-bottom-2 data-[placement^=left]:slide-in-from-right-2 data-[placement^=right]:slide-in-from-left-2",
           className,
         )}
         {...props}
@@ -257,8 +256,7 @@ function SelectContent({ children, className, ...props }: SelectContentProps) {
     <Popover
       className={cn(
         "w-(--trigger-width) overflow-auto rounded-lg border border-card-border bg-background-white-secondary",
-        "entering:animate-in entering:fade-in-0 entering:zoom-in-95",
-        "exiting:animate-out exiting:fade-out-0 exiting:zoom-out-95",
+        "duration-100 outline-none data-entering:animate-in data-entering:fade-in-0 data-entering:zoom-in-95 data-exiting:animate-out data-exiting:overflow-hidden data-exiting:fade-out-0 data-exiting:zoom-out-95 data-[placement^=bottom]:slide-in-from-top-2 data-[placement^=top]:slide-in-from-bottom-2 data-[placement^=left]:slide-in-from-right-2 data-[placement^=right]:slide-in-from-left-2",
         className,
       )}
       {...props}
@@ -275,7 +273,7 @@ function SelectItem({ className, children, ...props }: ListBoxItemProps) {
   return (
     <ListBoxItem
       className={cn(
-        "group/item relative flex w-full cursor-pointer items-center gap-3 rounded-md py-1 pr-7 pl-1.5 text-sm text-text-secondary outline-hidden select-none focus:bg-background-gray-secondary_alt focus:text-text-primary",
+        "group/item relative flex w-full cursor-pointer items-center gap-3 rounded-md py-1 pr-7 pl-1.5 text-sm text-text-secondary outline-hidden transition-colors duration-200 select-none focus:bg-background-gray-secondary_alt focus:text-text-primary",
         "data-disabled:pointer-events-none data-disabled:text-input-disabled-text",
         className,
       )}

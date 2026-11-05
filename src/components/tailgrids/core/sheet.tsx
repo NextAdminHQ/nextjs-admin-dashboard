@@ -46,10 +46,7 @@ export function SheetOverlay({ className, isDismissable = true, ...props }: Shee
     <ModalOverlay
       isDismissable={isDismissable}
       className={cn(
-        "fixed inset-0 z-9999 bg-black/50 backdrop-blur-sm",
-        "transition-opacity duration-300",
-        "data-entering:opacity-0",
-        "data-exiting:opacity-0",
+        "fixed inset-0 isolate z-9999 bg-black/50 duration-200 data-entering:animate-in data-entering:fade-in-0 data-exiting:animate-out data-exiting:fade-out-0 supports-backdrop-filter:backdrop-blur-xs dark:bg-black/70",
         className,
       )}
       {...props}
@@ -60,15 +57,18 @@ export function SheetOverlay({ className, isDismissable = true, ...props }: Shee
 // Sheet Content
 
 const sheetVariants = cva(
-  "fixed z-50 transition-transform duration-300 ease-in-out outline-none data-entering:translate-x-0 data-entering:translate-y-0",
+  "fixed z-50 duration-200 outline-none data-entering:animate-in data-exiting:animate-out",
   {
     variants: {
       side: {
         right:
-          "inset-y-0 right-0 h-full data-entering:translate-x-full data-exiting:translate-x-full",
-        left: "inset-y-0 left-0 h-full data-entering:-translate-x-full data-exiting:-translate-x-full",
-        top: "inset-x-0 top-0 data-entering:-translate-y-full data-exiting:-translate-y-full",
-        bottom: "inset-x-0 bottom-0 data-entering:translate-y-full data-exiting:translate-y-full",
+          "inset-y-0 right-0 h-full data-entering:slide-in-from-right data-exiting:slide-out-to-right",
+        left:
+          "inset-y-0 left-0 h-full data-entering:slide-in-from-left data-exiting:slide-out-to-left",
+        top:
+          "inset-x-0 top-0 data-entering:slide-in-from-top data-exiting:slide-out-to-top",
+        bottom:
+          "inset-x-0 bottom-0 data-entering:slide-in-from-bottom data-exiting:slide-out-to-bottom",
       },
     },
     defaultVariants: {

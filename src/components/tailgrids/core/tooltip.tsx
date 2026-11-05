@@ -149,6 +149,8 @@ export const TooltipContent = React.forwardRef<
 
   if (!context.open) return null;
 
+  const side = context.placement.split("-")[0];
+
   return (
     <FloatingPortal>
       <div
@@ -157,9 +159,12 @@ export const TooltipContent = React.forwardRef<
           ...context.floatingStyles,
           ...style,
         }}
+        data-side={side}
         {...context.getFloatingProps(props)}
         className={cn(
           "hidden rounded-lg border border-border-secondary bg-tooltip-background px-3 py-1.5 text-sm font-medium text-tooltip-text-color shadow-md sm:block",
+          "duration-150 animate-in fade-in-0 zoom-in-95",
+          "data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1",
           className,
         )}
       >

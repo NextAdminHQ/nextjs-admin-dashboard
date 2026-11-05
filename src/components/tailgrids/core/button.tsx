@@ -9,7 +9,7 @@ import {
 } from "react-aria-components";
 
 export const buttonStyles = cva(
-  "flex items-center justify-center rounded-lg text-sm font-medium transition outline-none focus:ring-4 disabled:pointer-events-none data-[focused=true]:ring-4 [&>svg]:text-current!",
+  "flex items-center justify-center rounded-lg text-sm font-medium transition-all outline-none focus:ring-2 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none data-[focused=true]:ring-2 [&>svg]:text-current!",
   {
     variants: {
       variant: {
@@ -42,20 +42,21 @@ export const buttonStyles = cva(
         variant: ["primary", "danger", "success"],
         appearance: "fill",
         className:
-          "text-white-100 disabled:bg-button-disabled-background disabled:text-button-disabled-text",
+          "text-white-100 disabled:border disabled:border-button-disabled-border disabled:bg-button-disabled-background disabled:text-button-disabled-text",
       },
       // Disable states for Outline
       {
         variant: ["primary", "danger", "success"],
         appearance: "outline",
         className:
-          "border disabled:border-button-outline-disabled-border disabled:bg-button-outline-disabled-background disabled:text-button-outline-disabled-text",
+          "border disabled:border disabled:border-button-disabled-border disabled:bg-button-disabled-background disabled:text-button-disabled-text",
       },
       // Disable states for Ghost
       {
         variant: ["primary", "danger", "success"],
         appearance: "ghost",
-        className: "disabled:bg-transparent disabled:text-button-outline-disabled-text",
+        className:
+          "disabled:border disabled:border-button-disabled-border disabled:bg-button-disabled-background disabled:text-button-disabled-text",
       },
 
       // Primary Fill

@@ -157,7 +157,7 @@ export function AccordionTrigger({ children, className }: AccordionTriggerProps)
 
         <span className="flex h-lh items-center">
           {variant === "style_four" ? (
-            <ChevronDown className="transition-all group-data-[state=open]:rotate-180" />
+            <ChevronDown className="transition-transform duration-200 ease-in-out group-data-[state=open]:rotate-180" />
           ) : (
             <>{dataState === "open" ? <Minus /> : <Plus />}</>
           )}
@@ -194,10 +194,11 @@ export function AccordionContent({ children, className }: AccordionContentProps)
       role="region"
       aria-labelledby={triggerId}
       data-state={dataState}
-      className={cn(accordionContentStyle({ variant }), className)}
-      hidden={dataState === "closed"}
+      className="grid transition-[grid-template-rows] duration-300 ease-in-out data-[state=closed]:grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]"
     >
-      {dataState === "open" && children}
+      <div className={cn("overflow-hidden", accordionContentStyle({ variant }), className)}>
+        {children}
+      </div>
     </div>
   );
 }

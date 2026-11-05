@@ -29,14 +29,17 @@ export function Dialog({
   ...props
 }: DialogProps) {
   return (
-    <AriaModal isOpen={isOpen} defaultOpen={defaultOpen} onOpenChange={onOpenChange}>
-      <AriaDialog
-        className={cn(
-          "fixed top-1/2 left-1/2 w-full max-w-140 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border-primary bg-background-white-primary p-6 shadow-lg outline-none max-sm:max-w-[calc(100%-2rem)]",
-          className,
-        )}
-        {...props}
-      >
+    <AriaModal
+      isOpen={isOpen}
+      defaultOpen={defaultOpen}
+      onOpenChange={onOpenChange}
+      className={cn(
+        "fixed top-1/2 left-1/2 w-full max-w-140 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border-primary bg-background-white-primary p-6 shadow-lg outline-none max-sm:max-w-[calc(100%-2rem)]",
+        "duration-100 data-entering:animate-in data-entering:fade-in-0 data-entering:zoom-in-95 data-exiting:animate-out data-exiting:fade-out-0 data-exiting:zoom-out-95",
+        className,
+      )}
+    >
+      <AriaDialog className="outline-none" {...props}>
         {({ close }) => (
           <>
             {typeof children === "function" ? children({ close }) : children}

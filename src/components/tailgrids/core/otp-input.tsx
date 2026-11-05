@@ -113,7 +113,10 @@ export default function OtpInput({
 
   const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const text = e.clipboardData.getData("text").trim().replace(/[^0-9]/g, "");
+    const text = e.clipboardData
+      .getData("text")
+      .trim()
+      .replace(/[^0-9]/g, "");
     if (text.length === digitLength) {
       const digits = text.split("");
       setOtp(digits);
@@ -158,7 +161,7 @@ export default function OtpInput({
               inputRefs.current[index] = el;
             }}
             className={cn(
-              "flex size-11 items-center justify-center rounded-lg border bg-input-background p-2 text-center text-base font-normal shadow-xs focus:ring-4 focus:outline-none disabled:border-base-100 disabled:bg-background-soft-50 disabled:text-input-disabled-text transition duration-300",
+              "flex size-11 items-center justify-center rounded-lg border bg-input-background p-2 text-center text-base font-normal shadow-xs transition duration-300 focus:ring-4 focus:outline-none disabled:border-base-100 disabled:bg-background-soft-50 disabled:text-input-disabled-text",
               isInvalid
                 ? "border-input-error-focus-border focus:ring-input-error-focus-border/20 data-invalid:border-input-error-focus-border data-invalid:ring-input-error-focus-border/20 data-invalid:focus:ring-input-error-focus-border/20"
                 : "border-base-300 focus:border-input-primary-focus-border focus:ring-input-primary-focus-border/20",

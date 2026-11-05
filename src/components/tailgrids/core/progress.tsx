@@ -29,7 +29,7 @@ export function Progress({ progress, withLabel, className, trackColor, barColor 
       >
         <div className="size-full overflow-hidden rounded-full">
           <div
-            className="size-full rounded-full text-center"
+            className="size-full rounded-full text-center transition-transform duration-300 ease-in-out"
             style={{
               transform: `translateX(-${100 - progress}%)`,
               backgroundColor: barColor || "var(--color-brand-500)",

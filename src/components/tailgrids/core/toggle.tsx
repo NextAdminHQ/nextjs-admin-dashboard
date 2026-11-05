@@ -6,8 +6,22 @@ type PropsType = Omit<ComponentProps<"input">, "size"> & {
   size?: "sm" | "md";
 };
 
+const toggleVariants = {
+  sm: {
+    root: "h-5 w-11",
+    thumb:
+      "top-[1.5px] left-[1.5px] h-[17px] w-[26px] peer-checked:translate-x-[15px] rtl:peer-checked:-translate-x-[15px]",
+  },
+  md: {
+    root: "h-6 w-13",
+    thumb:
+      "top-0.5 left-0.5 h-5 w-[30px] peer-checked:translate-x-[18px] rtl:peer-checked:-translate-x-[18px]",
+  },
+} as const;
+
 export function Toggle({ size = "sm", className, label, ...inputProps }: PropsType) {
   const id = useId();
+  const currentVariant = toggleVariants[size] ?? toggleVariants.sm;
 
   return (
     <label
@@ -22,21 +36,15 @@ export function Toggle({ size = "sm", className, label, ...inputProps }: PropsTy
 
         <div
           className={cn(
-            "h-5 w-9 rounded-full bg-toggle-default-background peer-checked:bg-toggle-active-background peer-focus:ring-4 peer-focus:ring-toggle-active-background/20 peer-disabled:bg-toggle-disabled-background",
-            {
-              "h-5 w-9": size === "sm",
-              "h-6 w-11": size === "md",
-            },
+            "rounded-full bg-toggle-default-background duration-200 peer-checked:bg-toggle-active-background peer-focus:ring-4 peer-focus:ring-toggle-active-background/20 peer-disabled:bg-toggle-disabled-background",
+            currentVariant.root,
           )}
         />
 
         <div
           className={cn(
-            "absolute top-1/2 left-0.5 flex -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-sm transition-all peer-checked:right-0.5 peer-checked:translate-x-full peer-disabled:bg-toggle-disabled-foreground",
-            {
-              "size-4": size === "sm",
-              "size-5": size === "md",
-            },
+            "pointer-events-none absolute rounded-full bg-white shadow-sm transition-transform duration-150 ease-linear peer-disabled:bg-toggle-disabled-foreground",
+            currentVariant.thumb,
           )}
         />
       </div>

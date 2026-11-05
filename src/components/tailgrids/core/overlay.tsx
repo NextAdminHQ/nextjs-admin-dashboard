@@ -23,7 +23,7 @@ export function Backdrop({
     <AriaModalOverlay
       isDismissable={isDismissable}
       className={cn(
-        "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-200",
+        "fixed inset-0 isolate z-100 bg-black/50 duration-100 data-entering:animate-in data-entering:fade-in-0 data-exiting:animate-out data-exiting:fade-out-0 supports-backdrop-filter:backdrop-blur-xs dark:bg-black/70",
         className
       )}
       {...props}

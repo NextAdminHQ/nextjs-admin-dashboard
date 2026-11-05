@@ -10,7 +10,7 @@ import {
 } from "react-aria-components";
 
 const checkboxStyles = cva(
-  "grid place-items-center overflow-hidden border border-button-primary-outline-stroke bg-checkbox-background transition group-hover:border-checkbox-checked-border group-data-[disabled=true]:border-base-50 group-data-[focused=true]:border-primary-300 group-data-[focused=true]:ring-4 group-data-[focused=true]:ring-checkbox-checked-border/20 group-data-[selected=true]:border-checkbox-checked-border! group-data-[selected=true]:bg-checkbox-checked-background [&>svg]:hidden [&>svg]:text-checkbox-checked-icon-color group-data-[disabled=true]:[&>svg]:text-(--border-color-base-50) group-data-[selected=true]:[&>svg]:block",
+  "grid place-items-center overflow-hidden border border-button-primary-outline-stroke bg-checkbox-background transition group-hover/checkbox:border-checkbox-checked-border group-data-[disabled=true]/checkbox:border-base-50 group-data-[focused=true]/checkbox:border-primary-300 group-data-[focused=true]/checkbox:ring-4 group-data-[focused=true]/checkbox:ring-checkbox-checked-border/20 group-data-[invalid=true]/checkbox:border-error-500 group-data-[invalid=true]/checkbox:text-error-500 group-data-[selected=true]/checkbox:border-checkbox-checked-border! group-data-[selected=true]/checkbox:bg-checkbox-checked-background [&>svg]:hidden [&>svg]:text-checkbox-checked-icon-color group-data-[disabled=true]/checkbox:[&>svg]:text-(--border-color-base-50) group-data-[selected=true]/checkbox:[&>svg]:block",
   {
     variants: {
       size: {
@@ -30,7 +30,10 @@ export interface CheckboxProps
 export function Checkbox({ size = "sm", className, children, ...props }: CheckboxProps) {
   return (
     <AriaCheckbox
-      className={cn("group inline-flex items-center gap-2 overflow-hidden select-none relative", className)}
+      className={cn(
+        "group/checkbox relative inline-flex items-center gap-2 overflow-hidden select-none",
+        className,
+      )}
       {...props}
     >
       {composeRenderProps(children, (resolvedChildren, { isDisabled }) => (

@@ -9,7 +9,7 @@ const wrapperStyles = cva("mx-auto flex w-full items-center justify-center max-s
   variants: {
     variant: {
       default: "gap-0.5",
-      compact: "max-w-fit sm:divide-x sm:divide-button-outline-border",
+      compact: "max-w-fit sm:divide-x sm:divide-button-primary-outline-stroke",
     },
   },
 });
@@ -178,7 +178,7 @@ function PaginationButton({
       className={cn(
         "size-10 shrink-0 rounded-lg hover:bg-background-gray-secondary_alt aria-[current=page]:bg-background-gray-secondary_alt",
         paginationVariant === "compact" &&
-          "rounded-none border-y border-button-outline-border bg-button-outline-background",
+          "rounded-none border-y border-button-primary-outline-stroke bg-button-primary-outline-background",
       )}
       onClick={() => onPageChange?.(page)}
     >
@@ -191,7 +191,7 @@ function PaginationEllipsis({ paginationVariant }: { paginationVariant: PropsTyp
   return (
     <button
       className={cn("pointer-events-none size-10 shrink-0", {
-        "border-y border-button-outline-border bg-button-outline-background":
+        "border-y border-button-outline-border bg-button-primary-outline-background":
           paginationVariant === "compact",
       })}
     >
