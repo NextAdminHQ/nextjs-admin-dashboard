@@ -20,6 +20,15 @@ interface SearchItem {
     icon?: React.ReactNode;
 }
 
+// Global custom event name for opening the search modal from outside triggers
+export const OPEN_SEARCH_EVENT = "open-search-modal";
+
+export function openSearchModal() {
+    if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent(OPEN_SEARCH_EVENT));
+    }
+}
+
 export default function SearchBar() {
     const [open, setOpen] = useState(false);
     const router = useRouter();
@@ -33,8 +42,15 @@ export default function SearchBar() {
             }
         };
 
+        const handleCustomOpen = () => setOpen(true);
+
         window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
+        window.addEventListener(OPEN_SEARCH_EVENT, handleCustomOpen);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener(OPEN_SEARCH_EVENT, handleCustomOpen);
+        };
     }, []);
 
     // Parse NAV_DATA into searchable items grouped by section
@@ -144,7 +160,7 @@ export default function SearchBar() {
                         </InputGroupAddon>
                         <Command.Input
                             placeholder='Search pages...'
-                            className='w-full min-w-0 flex-1 border-none bg-transparent pl-2 text-sm text-text-primary outline-none placeholder:text-text-tertiary focus:ring-0 focus:outline-none'
+                            className='w-full min-w-0 flex-1 border-none bg-transparent pl-2 text-sm text-text-primary outline-none placeholder:text-input-placeholder-text focus:ring-0 focus:outline-none'
                         />
                         <InputGroupAddon align='inline-end'>
                             <div className='rounded-md border border-card-border bg-background-gray-primary/50 px-2 py-0.75 text-xs text-text-tertiary'>

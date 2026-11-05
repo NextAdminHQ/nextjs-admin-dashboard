@@ -1,14 +1,15 @@
 "use client";
 
-import { MenuIcon } from "@/components/common/header/icons";
+import { MenuIcon, SearchIcon } from "@/components/common/header/icons";
 import ThemeToggle from "@/components/common/header/theme-toggle";
 import { UserProfileButton } from "@/components/common/header/user-profile";
 import { ThreeDots } from "@/components/common/sidebar/icon";
 import { cn } from "@/utils/cn";
-import { LogoWithText } from "@/utils/icon";
+import { LogoWithText, LogoWithTextDark } from "@/utils/icon";
+import Link from "next/link";
 import React from "react";
 import { NotificationsButton } from "./notifications";
-import SearchBar from "./searchbar";
+import SearchBar, { openSearchModal } from "./searchbar";
 
 //  Main Header
 export default function Header({ onMenuClick }: { onMenuClick?: () => void }) {
@@ -32,9 +33,10 @@ export default function Header({ onMenuClick }: { onMenuClick?: () => void }) {
           </div>
 
           {/* Center: Logo */}
-          <div className="flex items-center justify-center">
-            <LogoWithText />
-          </div>
+          <Link href="/" className="flex items-center justify-center">
+            <LogoWithText className="dark:hidden" />
+            <LogoWithTextDark className="hidden dark:block" />
+          </Link>
 
           {/* Right: Three-dot */}
           <div className="flex flex-1 justify-end">
@@ -85,7 +87,13 @@ function MobileInfoDrawer({ isOpen }: { isOpen: boolean }) {
           <div className="flex items-center gap-2.5">
             <NotificationsButton />
             <ThemeToggle />
-            <SearchBar />
+            <button
+              onClick={openSearchModal}
+              className="flex size-10 items-center justify-center rounded-lg border border-card-border bg-card-background text-icon-primary shadow-xs transition-colors outline-none hover:bg-background-gray-primary focus-visible:border-input-primary-focus-border focus-visible:ring-4 focus-visible:ring-input-primary-focus-border/20"
+              aria-label="Open search modal"
+            >
+              <SearchIcon />
+            </button>
           </div>
 
           {/* Right Side - Actions */}
