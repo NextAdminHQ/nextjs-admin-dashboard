@@ -1,7 +1,7 @@
-import formatCurrency from "@/utils/format-currency";
+import type { HomeOverviewStatsRawResponse } from "@/services/api/home";
+import { formatCurrency } from "@/utils/format-currency";
 import { formatNumber } from "@/utils/format-number";
 import { overviewStatDisplayConfig } from "./data";
-import type { HomeOverviewStatsRawResponse } from "@/services/api/home";
 
 import type { OverviewStatViewModel } from "./types";
 
@@ -14,7 +14,7 @@ export function mapOverviewStats(response: HomeOverviewStatsRawResponse): Overvi
       title: display.title,
       value:
         metric.display_format === "currency_compact"
-          ? formatCurrency(metric.current_value)
+          ? formatCurrency({ value: metric.current_value })
           : metric.display_format === "integer"
             ? metric.current_value.toLocaleString()
             : formatNumber({ value: metric.current_value }),

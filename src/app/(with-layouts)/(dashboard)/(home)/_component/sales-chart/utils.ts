@@ -1,4 +1,4 @@
-import formatCurrency from "@/utils/format-currency";
+import { formatCurrency } from "@/utils/format-currency";
 import { SalesChartSummary } from "./types";
 
 export function formatDelta(value: number) {
@@ -10,7 +10,7 @@ export function getSalesChartStats(summary: SalesChartSummary) {
     {
       id: "sales",
       label: "Sales Amount",
-      value: formatCurrency(summary.totalSales),
+      value: formatCurrency({ value: summary.totalSales }),
       delta: formatDelta(summary.salesDeltaPercent),
       isPositive: summary.salesDeltaPercent >= 0,
       dotClassName: "bg-brand-500",
@@ -18,7 +18,7 @@ export function getSalesChartStats(summary: SalesChartSummary) {
     {
       id: "revenue",
       label: "Revenue Amount",
-      value: formatCurrency(summary.totalRevenue),
+      value: formatCurrency({ value: summary.totalRevenue }),
       delta: formatDelta(summary.revenueDeltaPercent),
       isPositive: summary.revenueDeltaPercent >= 0,
       dotClassName: "bg-purple-500",

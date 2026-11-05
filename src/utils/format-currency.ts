@@ -1,4 +1,4 @@
-export default function formatCurrency(value: number) {
+export function formatCurrency({ value }: { value: number }) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
