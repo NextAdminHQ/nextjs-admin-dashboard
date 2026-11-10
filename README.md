@@ -98,6 +98,10 @@ Issues and pull requests are welcome. If something is broken or missing, open an
 
 ## Update Logs
 
+### Version 2.0.2 - [Nov 10, 2026]
+
+- Updated `next`, `react`, and `react-dom` version addressing `GHSA-xqc2-xf4c-x3h3`.
+
 ### Version 2.0.1 - [Nov 05, 2026]
 
 - Updated Next.js, React, and other dependencies to their latest versions.
